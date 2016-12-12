@@ -37,11 +37,6 @@ class PostTableSeeder extends Seeder
 
             $post->save();
 
-            $table = range(1, 10);
-            $shuffle = shuffle($table);
-            $tags = array_slice($table, rand(1,5));
-
-            $post->tags()->attach($tags);
         });
     }
 }

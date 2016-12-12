@@ -17,7 +17,7 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->string('title', 100);
             $table->text('content');
-            $table->dateTime('published_at');
+            $table->dateTime('date');
             $table->enum('status',['published','unpublished']);
             $table->timestamps();
         });
