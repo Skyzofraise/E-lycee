@@ -6,7 +6,7 @@
             @foreach($posts as $post)
             <article>
                 @if(!empty($post->url_thumbnail))
-                <img src="{{ url('images', [$post->url_thumbnail]) }}" alt="">
+                <img src="{{ url('images/posts', [$post->url_thumbnail]) }}" alt="">
                 @endif
                 <div class="infos">
                     <h3><a href="{{url('post', [$post->id])}}">{{$post->title}}</a></h3>

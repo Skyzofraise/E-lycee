@@ -5,7 +5,7 @@
 <div>
 
     @if($post->url_thumbnail)
-    <img src="{{ url('images/'.$post->url_thumbnail) }}" alt="">
+    <img src="{{ url('images/posts', [$post->url_thumbnail]) }}" alt="">
     @endif
 
     <h2>{{ $post->title }}</h2>

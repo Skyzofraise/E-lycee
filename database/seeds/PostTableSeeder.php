@@ -12,7 +12,7 @@ class PostTableSeeder extends Seeder
     public function run()
     {
         // Supprimer les image avant si le dossier image est non vide
-        $upload = public_path('images'); // chemin du dossier images dans dossier public
+        $upload = public_path('images/posts'); // chemin du dossier images dans dossier public
         $files = File::allFiles($upload);
 
         foreach ($files as $file) {
