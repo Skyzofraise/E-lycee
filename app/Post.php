@@ -23,21 +23,4 @@ class Post extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function getPublishedAtAttribute($value)
-    {
-        return Carbon::parse($value)->format('Y-m-d');
-    }
-
-    public function getTitleAttribute($value)
-    {
-        return ucfirst($value);
-    }
-
-    public function setUserIdAttribute($value)
-    {
-        if($value == 0)
-            $this->attributes['user_id'] = null;
-        else
-            $this->attributes['user_id'] = $value;
-    }
 }

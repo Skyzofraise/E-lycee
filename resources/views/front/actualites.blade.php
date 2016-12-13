@@ -1,41 +1,48 @@
 @extends('layouts.master')
 
 @section('content')
-
-    @forelse($posts as $post)
-
-        <article class="post">
-            <!-- Post image -->
-            <div class="post-thumbnail">
-                @if($post->url_thumbnail)
+    @if(!empty($posts))
+    <section id="articles" class="flex">
+        @forelse($posts as $post)
+        <article class="posts">
+            <div class="posts-image">
+                @if(!empty($post->url_thumbnail))
                 <img src="{{ url('images/posts', [$post->url_thumbnail]) }}" alt="">
                 @endif
             </div>
-            <div class="post-content">
-                <!-- Post Titre -->
-                <h2>
-                    <a href="{{ action('FrontController@actualite', $post->id)}}">{{ $post->title }}</a>
-                </h2>
-
-                <!-- Post auteur, date -->
-                <div class="post-meta">
-                    <a class="post-auteur" href="#">Margarita</a>
-                    <a href=""><time datetime="">{{ $post->date }}</time></a>
+            <div class="infos flex-col">
+                <div class="infos flex">
+                    <div class="posts-date">{{ $post->date }}</div>
+                    <div class="posts-heading flex-col">
+                        <h2 class="posts-title">
+                            <a href="{{ url('actualite', [$post->id]) }}">{{$post->title}}</a>
+                        </h2>
+                        <span class="posts-auteur">
+                        @if($post->user)
+                            <a href="{{ url('user', [$post->user->id]) }}">{{$post->user->username}}</a>
+                        @else
+                            {{'Anonyme'}}
+                        @endif
+                        </span>
+                    </div>
                 </div>
-
-                <!-- Post resume -->
-                <p class="description">{{ $post->abstract }}</p>
-
-                <!-- Post bouton lire plus -->
-                <a href="{{ action('FrontController@actualite', $post->id)}}" class="read-more">
-                    Lire la suite
-                </a>
+                <div class="posts-resume">
+                    {{ $post->abstract }}
+                </div>
+                <div class="posts-readmore">
+                    <a href="{{ url('actualite', [$post->id]) }}">Lire la suite</a>
+                </div>
             </div>
         </article>
+            
         @empty
         Aucun article
 
-    @endforelse
+        @endforelse
+    </section>
+    @else
+        <p>Il n'y a aucun article pour le moment. Mais cela ne saurait tarder.</p>
+    @endif
 
     {!! $posts->render() !!}
 

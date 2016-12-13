@@ -15,23 +15,22 @@
                         <div class="posts-date">{{ $post->date }}</div>
                         <div class="posts-heading flex-col">
                             <h2 class="posts-title">
-                                <a href="{{url('post', [$post->id])}}">{{$post->title}}</a>
+                                <a href="{{ url('actualite', [$post->id]) }}">{{$post->title}}</a>
                             </h2>
                             <span class="posts-auteur">
-                                <a href="">Quelqu'un</a>
+                            @if($post->user)
+                                <a href="{{ url('user', [$post->user->id]) }}">{{$post->user->username}}</a>
+                            @else
+                                {{'Anonyme'}}
+                            @endif
                             </span>
-
-                            <!-- -->
-                            <!-- AJOUTER AUTEUR/USER -->
-                            <!-- -->
-
                         </div>
                     </div>
                     <div class="posts-resume">
                         {{ $post->abstract }}
                     </div>
                     <div class="posts-readmore">
-                        <a href="{{ action('FrontController@actualite', $post->id)}}">Lire la suite</a>
+                        <a href="{{ url('actualite', [$post->id]) }}">Lire la suite</a>
                     </div>
                 </div>
             </article>
