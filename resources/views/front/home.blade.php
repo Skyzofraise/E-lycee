@@ -24,10 +24,10 @@
 
 @section('sidebar')
 @parent
-@if(!empty($students))
-    <div class="contain">
-    </div>
-@else
-    <p>désolé aucun étudiant</p>
-@endif
+    @if(!empty($students))
+        <div class="contain">
+        </div>
+    @else
+        <p>désolé aucun étudiant</p>
+    @endif
 @endsection
