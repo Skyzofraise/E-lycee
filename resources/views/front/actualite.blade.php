@@ -14,8 +14,9 @@
     <div class="stats">
         <span>{{ $post->user->username }}</span>
         <span>{{ $post->date }}</span>
-        <span>{{ $post->date }}</span>
     </div>
 </div>
 
+@endsection
+@section('sidebar')
 @endsection

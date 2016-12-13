@@ -14,7 +14,9 @@ class FrontController extends Controller
 
 	public function index() 
 	{
-		$posts = Post::all();
+		$posts = Post::orderBy('date', 'desc')
+               ->take(3)
+               ->get();
 
 		return view('front.home', compact('posts'));
 	}
