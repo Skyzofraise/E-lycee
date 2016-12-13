@@ -4,22 +4,34 @@
 
     @forelse($posts as $post)
 
-        <div class="post">
-
-            @if($post->url_thumbnail)
-            <img src="{{ url('images/posts', [$post->url_thumbnail]) }}" alt="">
-            @endif
-
-            <a href="{{ action('FrontController@actualite', $post->id)}}">
-                <h3>{{ $post->title }}</h3>
-            </a>
-            <div>
-                <span>{{ $post->date }}</span>
+        <article class="post">
+            <!-- Post image -->
+            <div class="post-thumbnail">
+                @if($post->url_thumbnail)
+                <img src="{{ url('images/posts', [$post->url_thumbnail]) }}" alt="">
+                @endif
             </div>
-            <p>{{ $post->abstract }}</p>
+            <div class="post-content">
+                <!-- Post Titre -->
+                <h2>
+                    <a href="{{ action('FrontController@actualite', $post->id)}}">{{ $post->title }}</a>
+                </h2>
 
-            <a href="{{ action('FrontController@actualite', $post->id)}}">Lire la suite</a>
-        </div>
+                <!-- Post auteur, date -->
+                <div class="post-meta">
+                    <a class="post-auteur" href="#">Margarita</a>
+                    <a href=""><time datetime="">{{ $post->date }}</time></a>
+                </div>
+
+                <!-- Post resume -->
+                <p class="description">{{ $post->abstract }}</p>
+
+                <!-- Post bouton lire plus -->
+                <a href="{{ action('FrontController@actualite', $post->id)}}" class="read-more">
+                    Lire la suite
+                </a>
+            </div>
+        </article>
         @empty
         Aucun article
 
