@@ -33,12 +33,12 @@
                     <a href="{{url('')}}">Home</a>
                     <a href="{{url('actualites')}}">Actualités</a>
                     <a href="">Lycée</a>
-                    <div class="log-in-button">
-                        <a href="">
-                            Log in
-                        </a>
-                    </div>
                 </nav>
+                <div class="log-in-button">
+                    <a href="">
+                        Log in
+                    </a>
+                </div>
             </div>
         </div>
     </header>
