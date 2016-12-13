@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>E-Lycée</title>
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/style.css') }}">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
 </head>
 <body>
     <header>
