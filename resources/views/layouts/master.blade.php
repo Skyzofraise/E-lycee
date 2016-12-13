@@ -48,7 +48,7 @@
                 @yield('content')
             </div>
             @section('sidebar')
-                @include('includes.sidebar');
+                @include('includes.sidebar')
             @show
         </div>
     <footer>
