@@ -3,33 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>E-Lycée</title>
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Quicksand" rel="stylesheet">
 </head>
 <body>
 <header>
-    <div>
-        <div class="facebook">facebook</div>
-        <div class="connexion">connexion</div>
-        <div class="rs">rs</div>
-    </div>
     <div class="header">
         <h1><a href="{{url('')}}">E-Lycée</a></h1>
     </div>
-    <nav class="menu">
-        <ul class="flexible">
-            <li>
-                <a href="fanfictions.php" class="w_open">Fanfictions</a>
-            </li>
-            <li>
-                <a href="fanarts.php" class="w_open">Fanarts</a>
-            </li>
-            <li>
-                <a href="{{ url('category', [1]) }}">PHP</a>
-            </li>
-            <li>
-                <a href="{{ url('category', [2]) }}">MySQL</a>
-            </li>
+    <div class="top-nav">
+        <ul>
+            <li>Like fb</li>
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li class="search">Search!</li>
         </ul>
-    </nav>
+    </div>
+    <div class="second-nav">
+        <nav>
+            <a href="">Home</a>
+            <a href="">Actualités</a>
+            <a href="">Lycée</a>
+        </nav>
+    </div>
 </header>
 <div class="contenu">
     <div class="content">
