@@ -16,9 +16,12 @@ table{border-collapse:collapse;border-spacing:0}
 hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
 input,select{vertical-align:middle}
 
+/* GÉNÉRALITÉS */
+a { text-decoration: none;}
 
 
-/*---- STRUCTURE PRINCIPALE ----*/
+
+/*---- STRUCTURE ----*/
 body{ 
 	font-family: 'Quicksand', sans-serif;
 	background-color: #FFF;
@@ -28,7 +31,7 @@ body{
 	width: 1180px;
 	margin: auto;
 }
-a { text-decoration: none;}
+
 .flex {display: flex; flex-direction: row;}
 .flex-col {display: flex; flex-direction: column;}
 
@@ -45,7 +48,8 @@ header .second-nav{ background-color: #232323; }
 header .second-nav{ border-top: 1px solid rgba(255, 255, 255, 0.2); display: flex; flex-direction: row; align-items: center;}
 header .second-nav nav{ padding: 20px 10px; font-size: 20px; display: flex; flex: 1; }
 header .second-nav nav a{ text-decoration: none; color: #eee; margin-right: 10px; align-self: flex-end; }
-header .second-nav .log-in-button{ padding: 15px; margin-right: 10px; }
+header .second-nav .log-in-button{ margin-right: 10px; background-color: #439fdf; border-radius: 3px; }
+header .second-nav .log-in-button a{ color: #FFF; padding: 15px; display: inline-block; }
 
 /* CONTENT */
 section#articles { flex-wrap: wrap; }
@@ -64,10 +68,12 @@ article.posts .posts-readmore a { border: 1px solid #2e8ece; color: #2e8ece; dis
 /* FOOTER */
 footer { background-color: #232323; text-align: center; padding: 20px; justify-content: center; }
 footer .static-link a { color: #fff; padding: 10px 15px; text-decoration: none; }
-footer .static-link a:hover { color: #5e82e6; font-weight: 600; }
+footer .static-link a:hover { color: #439fdf; font-weight: 600; }
 footer .static-link:first-child { border-right: 1px solid #fff; }
 
-/*---- FIN STRUCTURE PRINCIPALE ----*/
+/*---- FIN STRUCTURE ----*/
+
+
 
 
 /*---- CONTENUS ----*/
