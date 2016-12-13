@@ -34,42 +34,12 @@
             </div>
             <div class="sidebar">
                 @section('sidebar')
-                    <nav>
-                    </nav>
+                    <div>
+                        YEAH !!! BAMBOO SIDEBAR
+                    </div>
                 @show
             </div>
         </div>
-<header>
-    <div class="header">
-        <h1><a href="{{url('')}}">E-Lycée</a></h1>
-    </div>
-    <div class="top-nav">
-        <ul>
-            <li>Like fb</li>
-            <li>Facebook</li>
-            <li>Twitter</li>
-            <li class="search">Search!</li>
-        </ul>
-    </div>
-    <div class="second-nav">
-        <nav>
-            <a href="">Home</a>
-            <a href="">Actualités</a>
-            <a href="">Lycée</a>
-        </nav>
-    </div>
-</header>
-<div class="contenu">
-    <div class="content">
-        @yield('content')
-    </div>
-    <div class="sidebar">
-        @section('sidebar')
-            <div>
-                YEAH !!! BAMBOO SIDEBAR
-            </div>
-        @show
-    </div>
     <footer>
         {{-- mon footer --}}
     </footer>
