@@ -7,37 +7,44 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Quicksand" rel="stylesheet">
 </head>
 <body>
-<header>
-    <div class="header">
-        <h1><a href="{{url('')}}">E-Lycée</a></h1>
-    </div>
-    <div class="top-nav">
-        <ul>
-            <li>Like fb</li>
-            <li>Facebook</li>
-            <li>Twitter</li>
-            <li class="search">Search!</li>
-        </ul>
-    </div>
-    <div class="second-nav">
-        <nav>
-            <a href="">Home</a>
-            <a href="">Actualités</a>
-            <a href="">Lycée</a>
-        </nav>
-    </div>
-</header>
-<div class="contenu">
-    <div class="content">
-        @yield('content')
-    </div>
-    <div class="sidebar">
-        @section('sidebar')
+
+    <header>
+        <div class="logo">
+            <h1><a href="{{url('')}}">E-Lycée</a></h1>
+        </div>
+        <div class="top-nav">
+            <ul>
+                <li>Like fb</li>
+                <li>Facebook</li>
+                <li>Twitter</li>
+                <li class="search">Search!</li>
+            </ul>
+        </div>
+        <div class="second-nav">
             <nav>
+                <a href="{{url('')}}">Home</a>
+                <a href="{{url('actualites')}}">Actualités</a>
+                <a href="">Lycée</a>
             </nav>
-        @show
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="contenu">
+            <div class="content">
+                @yield('content')
+            </div>
+            <div class="sidebar">
+                @section('sidebar')
+                    <nav>
+                    </nav>
+                @show
+            </div>
+        </div>
     </div>
-</div>
-<footer></footer>
+    <footer>
+        {{-- mon footer --}}
+    </footer>
+
+    
 </body>
 </html>
