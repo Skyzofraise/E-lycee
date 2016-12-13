@@ -33,8 +33,9 @@
     </div>
     <div class="sidebar">
         @section('sidebar')
-            <nav>
-            </nav>
+            <div>
+                YEAH !!! BAMBOO SIDEBAR
+            </div>
         @show
     </div>
 </div>

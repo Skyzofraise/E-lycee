@@ -23,11 +23,7 @@
 @endsection
 
 @section('sidebar')
+
 @parent
-    @if(!empty($students))
-        <div>
-        </div>
-    @else
-        <p>désolé aucun étudiant</p>
-    @endif
+
 @endsection
