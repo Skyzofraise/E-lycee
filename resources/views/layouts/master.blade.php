@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Quicksand" rel="stylesheet">
 </head>
 <body>
-
     <header>
         <div class="logo">
             <h1><a href="{{url('')}}">E-Lycée</a></h1>
