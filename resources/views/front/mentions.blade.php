@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h2>Lycée</h2>
+<h2>Mentions légales</h2>
 
 <div>
 	<p>Hac ex causa conlaticia stipe Valerius humatur ille Publicola et subsidiis amicorum mariti inops cum liberis uxor alitur Reguli et dotatur ex aerario filia Scipionis, cum nobilitas florem adultae virginis diuturnum absentia pauperis erubesceret patris.</p>

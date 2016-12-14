@@ -18,3 +18,5 @@ Route::get('/', 'FrontController@index');
 Route::get('actualites', 'FrontController@actualites');
 Route::get('actualite/{id}', 'FrontController@actualite');
 Route::get('lycee', 'FrontController@lycee');
+Route::get('mentions', 'FrontController@mentions');
+Route::get('contact', 'FrontController@contact');
