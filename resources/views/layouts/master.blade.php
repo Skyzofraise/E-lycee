@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <div class="logo">
+        <div class="logo flex">
             <h1><a href="{{url('')}}">E-Lycée</a></h1>
         </div>
         <div class="nav-container">
