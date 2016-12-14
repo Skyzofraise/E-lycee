@@ -32,7 +32,7 @@
                 <nav>
                     <a href="{{url('')}}">Home</a>
                     <a href="{{url('actualites')}}">Actualités</a>
-                    <a href="">Lycée</a>
+                    <a href="{{url('lycee')}}">Lycée</a>
                 </nav>
                 <div class="log-in-button">
                     <a href="">
