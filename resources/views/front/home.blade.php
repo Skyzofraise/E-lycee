@@ -2,6 +2,7 @@
 
 @section('content')
     @if(!empty($posts))
+        <h3>Derniers articles</h3>
         <section id="articles" class="flex">
             @foreach($posts as $post)
             <article class="posts">

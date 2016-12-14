@@ -1,15 +1,13 @@
 <aside class="sidebar" class="flex-col">
-    BAMBOO SIDEBAR
-
     <section class="autres-articles flex-col">
     	<h3>A lire aussi</h3>
 		@if(!empty($posts))
 
         @foreach($posts as $post)
         <article class="aside-posts">
-            <h2 class="posts-title">
+            <h4 class="posts-title">
                 <a href="{{ url('actualite', [$post->id]) }}">{{$post->title}}</a>
-            </h2>
+            </h4>
         </article>
         @endforeach
 
