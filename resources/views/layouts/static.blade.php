@@ -7,9 +7,7 @@
     </div>
     <div class="wrapper">
         <div class="contenu">
-            <div class="content">
-                @yield('content')
-            </div>
+            @yield('content')
         </div>
     </div>
 
