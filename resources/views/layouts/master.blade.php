@@ -2,7 +2,7 @@
 
     <div class="banner flex">
         <h2>
-            Les Mathématiques c'est fantastique!
+            Les Mathématiques <span>c'est fantastique!</span>
         </h2>
     </div>
     <div class="wrapper">
