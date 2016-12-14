@@ -40,14 +40,14 @@ class FrontController extends Controller
         return view('front.lycee');
     }
 
-    // public function mentions()
-    // {
-    //  return view('front.mentions');
-    // }
+    public function mentions()
+    {
+     return view('front.mentions');
+    }
 
-    // public function contact()
-    // {
-    // 	return view('front.contact');
-    // }
+    public function contact()
+    {
+    	return view('front.contact');
+    }
 
 }

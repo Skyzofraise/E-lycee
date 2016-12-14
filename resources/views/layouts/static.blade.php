@@ -10,9 +10,6 @@
             <div class="content">
                 @yield('content')
             </div>
-            @section('sidebar')
-                @include('includes.sidebar')
-            @show
         </div>
     </div>
 
