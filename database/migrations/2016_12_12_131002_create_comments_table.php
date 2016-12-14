@@ -15,10 +15,14 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('post_id')->nullable();
+            $table->unsignedInteger('user_id')->nullable();
             $table->string('title', 100);
             $table->text('content');
             $table->dateTime('date');
             $table->enum('status',['published','unpublished']);
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('CASCADE');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
             $table->timestamps();
         });
     }

@@ -17,13 +17,16 @@
                         <h2 class="posts-title">
                             <a href="{{ url('actualite', [$post->id]) }}">{{$post->title}}</a>
                         </h2>
-                        <span class="posts-auteur">
-                        @if($post->user)
-                            <a href="{{ url('user', [$post->user->id]) }}">{{$post->user->username}}</a>
-                        @else
-                            {{'Anonyme'}}
-                        @endif
-                        </span>
+                        <div class="posts-infos">
+                            <span>
+                            @if($post->user)
+                                <a href="{{ url('user', [$post->user->id]) }}">{{$post->user->username}}</a>
+                            @else
+                                {{'Anonyme'}}
+                            @endif
+                            </span> - 
+                            <span><i class="fa fa-comments"></i> {{count($post->comments)}} commentaires</span>
+                        </div>
                     </div>
                 </div>
                 <div class="posts-resume">

@@ -71,7 +71,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="Carte">
+	<div class="carte">
 		<img src="{{ URL::asset('images/carte.jpg') }}" alt="">
 	</div>
 </section>

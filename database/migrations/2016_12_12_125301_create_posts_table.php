@@ -14,16 +14,16 @@ class CreatePostsTable extends Migration
    public function up()
    {
        Schema::create('posts', function (Blueprint $table) {
-           $table->increments('id');
-           $table->unsignedInteger('user_id')->nullable();
-           $table->string('title', 100);
-           $table->text('abstract'); // résumé
-           $table->text('content');
-           $table->string('url_thumbnail', 100)->default('');
-           $table->dateTime('date');
-           $table->enum('status',['published','unpublished','draft']);
-           $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
-           $table->timestamps();
+          $table->increments('id');
+          $table->unsignedInteger('user_id')->nullable();
+          $table->string('title', 100);
+          $table->text('abstract'); // résumé
+          $table->text('content');
+          $table->string('url_thumbnail', 100)->default('');
+          $table->dateTime('date');
+          $table->enum('status',['published','unpublished','draft']);
+          $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
+          $table->timestamps();
        });
    }
 
