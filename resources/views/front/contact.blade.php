@@ -72,7 +72,7 @@
 		</div>
 	</div>
 	<div class="Carte">
-		C'est la carte ! C'est la carte !
+		<img src="{{ URL::asset('images/carte.jpg') }}" alt="">
 	</div>
 </section>
 
