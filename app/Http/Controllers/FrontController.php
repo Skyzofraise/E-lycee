@@ -20,11 +20,12 @@ class FrontController extends Controller
 
 		return view('front.home', compact('posts'));
 	}
-	public function actualites()
-    {
-    	$posts = Post::orderBy('date', 'DESC')->paginate(10);
 
-    	return view('front.actualites', compact('posts'));
+    public function actualites()
+    {
+        $posts = Post::orderBy('date', 'DESC')->paginate(10);
+
+        return view('front.actualites', compact('posts'));
     }
 
     public function actualite($id)
@@ -33,22 +34,15 @@ class FrontController extends Controller
 
     	return view('front.actualite', compact('post'));
     }
-    
-    // public function actualite($id)
-    // {
-    // 	$post = Post::findOrFail($id);
 
-    // 	return view('front.actualite', compact('post'));
-    // }
-
-    // public function lycee()
-    // {
-    // 	return view('front.lycee');
-    // }
+    public function lycee()
+    {
+        return view('front.lycee');
+    }
 
     // public function mentions()
     // {
-    // 	return view('front.mentions');
+    //  return view('front.mentions');
     // }
 
     // public function contact()
