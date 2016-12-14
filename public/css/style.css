@@ -60,6 +60,10 @@ header .second-nav .log-in-button a{ color: #FFF; padding: 10px 15px; display: i
 .banner h2 span{ color: #79CCF0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 3vw; display: block; text-align: right; }
 
 /* CONTENT */
+.content{ width: 75%; }
+.sidebar{ width: 25%;  }
+
+
 section#articles { flex-wrap: wrap; }
 article.posts { width: 50%; padding: 40px 0; border-top: 1px solid #ddd;}
 article.posts { width: 50%; padding: 40px 0; border-top: 1px solid #ddd;}

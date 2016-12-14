@@ -40,11 +40,3 @@
         <p>Il n'y a aucun article pour le moment. Mais cela ne saurait tarder.</p>
     @endif
 @endsection
-
-@section('sidebar')
-    @parent
-    <div>
-        Ici c'est la home page
-    </div>
-
-@endsection

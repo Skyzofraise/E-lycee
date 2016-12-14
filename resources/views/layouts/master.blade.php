@@ -6,7 +6,7 @@
         </h2>
     </div>
     <div class="wrapper">
-        <div class="contenu">
+        <div class="contenu flex">
             <div class="content">
                 @yield('content')
             </div>
