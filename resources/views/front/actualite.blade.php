@@ -2,25 +2,28 @@
 
 @section('content')
 
+<h3>{{ $post->title }}</h3>
+<p class="post-date">Le {{ $post->date }} </p>
+Par 
+<span>
+    @if($post->user)
+    	{{ $post->user->username }}
+    @else
+        {{'Anonyme'}}
+    @endif
+</span>
 <article>
+
     @if($post->url_thumbnail)
-    <img src="{{ url('images/posts', [$post->url_thumbnail]) }}" alt="">
+    <div class="image-article">
+    	<img src="{{ url('images/posts', [$post->url_thumbnail]) }}" alt="" title="{{ $post->title }}">
+    </div>
     @endif
 
-    <h2>{{ $post->title }}</h2>
     <p>{{ $post->content }}</p>
 
-    <div class="stats">
-    	<span>
-        @if($post->user)
-        	{{ $post->user->username }}
-        @else
-            {{'Anonyme'}}
-        @endif
-        </span>
-        <span>{{ $post->date }}</span>
-    </div>
 </article>
+
 <section id="commentaire">
 	<div id="respond">
 		<h3 class="respond-titre">

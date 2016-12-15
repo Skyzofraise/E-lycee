@@ -84,7 +84,7 @@ header .second-nav .log-in-button a{ color: #FFF; padding: 10px 15px; display: i
 .banner h2 span{ color: #79CCF0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 3vw; display: block; text-align: right; }
 
 /* CONTENT */
-.contenu{ margin: 30px 0; }
+.contenu{ margin: 60px 0; }
 
 .content{ width: 76%; margin-right: 4%; }
 .sidebar{ width: 20%; }
@@ -116,9 +116,9 @@ article.posts .posts-title a { color: #333; }
 article.posts .posts-infos { margin-right: 30px; }
 article.posts .posts-infos span,
 article.posts .posts-infos span a { font-size: 14px; color: #666; line-height: 25px;}
-article.posts a:hover { color: #79CCF0;}
 article.posts .posts-resume { margin: 0 0 25px 0; line-height: 25px; overflow: hidden; text-overflow: ellipsis; }
 article.posts .posts-author{ font-size: 13px; }
+article.posts .posts-author a{ color: #79CCF0; }
 article.posts .posts-readmore{ text-align: center; width: 100%; }
 article.posts .posts-readmore a { border: 1px solid #79CCF0; color: #79CCF0; display: inline-block; margin: auto; line-height: 38px; height: 40px; padding: 0 30px; text-transform: uppercase; font-size: 13px; font-weight: 700; border-radius: 30px; }
 article.posts .posts-readmore a:hover { color: #fff; background-color: #79CCF0; }
