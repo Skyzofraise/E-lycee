@@ -22,7 +22,7 @@ Route::get('mentions', 'FrontController@mentions');
 Route::get('contact', 'FrontController@contact');
 Auth::routes();
 
-Route::any('login','LoginController@login');
+Route::post('login','LoginController@login');
 
 // Route::get('profile', function () {
 //     // Only authenticated users may enter...
