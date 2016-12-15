@@ -3,7 +3,7 @@
 @section('content')
     @if(!empty($posts))
         <h3>Derniers articles</h3>
-        <section id="articles" class="flex">
+        <section id="articles" class="home flex">
             @foreach($posts as $post)
             <article class="posts">
                 <div class="posts-image">

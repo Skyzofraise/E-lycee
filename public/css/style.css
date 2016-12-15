@@ -78,14 +78,19 @@ header .second-nav .log-in-button a{ color: #FFF; padding: 10px 15px; display: i
 .sidebar h4.posts-title{ font-size: 1.2em; }
 
 
-
+/* ARTICLES */
 section#articles { flex-wrap: wrap; }
 article.posts { width: 48%; margin-right: 4%; padding: 40px 0; border-top: 1px solid #ddd;}
-article.posts:nth-child(2n+2) { margin-right: 0; }
+article.posts:nth-child(even) { margin-right: 0; }
+.home article.posts:first-child { display: flex; flex-direction: row; align-items: flex-start; width: 100%; margin-right: 0; }
+.home article.posts:nth-child(even) { margin-right: 4%; }
+.home article.posts:nth-child(odd) { margin-right: 0; }
+.home article.posts .posts-image { margin-right: 30px; }
 article.posts .posts-image { width: 100%; height: auto; margin-bottom: 20px; text-align: center; background-color: grey; }
 article.posts .posts-date { color: #79CCF0; font-weight: 600; margin-right: 15px; }
 article.posts .posts-heading { flex: 1; }
-article.posts .posts-title a { font-size: 20px; line-height: 25px; color: #333; margin-bottom: 15px; }
+article.posts h2.posts-title { font-size: 20px; line-height: 25px; margin-bottom: 15px; }
+article.posts .posts-title a { color: #333; }
 article.posts .posts-infos { margin-right: 30px; }
 article.posts .posts-infos span,
 article.posts .posts-infos span a { font-size: 14px; color: #666; line-height: 25px;}
