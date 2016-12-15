@@ -115,7 +115,7 @@ article.posts .posts-date span.post_year{ font-size: 14px; }
 article.posts .posts-heading { flex: 1; align-self: center; }
 
 article.posts .infos:first-child{ margin-bottom: 20px; }
-article.posts .infos{ width: 100%; }
+article.posts .infos{ width: 100%; align-items: flex-start; }
 
 article.posts h4.posts-title { line-height: 25px; letter-spacing: 1px; }
 article.posts .posts-title a { color: #333; }

@@ -34,7 +34,7 @@
                             {{'Anonyme'}}
                         @endif
                         </span> - 
-                        <span><i class="fa fa-comments"></i> {{count($post->comments)}} commentaires</span>
+                        <span><i class="fa fa-comment"></i> {{count($post->comments)}} commentaires</span>
                     </p>
                 </div>
                 <div class="posts-readmore">
