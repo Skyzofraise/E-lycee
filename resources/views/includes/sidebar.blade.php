@@ -5,9 +5,12 @@
 
         @foreach($posts as $post)
         <article class="aside-posts">
-            <h4 class="posts-title">
-                <a href="{{ url('actualite', [$post->id]) }}">{{$post->title}}</a>
-            </h4>
+            <ul class="article-list">
+                <li>
+                    <span> {{date('d/m/Y', strtotime($post->date))}} :</span>
+                    <a href="{{ url('actualite', [$post->id]) }}">{{$post->title}}</a>
+                </li>
+            </ul>
         </article>
         @endforeach
 

@@ -4,10 +4,9 @@
 
 
 <section id="contact">
-	<h2>Contact</h2>
 	<div class="contact-content flex">
 		<div class="contact-info flex-col">
-			<h3 class="title">Joins le lycée</h3>
+			<h3>Coordonnées</h4>
 			<div class="flex part contact-tel">
 				<div class="boxes-icon">
 					<i class="fa fa-phone"></i>
@@ -43,7 +42,7 @@
 			</div>
 		</div>
 		<div class="contact-form">
-			<h3 class="title">Envoi-nous un petit message</h3>
+			<h3 class="title">Contactez-nous</h3>
 			<div class="contact-form">
 				<form action="" method="post" novalidate="novalidate">
 					<div class="flex">
