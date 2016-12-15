@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>E-Lycée</title>
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/style.css') }}">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i|Quicksand:400,500,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i|Lato:300,400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('font-awesome/css/font-awesome.min.css') }}">
 
 </head>
 <body>
