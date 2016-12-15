@@ -13,22 +13,31 @@
                 </div>
                 <div class="infos flex-col">
                     <div class="infos flex">
-                        <div class="posts-date">{{ $post->date }}</div>
+                        <div class="posts-date">
+                            <span class="post_date_month">{{ date('d/m', strtotime($post->date)) }}</span>
+                            <span class="post_year">{{ date('Y', strtotime($post->date)) }}</span>
+                        </div>
                         <div class="posts-heading flex-col">
-                            <h2 class="posts-title">
+                            <h4 class="posts-title">
                                 <a href="{{ url('actualite', [$post->id]) }}">{{$post->title}}</a>
-                            </h2>
-                            <span class="posts-auteur">
-                            @if($post->user)
-                                <a href="{{ url('user', [$post->user->id]) }}">{{$post->user->username}}</a>
-                            @else
-                                {{'Anonyme'}}
-                            @endif
-                            </span>
+                            </h4>
+                            
                         </div>
                     </div>
                     <div class="posts-resume">
                         {{ $post->abstract }}
+                    </div>
+                    <div class="posts-author">
+                        <p>
+                            Par :
+                            <span class="posts-auteur">
+                                @if($post->user)
+                                    <a href="{{ url('user', [$post->user->id]) }}">{{$post->user->username}}</a>
+                                @else
+                                    {{'Anonyme'}}
+                                @endif
+                            </span>
+                        </p>
                     </div>
                     <div class="posts-readmore">
                         <a href="{{ url('actualite', [$post->id]) }}">Lire la suite</a>
