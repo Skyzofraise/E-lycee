@@ -32,7 +32,7 @@
             </div>
             <div class="second-nav">
                 <nav>
-                    <a href="{{url('')}}">Home</a>
+                    <a href="{{url('')}}">Accueil</a>
                     <a href="{{url('actualites')}}">Actualités</a>
                     <a href="{{url('lycee')}}">Lycée</a>
                 </nav>
