@@ -44,21 +44,30 @@
         <div id="popup-login">
             <div class="popup-content">
                 <div class="popup-title">Connexion</div>
-                <form class="popup-form connexion" method="post" action="">
-                    <div id="erreur-connexion"></div>
-                    <p>
-                        <label for="pseudo">E-mail</label>
-                        <input type="text" name="pseudo" placeholder="Pseudo *" class="pseudo with_icon" required>
+                <form class="popup-form" role="form" method="POST" action="{{ url('login') }}">
+                    {{csrf_field()}}
+                    <!-- <div id="erreur-connexion"></div> -->
+                    <p class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                        <label for="pseudo">Nom d'utilisateur</label>
+                        <input type="text" name="pseudo" placeholder="Pseudo *" class="pseudo" required>
+                        @if ($errors->has('username'))
+                            <span class="">{{ $errors->first('username') }}</span>
+                        @endif
                     </p>
-                    <p>
-                        <label for="mdp">Password</label>
-                        <input name="mdp" type="password" placeholder="Mot de passe *" class="mdp with_icon" required>
+                    <p class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <label for="password">Password</label>
+                        <input name="password" type="password" placeholder="Mot de passe *" class="password" required>
+                        @if ($errors->has('password'))
+                            <span class="">{{ $errors->first('password') }}</span>
+                        @endif
                     </p>
                     <p>
                         <input class="valider" type="submit" value="Valider" id="connecter">
                     </p>
                 </form>
-                <p class="popup-signin"><a href="#">Si vous n'avez pas vos identifiant, demandez-les auprès de Jean-Paul, 3e étage salle 306.</a></p>
+                <p class="popup-signin">
+                    <a href="#">Si vous n'avez pas vos identifiant, demandez-les auprès de Jean-Paul, 3e étage salle 306.</a>
+                </p>
             </div>
         </div>
     </header>

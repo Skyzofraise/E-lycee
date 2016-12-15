@@ -22,4 +22,8 @@ Route::get('mentions', 'FrontController@mentions');
 Route::get('contact', 'FrontController@contact');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::any('login','LoginController@login');
+
+// Route::get('profile', function () {
+//     // Only authenticated users may enter...
+// })->middleware('auth.basic');
