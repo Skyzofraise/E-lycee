@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id'); // PK
-            $table->string('username', 100); // VARCHAR 100
+            $table->string('username', 100)->unique(); // VARCHAR 100
             $table->string('password', 100); // VARCHAR 100
             $table->enum('role',['teacher','first_class','final_class']);
             $table->timestamps(); // Eloquent
