@@ -18,18 +18,18 @@
                             <span class="post_year">{{ date('Y', strtotime($post->date)) }}</span>
                         </div>
                         <div class="posts-heading flex-col">
-                            <h4 class="posts-title">
-                                <a href="{{ url('actualite', [$post->id]) }}">{{$post->title}}</a>
+                            <h4>
+                                <a href="{{ url('actualite', [$post->id]) }}">{{str_limit($post->title, 40)}}</a>
                             </h4>
                             
                         </div>
                     </div>
                     <div class="posts-resume">
-                        {{ $post->abstract }}
+                        {{ str_limit($post->abstract, 100) }}
                     </div>
                     <div class="posts-author">
                         <p>
-                            Par :
+                            Par 
                             <span class="posts-auteur">
                                 @if($post->user)
                                     <a href="{{ url('user', [$post->user->id]) }}">{{$post->user->username}}</a>

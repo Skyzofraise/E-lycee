@@ -38,7 +38,7 @@
                 </nav>
                 <div class="log-in-button">
                     <a href="" id="login-open">
-                        Log in
+                        Connexion
                     </a>
                 </div>
             </div>

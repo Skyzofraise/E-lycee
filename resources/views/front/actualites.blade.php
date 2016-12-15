@@ -2,7 +2,8 @@
 
 @section('content')
     @if(!empty($posts))
-    <section id="articles" class="flex">
+    <h3>Actualités</h3>
+    <section id="articles" class="actualites flex">
         @forelse($posts as $post)
         <article class="posts">
             <div class="posts-image">
@@ -17,24 +18,25 @@
                         <span class="post_year">{{ date('Y', strtotime($post->date)) }}</span>
                     </div>
                     <div class="posts-heading flex-col">
-                        <h4 class="posts-title">
-                            <a href="{{ url('actualite', [$post->id]) }}">{{$post->title}}</a>
+                        <h4>
+                            <a href="{{ url('actualite', [$post->id]) }}">{{ str_limit($post->title, 40) }}</a>
                         </h4>
                     </div>
                 </div>
                 <div class="posts-resume">
-                    {{ $post->abstract }}
+                    {{ str_limit($post->abstract, 100) }}
                 </div>
                 <div class="posts-author">
                     <p>
+                    Par  
                         <span>
                         @if($post->user)
                             <a href="{{ url('user', [$post->user->id]) }}">{{$post->user->username}}</a>
                         @else
                             {{'Anonyme'}}
                         @endif
-                        </span> - 
-                        <span><i class="fa fa-comment"></i> {{count($post->comments)}} commentaires</span>
+                        </span> | 
+                        <span>{{count($post->comments)}} <i class="fa fa-comment"></i></span>
                     </p>
                 </div>
                 <div class="posts-readmore">
