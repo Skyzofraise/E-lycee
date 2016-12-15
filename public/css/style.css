@@ -79,8 +79,8 @@ header .second-nav .log-in-button a{ color: #FFF; padding: 10px 15px; display: i
 #popup-login .popup-signin a:hover { color: #333; }
 
 /* BANNER */
-.banner{ width: 100%; height: 380px; background: url(../images/banner3.jpg) no-repeat center -80px/ cover; margin-top: -60px; justify-content: center; align-items: center; }
-.banner h2{ color: #FFF; font-size: 5.5vw; margin-top: 2.5%; font-weight: 500; text-shadow: rgba(0,0,0,0.4) 2px 2px 2px; }
+.banner{ width: 100%; height: 380px; background: url(../images/banner4.jpg) no-repeat center bottom -120px/ cover; justify-content: center; align-items: center; margin-top: -60px; }
+.banner h2{ color: #333; font-size: 5.5vw; margin-top: 2.5%; font-weight: 500; text-shadow: rgba(0,0,0,0.4) 2px 2px 2px; }
 .banner h2 span{ color: #79CCF0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 3vw; display: block; text-align: right; }
 
 /* CONTENT */
