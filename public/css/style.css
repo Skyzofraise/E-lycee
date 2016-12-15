@@ -110,7 +110,7 @@ article.posts .posts-date span.post_date_month,
 article.posts .posts-date span.post_year{ display: block; }
 
 article.posts .posts-date span.post_date_month{ margin-bottom: 4px; font-size: 18px; letter-spacing: 1px; }
-article.posts .posts-date span.post_year{ font-size: 16px; letter-spacing: 4px; }
+article.posts .posts-date span.post_year{ font-size: 14px; }
 
 article.posts .posts-heading { flex: 1; align-self: center; }
 
