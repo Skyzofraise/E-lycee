@@ -20,10 +20,8 @@ Route::get('actualite/{id}', 'FrontController@actualite');
 Route::get('lycee', 'FrontController@lycee');
 Route::get('mentions', 'FrontController@mentions');
 Route::get('contact', 'FrontController@contact');
+
 Auth::routes();
 
-Route::post('login','LoginController@login');
-
-// Route::get('profile', function () {
-//     // Only authenticated users may enter...
-// })->middleware('auth.basic');
+Route::get('/home', 'HomeController@index');
+// Route::get('/register', 'RegisterController@create');
