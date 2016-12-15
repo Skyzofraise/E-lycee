@@ -13,7 +13,7 @@ class LoginController extends Controller
         if($request->isMethod('post'))
         {
             $this->validate($request, [
-                'username' => 'required|username',
+                'username' => 'required',
                 'password' => 'required'
             ]);
 
@@ -27,10 +27,10 @@ class LoginController extends Controller
             } else {
                 return back()
                     ->withInput($request->only('username'))
-                    ->with(['message'=> 'mon coco c pas bon !!!']);
+                    ->with(['message'=> 'C\'est pas bon ça, mon coco !']);
             }
         }
-        return view('front.home');
+        return view('front.mentions');
     }
 
     public function logout()
