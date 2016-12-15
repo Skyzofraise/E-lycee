@@ -35,10 +35,30 @@
                     <a href="{{url('lycee')}}">Lycée</a>
                 </nav>
                 <div class="log-in-button">
-                    <a href="">
+                    <a href="" id="login-open">
                         Log in
                     </a>
                 </div>
+            </div>
+        </div>
+        <div id="popup-login">
+            <div class="popup-content">
+                <div class="popup-title">Connexion</div>
+                <form class="popup-form connexion" method="post" action="">
+                    <div id="erreur-connexion"></div>
+                    <p>
+                        <label for="pseudo">E-mail</label>
+                        <input type="text" name="pseudo" placeholder="Pseudo *" class="pseudo with_icon" required>
+                    </p>
+                    <p>
+                        <label for="mdp">Password</label>
+                        <input name="mdp" type="password" placeholder="Mot de passe *" class="mdp with_icon" required>
+                    </p>
+                    <p>
+                        <input class="valider" type="submit" value="Valider" id="connecter">
+                    </p>
+                </form>
+                <p class="popup-signin"><a href="#">Si vous n'avez pas vos identifiant, demandez-les auprès de Jean-Paul, 3e étage salle 306.</a></p>
             </div>
         </div>
     </header>

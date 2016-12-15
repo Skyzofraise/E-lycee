@@ -20,3 +20,6 @@ Route::get('actualite/{id}', 'FrontController@actualite');
 Route::get('lycee', 'FrontController@lycee');
 Route::get('mentions', 'FrontController@mentions');
 Route::get('contact', 'FrontController@contact');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
