@@ -49,14 +49,14 @@
                 <form class="popup-form" role="form" method="POST" action="{{ url('login') }}">
                     {{csrf_field()}}
                     <!-- <div id="erreur-connexion"></div> -->
-                    <p class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                    <p class="">
                         <label for="pseudo">Nom d'utilisateur</label>
                         <input type="text" name="pseudo" placeholder="Pseudo *" class="pseudo" required>
                         @if ($errors->has('username'))
                             <span class="">{{ $errors->first('username') }}</span>
                         @endif
                     </p>
-                    <p class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                    <p class="">
                         <label for="password">Password</label>
                         <input name="password" type="password" placeholder="Mot de passe *" class="password" required>
                         @if ($errors->has('password'))
