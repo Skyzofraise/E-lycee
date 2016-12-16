@@ -12,9 +12,7 @@
 	<p>
 		C'est un établissement de référence pour l'enseignement technologique industriel. Il prépare ses étudiants à sept brevets de techniciens supérieurs industriels dans les domaines de l'informatique de réseau, de la métallurgie, des microtechniques, de la conception de produits industriels, de l'électronique, de l'électrotechnique et des automatismes. Une classe préparatoire aux grandes écoles, dédiée aux techniciens supérieurs, permet aux meilleurs étudiants d'accéder aux métiers d'ingénieurs.
 	</p>
-	<p>
-		<img src="images/school-2.jpg" alt="">
-	</p>
+	
 	<h4>Nos formations</h4>
 	<p>
 		Deux licences professionnelles construites en partenariat avec des universités constituent une autre voie complémentaire de réussite et de professionnalisation pour nos techniciens supérieurs.
@@ -33,8 +31,11 @@
 	<p>
 		Les ressources tant humaines que matérielles dont dispose le lycée DIDEROT permettent d'assurer des opérations de conseil technologique en direction des entreprises.
 	</p>
-	</div>
+	<p>
 		Voué depuis des générations à l'excellence dans le domaine des technologies industrielles, le lycée DIDEROT constitue un outil de promotion et de réussite pour tous les élèves et les étudiants qui lui sont confiés.
+	</p>
+	<p class="fin-page">
+		<img src="images/school-2.jpg" alt="">
 	</p>
 </div>
 

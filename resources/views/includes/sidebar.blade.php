@@ -1,6 +1,6 @@
 <aside class="sidebar" class="flex-col">
-    <section class="autres-articles flex-col">
-    	<h3>A lire aussi</h3>
+    <section class="flex-col">
+    	<h3><i class="fa fa-plus-circle" aria-hidden="true"></i> A lire aussi</h3>
 		@if(!empty($posts))
 
         @foreach($posts as $post)
@@ -19,9 +19,10 @@
    		@endif
    	</section>
 
-    <section class="twitter-mod flex-col">
+    <section class="flex-col">
+    <h3><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</h3>
         <center>
-        	<div class="twitter">Twitter</div>
+            <a class="twitter-timeline" data-height="500" href="https://twitter.com/MMI_Troyes">Tweets by MMI_Troyes</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         </center>
    	</section>
 

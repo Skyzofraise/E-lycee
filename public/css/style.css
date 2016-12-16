@@ -66,7 +66,7 @@ header .second-nav nav a:hover{ color: #333; }
 header .second-nav nav a:first-child{ margin-left: 12px; }
 header .second-nav nav a::after{ content: ' '; width: 100%; position: absolute; border-bottom: 2px solid #79CCF0; left: 0; bottom: -5%; opacity: 0; -webkit-transition: all 0.5s; transition: all 0.5s; }
 header .second-nav nav a:hover::after{ bottom: 20%; opacity: 1; }
-header .second-nav .log-in-button{ margin-right: 10px; background-color: #79CCF0; border-radius: 3px; }
+header .second-nav .log-in-button{ margin-right: 10px; background-color: #79CCF0; border-radius: 10px; }
 header .second-nav .log-in-button a{ color: #FFF; padding: 10px 15px; display: inline-block; }
 
 /* POPUP CONNEXION */
@@ -76,7 +76,7 @@ header .second-nav .log-in-button a{ color: #FFF; padding: 10px 15px; display: i
 #popup-login .popup-content { background: #FFFFFF; margin: 50px auto; width: 90%; cursor: auto; max-width: 500px; padding: 30px; } 
 #popup-login .popup-title { font-size: 30px; font-weight: bold; margin-bottom: 30px; }
 #popup-login .popup-form label:not(.checkbox) {position: absolute; height: 20px; width: 20px; overflow: hidden; text-indent: -10000px; }
-#popup-login .popup-form input.valider { color: #FFFFFF; background: #79ccf0; font-weight: 600; text-transform: uppercase; cursor: pointer; border-radius: 30px; padding: 13px 30px; }
+#popup-login .popup-form input.valider { color: #FFFFFF; background: #79ccf0; font-weight: 600; text-transform: uppercase; cursor: pointer; border-radius: 10px; padding: 13px 30px; }
 #popup-login .popup-form input.valider:hover { color: #79ccf0; background: #ffffff; border: 1px solid #79ccf0; }
 
 #popup-login .popup-signin { font-size: 18px; line-height: 24px; margin: 0; color: #79CCF0; }
@@ -93,7 +93,9 @@ header .second-nav .log-in-button a{ color: #FFF; padding: 10px 15px; display: i
 
 .content{ width: 76%; margin-right: 4%; }
 .sidebar{ width: 20%; }
+.sidebar section{ margin-bottom: 40px; }
 
+.sidebar h3 i{ color: #79CCF0; }
 .sidebar h4.posts-title{ font-size: 1.2em; }
 
 
@@ -125,7 +127,7 @@ article.posts .posts-resume { margin: 0 0 25px 0; line-height: 25px; overflow: h
 article.posts .posts-author{ font-size: 13px; }
 article.posts .posts-author a{ color: #79CCF0; }
 article.posts .posts-readmore{ text-align: center; width: 100%; }
-article.posts .posts-readmore a { border: 1px solid #79CCF0; color: #79CCF0; display: inline-block; margin: auto; line-height: 38px; height: 40px; padding: 0 30px; text-transform: uppercase; font-size: 13px; font-weight: 700; border-radius: 30px; }
+article.posts .posts-readmore a { border: 1px solid #79CCF0; color: #79CCF0; display: inline-block; margin: auto; line-height: 38px; height: 40px; padding: 0 30px; text-transform: uppercase; font-size: 13px; font-weight: 700; border-radius: 10px; }
 article.posts .posts-readmore a:hover { color: #fff; background-color: #79CCF0; }
 
 
@@ -186,7 +188,7 @@ p { margin-bottom: 20px; }
 
 /* FORMULAIRES */
 input[type=text], input[type=email], input[type=tel], input[type=password], input[type=number], input[type=date], form select, form textarea {width: 100%; background: #fff; border: 1px solid #e5e5e5; border-radius: 0; box-shadow: none; min-height: 40px; padding: 5px 10px; line-height: 28px; font-size: 12px; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; -ms-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
-.submit { margin-top: 20px; clear: both; border-radius: 30px; padding: 5px 30px; font-size: 13px; font-weight: 700; line-height: 30px; text-transform: uppercase; border: 0; color: #fff; }
+.submit { margin-top: 20px; clear: both; border-radius: 10px; padding: 5px 30px; font-size: 13px; font-weight: 700; line-height: 30px; text-transform: uppercase; border: 0; color: #fff; }
 
 /* PAGE CONTACT */
 
@@ -202,10 +204,14 @@ input[type=text], input[type=email], input[type=tel], input[type=password], inpu
 #contact .contact-info .part .text a:hover { color: #79CCF0; }
 
 #contact .contact-form .form-left { width: 50%; padding-right: 15px; float: left; }
-#contact .contact-form input.submit { background: #79CCF0; }
+#contact .contact-form p.form-submit{ text-align: center; }
+#contact .contact-form input.submit { background: #79CCF0; margin-top: 0; }
+
+#contact .carte{ margin-top: 40px; }
 
 /* FULL PAGE */
 .text-full-page h4{ margin-bottom: 10px; margin-top: 30px; }
+.text-full-page p.fin-page{ border-bottom: 2px solid #DDD; padding-bottom: 40px; }
 
 
 /*---- CONTENUS ----*/
