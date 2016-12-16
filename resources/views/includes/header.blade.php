@@ -42,6 +42,9 @@
                     </a>
                 </div>
                 <div class="log-in-button">
+                    <a href="{{ url('/register') }}">Register</a>
+                </div>
+                <div class="log-in-button">
                     <a href="{{url('/logout')}}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                         Deconnexion
