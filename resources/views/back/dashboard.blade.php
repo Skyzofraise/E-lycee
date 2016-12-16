@@ -2,7 +2,7 @@
 
 
 @section ('content')
-<div class="user">
+<div>
     <h2>Gestion des élèves</h2>
     
     @foreach($users as $user)
@@ -13,10 +13,8 @@
 
     <a href="">Voir tous les élèves</a>
 </div>
-  
-  
-  
-<div class="post">
+
+<div>
     <h2>Gestion des articles</h2>
 
     @foreach($posts as $post)
@@ -25,7 +23,7 @@
     </div>   
     @endforeach
 
-    <a href="">Voir tous les articles</a> 
+    <a href="{{ action('PostController@index')}}">Voir tous les articles</a>
 </div>
 
        
