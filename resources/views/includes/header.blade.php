@@ -37,8 +37,13 @@
                     <a href="{{url('lycee')}}">Lycée</a>
                 </nav>
                 <div class="log-in-button">
-                    <a href="" id="login-open">
+                    <a href="{{url('login')}}" id="login-open">
                         Connexion
+                    </a>
+                </div>
+                <div class="log-in-button">
+                    <a href="{{url('logout')}}" id="login-open">
+                        Deconnexion
                     </a>
                 </div>
             </div>
