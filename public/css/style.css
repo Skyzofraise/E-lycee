@@ -21,7 +21,7 @@ input,select{vertical-align:middle}
 a { text-decoration: none; color: #333; transition: all 0.3s; }
 a:hover{ color: #79CCF0; }
 
-p{ font-size: 15px; line-height: 21px; }
+p{ font-size: 15px; line-height: 22px; }
 
 p img{ width: 100%; }
 
@@ -132,30 +132,20 @@ article.posts .posts-readmore a:hover { color: #fff; background-color: #79CCF0; 
 
 
 /* article */
-.post-header{ position: relative; }
+h3.actualite-title{ margin-bottom: 4px; }
 
-h3.actualite-title{ position: relative; }
+p.post-informations{ border-bottom: 1px solid #DDD; padding-bottom: 4px; }
+p.post-informations span{ font-size: 1em; font-family: 'Lato'; font-weight: 500; }
+p.post-informations span.post-date{ padding: 6px; color: #FFF; background-color: #79CCF0; }
+p.post-informations span.post-author{ text-transform: uppercase; margin-left: 10px; color: #757575; }
 
-.post-header span p.post-informations{
-    position: absolute;
-    bottom: -30px;
-    left: 0;
-    font-size: 16px;
-    font-family: 'Lato';
-    font-weight: 500;
-}
+article.actualite-content { border-bottom: 1px solid #DDD; padding-bottom: 20px; margin-bottom: 20px; }
+article.actualite-content img{ width: 100%; margin-bottom: 20px; }
 
- span.post-date{
-	padding: 6px;
-    color: #FFF;
-    background-color: #79CCF0;
-}
-span.post-author{
-	text-transform: uppercase;
-	margin-left: 10px;
-	color: #757575;
-}
+#commentaire h4{ font-family: 'Playfair Display', serif; margin-bottom: 30px; }
+#commentaire input.submit{ width: auto; }
 
+section#commentaire #respond{ padding: 20px 0; margin-bottom: 20px; border-bottom: 1px solid #DDD; }
 
 /* page home */
 .home article.posts:first-child { display: flex; flex-direction: row; align-items: flex-start; width: 100%; margin-right: 0; border-top: 0; padding: 0 0 40px; }
@@ -188,7 +178,17 @@ p { margin-bottom: 20px; }
 
 /* FORMULAIRES */
 input[type=text], input[type=email], input[type=tel], input[type=password], input[type=number], input[type=date], form select, form textarea {width: 100%; background: #fff; border: 1px solid #e5e5e5; border-radius: 0; box-shadow: none; min-height: 40px; padding: 5px 10px; line-height: 28px; font-size: 12px; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; -ms-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
-.submit { margin-top: 20px; clear: both; border-radius: 10px; padding: 5px 30px; font-size: 13px; font-weight: 700; line-height: 30px; text-transform: uppercase; border: 0; color: #fff; }
+
+.form-left { width: 48%; margin-right: 4%; }
+.form-left input{ margin-bottom: 30px; }
+.form-left input:last-child{margin-bottom: 0;}
+
+.form-right{ width: 48%; }
+.form-right textarea{ height: 100%; }
+
+p.form-submit{ text-align: center; }
+input.submit { background: #79CCF0; margin-top: 30px; width: 100%; border-radius: 10px; padding: 5px 30px; font-weight: 700; line-height: 30px; text-transform: uppercase; border: 0; color: #FFF; font-size: 0.95em;}
+input.submit:hover{ cursor: pointer; }
 
 /* PAGE CONTACT */
 
@@ -202,10 +202,6 @@ input[type=text], input[type=email], input[type=tel], input[type=password], inpu
 #contact .contact-info .part .text,
 #contact .contact-info .part .text a { color: #666; }
 #contact .contact-info .part .text a:hover { color: #79CCF0; }
-
-#contact .contact-form .form-left { width: 50%; padding-right: 15px; float: left; }
-#contact .contact-form p.form-submit{ text-align: center; }
-#contact .contact-form input.submit { background: #79CCF0; margin-top: 0; }
 
 #contact .carte{ margin-top: 40px; }
 

@@ -47,20 +47,12 @@
 				<form action="" method="post" novalidate="novalidate">
 					<div class="flex">
 						<div class="form-left flex-col">
-							<p>
-								<input type="text" name="nom" value="" class="nom" required="required" placeholder="Nom *">
-							</p>
-							<p>
-								<input type="text" name="email" value="" class="email" required="required" placeholder="Email *">
-							</p>
-							<p>
-								<input type="text" name="sujet" value="" class="sujet" placeholder="Sujet">
-							</p>
+							<input type="text" name="nom" value="" class="nom" required="required" placeholder="Nom *">
+							<input type="text" name="email" value="" class="email" required="required" placeholder="Email *">
+							<input type="text" name="sujet" value="" class="sujet" placeholder="Sujet">
 						</div>
 						<div class="form-right">
-							<p>
-								<textarea name="message" cols="40" rows="6" class="message" required="required" placeholder="Message *"></textarea>
-							</p>
+							<textarea name="message" cols="40" rows="6" class="message" required="required" placeholder="Message *"></textarea>
 						</div>
 					</div>
 					<p class="form-submit">

@@ -22,7 +22,7 @@
     <section class="flex-col">
     <h3><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</h3>
         <center>
-            <a class="twitter-timeline" data-height="500" href="https://twitter.com/MMI_Troyes">Tweets by MMI_Troyes</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a class="twitter-timeline" data-height="500" href="https://twitter.com/MMI_Troyes">Tweets by E-Lycée</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         </center>
    	</section>
 
