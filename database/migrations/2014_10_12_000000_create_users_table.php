@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('username', 100)->unique(); // VARCHAR 100
             $table->string('password', 100); // VARCHAR 100
             $table->enum('role',['teacher','first_class','final_class']);
+            $table->rememberToken();
             $table->timestamps(); // Eloquent
         });
     }

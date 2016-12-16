@@ -37,9 +37,18 @@
                     <a href="{{url('lycee')}}">Lycée</a>
                 </nav>
                 <div class="log-in-button">
-                    <a href="" id="login-open">
+                    <a href="{{url('login')}}">
                         Connexion
                     </a>
+                </div>
+                <div class="log-in-button">
+                    <a href="{{url('/logout')}}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                        Deconnexion
+                    </a>
+                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
                 </div>
             </div>
         </div>
