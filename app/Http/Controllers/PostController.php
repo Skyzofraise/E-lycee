@@ -2,22 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Gate;
-use App\Tag;
-use App\User;
-use App\Post;
-use App\Category;
-use App\Http\Requests;
 use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\Post;
+use Auth;
 
 class PostController extends Controller
 {
-
-    public function __construct()
-    {
-        //$this->middleware('auth', ['except'=>['index']]);
-        $this->middleware('auth');
-    }
 
     /**
      * Display a listing of the resource.
@@ -26,9 +18,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-
-        return view('admin.post.index', compact('posts'));
+        $posts = Post::orderBy('date', 'DESC')->get();
+        
+        return view('back.posts.index', compact('posts'));
     }
 
     /**
