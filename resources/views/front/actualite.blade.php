@@ -58,19 +58,23 @@
 
 	    @forelse($post->comments as $comment)
 		<div class="comment">
-	        <p class="comment-texte">{{ $comment->content }}</p>
-		    <div class="stats" style="border:none;margin-bottom:30px;padding-top:0;margin-top:10px;">
-		        <span class="auteur">
+			<div class="stats">
+				
+		        <p class="comment-author">
                     @if($comment->user)
                         <a href="{{ url('user', [$comment->user->id]) }}">{{ $comment->user->username }}</a>
                     @else
                         {{'Anonyme'}}
                     @endif
-		        </span>
-		        <span class="date">
-		        	{{ $comment->created_at }}
-		        </span>
+		        </p>
+		        
+		        <p class="comment-date">
+		        	{{ date('d/m/Y', strtotime($comment->created_at)) }}
+		        </p>
 		    </div>
+
+	        <p class="comment-texte">{{ $comment->content }}</p>
+		    
 	    </div>          
         @empty
         <p>Aucun commentaire</p>
