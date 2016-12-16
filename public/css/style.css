@@ -148,6 +148,14 @@ article.actualite-content img{ width: 100%; margin-bottom: 20px; }
 
 section#commentaire #respond{ padding: 20px 0; margin-bottom: 20px; border-bottom: 1px solid #DDD; }
 
+section#commentaire .comment{ padding: 10px 0; margin-bottom: 10px; border-bottom: 1px solid #79CCF0; }
+section#commentaire .comment .stats{ margin: 10px 0; }
+section#commentaire .comment .stats .comment-author{ font-size: 1.2em; font-weight: 600; }
+section#commentaire .comment .stats .comment-author a { color: #79CCF0; }
+section#commentaire .comment .stats .comment-author,
+section#commentaire .comment .stats .comment-date{ margin-bottom: 0; }
+section#commentaire .comment .stats .comment-date{ font-size: 0.8em; color: #757575; }
+
 /* page home */
 .home article.posts:first-child { display: flex; flex-direction: row; align-items: flex-start; width: 100%; margin-right: 0; border-top: 0; padding: 0 0 40px; }
 .home article.posts:nth-child(even) { margin-right: 4%; }
