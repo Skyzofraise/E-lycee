@@ -71,7 +71,9 @@
 		</div>
 	</div>
 	<div class="carte">
-		<img src="{{ URL::asset('images/carte.jpg') }}" alt="">
+		<p>
+			<img src="{{ URL::asset('images/carte.jpg') }}" alt="" title="Carte">
+		</p>
 	</div>
 </section>
 
