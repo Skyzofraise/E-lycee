@@ -2,16 +2,26 @@
 
 @section('content')
 
-<h3>{{ $post->title }}</h3>
-<p class="post-date">Le {{ $post->date }} </p>
-Par 
-<span>
-    @if($post->user)
-    	{{ $post->user->username }}
-    @else
-        {{'Anonyme'}}
-    @endif
-</span>
+<div class="post-header">
+	<h3 class="actualite-title">
+		{{ $post->title }}
+	</h3>
+
+	<p class="post-informations">
+		<span class="post-date">
+			{{ date('d / m / Y', strtotime($post->date)) }}
+		</span>
+		<span class="post-author">
+			par 
+		    @if($post->user)
+		    	<a href="{{ url('user', [$post->user->id]) }}">{{$post->user->username}}</a>
+		    @else
+		        {{'Anonyme'}}
+		    @endif
+		</span>
+	</p>
+</div>
+
 <article>
 
     @if($post->url_thumbnail)
@@ -26,9 +36,7 @@ Par
 
 <section id="commentaire">
 	<div id="respond">
-		<h3 class="respond-titre">
-			Laisse un commentaire
-		</h3>
+		<h4>Laisse un commentaire </h4>
 		<form action="" method="post" id="respondform" class="respond-form flex">
 			<div class="form-left flex-col">
 				<p class="respond-nom">
@@ -54,9 +62,7 @@ Par
 	</div>
 	<div id="comments">
 	@if (!empty($post->comments))
-		<h3 class="comments-titre">
-			Commentaires
-		</h3>
+		<h4>Commentaires</h4>
 
 	    @forelse($post->comments as $comment)
 		<div class="comment">
