@@ -24,7 +24,6 @@ class BackController extends Controller
         $posts = Post::orderBy('date', 'DESC')->take(3)->get();
         $users = User::where('role', 'first_class')->orWhere('role', 'final_class')->orderBy('id', 'DESC')->take(3)->get();
 
-        // return view('back.dashboard', compact('posts', 'users'));
-        return view('front.home', compact('posts', 'users'));
+        return view('back.dashboard', compact('posts', 'users'));
     }
 }

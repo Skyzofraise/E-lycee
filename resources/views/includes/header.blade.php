@@ -55,34 +55,4 @@
                 </div>
             </div>
         </div>
-        <!-- <div id="popup-login">
-            <div class="popup-content">
-                <div class="popup-title">Connexion</div>
-
-                <form class="popup-form" role="form" method="POST" action="{{ url('login') }}">
-                    {{csrf_field()}}
-                    <p class="">
-                        <label for="username">Nom d'utilisateur</label>
-                        <input type="text" name="username" placeholder="Pseudo *" class="username" required>
-                        @if ($errors->has('username'))
-                            <span class="">{{ $errors->first('username') }}</span>
-                        @endif
-                    </p>
-                    <p class="">
-                        <label for="password">Password</label>
-                        <input name="password" type="password" placeholder="Mot de passe *" class="password" required>
-                        @if ($errors->has('password'))
-                            <span class="">{{ $errors->first('password') }}</span>
-                        @endif
-                    </p>
-                    <p>
-                        <input class="valider" type="submit" value="Valider" id="connecter">
-                    </p>
-                </form>
-
-                <p class="popup-signin">
-                    <a href="#">Si vous n'avez pas vos identifiant, demandez-les auprès de Jean-Paul, 3e étage salle 306.</a>
-                </p>
-            </div>
-        </div> -->
     </header>
