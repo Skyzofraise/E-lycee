@@ -131,6 +131,7 @@ article.posts .posts-readmore a:hover { color: #fff; background-color: #79CCF0; 
 .post-header{ position: relative; }
 
 h3.actualite-title{ position: relative; }
+
 .post-header span p.post-informations{
     position: absolute;
     bottom: -30px;
@@ -147,6 +148,8 @@ h3.actualite-title{ position: relative; }
 }
 span.post-author{
 	text-transform: uppercase;
+	margin-left: 10px;
+	color: #757575;
 }
 
 
@@ -200,6 +203,7 @@ input[type=text], input[type=email], input[type=tel], input[type=password], inpu
 #contact .contact-form input.submit { background: #79CCF0; }
 
 /* FULL PAGE */
+.text-full-page h4{ margin-bottom: 10px; margin-top: 30px; }
 
 /*---- CONTENUS ----*/
 
