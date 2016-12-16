@@ -13,7 +13,7 @@
 		C'est un établissement de référence pour l'enseignement technologique industriel. Il prépare ses étudiants à sept brevets de techniciens supérieurs industriels dans les domaines de l'informatique de réseau, de la métallurgie, des microtechniques, de la conception de produits industriels, de l'électronique, de l'électrotechnique et des automatismes. Une classe préparatoire aux grandes écoles, dédiée aux techniciens supérieurs, permet aux meilleurs étudiants d'accéder aux métiers d'ingénieurs.
 	</p>
 	<p>
-		<img src="images/school-slice.jpg" alt="">
+		<img src="images/school-2.jpg" alt="">
 	</p>
 	<h4>Nos formations</h4>
 	<p>
