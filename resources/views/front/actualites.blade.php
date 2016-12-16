@@ -31,7 +31,7 @@
                     Par  
                         <span>
                         @if($post->user)
-                            <a href="{{ url('user', [$post->user->id]) }}">{{$post->user->username}}</a>
+                            <a href="#">{{$post->user->username}}</a>
                         @else
                             {{'Anonyme'}}
                         @endif

@@ -57,6 +57,7 @@ header .top-nav{ font-size: 12px; text-align: right; color: #333; background-col
 header .top-nav ul { padding: 8px 10px; }
 header .top-nav ul li{ display: inline-block; margin-right: 10px; }
 header .top-nav ul li img{ height: 20px; vertical-align: middle; }
+header .top-nav ul li .fb-like.fb_iframe_widget{ vertical-align: middle; }
 
 header .second-nav{ background-color: rgba(255, 255, 255, 0.6); }
 header .second-nav{ display: flex; flex-direction: row; align-items: center;}

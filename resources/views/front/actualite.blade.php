@@ -62,7 +62,7 @@
 				
 		        <p class="comment-author">
                     @if($comment->user)
-                        <a href="{{ url('user', [$comment->user->id]) }}">{{ $comment->user->username }}</a>
+                        <a href="#">{{ $comment->user->username }}</a>
                     @else
                         {{'Anonyme'}}
                     @endif
