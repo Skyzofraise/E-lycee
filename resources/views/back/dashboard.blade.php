@@ -11,7 +11,7 @@
     </div>
     @endforeach 
 
-    <a href="">Voir tous les élèves</a>
+    <a href="{{url('users')}}">Voir tous les élèves</a>
 </div>
 
 <div>
@@ -23,7 +23,7 @@
     </div>   
     @endforeach
 
-    <a href="{{ action('PostController@index')}}">Voir tous les articles</a>
+    <a href="">Voir tous les articles</a>
 </div>
 
        
