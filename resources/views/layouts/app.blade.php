@@ -11,7 +11,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/style.css') }}">
+    <link href="/css/app.css" type="text/css" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -21,65 +22,30 @@
     </script>
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
+    <div class="main-content">
 
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{-- {{ config('app.name', 'Laravel') }} --}}
-                        E-Lycée
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ url('/login') }}">Se connecter</a></li>
-                            <li><a href="{{ url('/register') }}">S'enregistrer</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->username }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ url('/logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Se déconnecter
-                                        </a>
-
-                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <header>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <!-- <li class="navbar-brand">E-Lycée</li> -->
+                            <li><a href="{{url('/dashboard')}}" class="navbar-brand">E-Lycée Dashboard</a></li>
+                            <li><a href="{{url('')}}">Retourner au site public</a></li>
+                        </ul>
+                    </div>
+                    <div id="navbar" class="navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="">{{ Auth::user()->username }}</a></li>
+                            <li><a href="">Déconnexion</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div><!--/.container-fluid -->
+            </nav>
+        </header>
 
         @yield('content')
+
     </div>
 
     <!-- Scripts -->
