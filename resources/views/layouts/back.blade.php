@@ -46,9 +46,9 @@
         <nav class="col-md-2">
             <ul class="nav">
                 <li><a href="{{url('dashboard')}}">Dashboard</a></li>
+                <li><a href="{{url('')}}">QCMs</a></li>
                 <li><a href="{{url('users')}}">Elèves</a></li>
                 <li><a href="{{url('posts')}}">Articles</a></li>
-                <li><a href="{{url('')}}">Fiches</a></li>
             </ul>
         </nav>
         <!-- @yield('sidebar') -->
