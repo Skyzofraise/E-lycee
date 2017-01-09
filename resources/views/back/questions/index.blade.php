@@ -7,7 +7,7 @@
     {{Session::get('message')}}
     
     <button class="btn btn-primary pull-right ctt-ajout">
-        <a href="" class="ajouter">Ajouter</a>
+        <a href="{{ route('questions.create') }}" class="ajouter">Ajouter</a>
     </button>
     <table class="table">
         <tr>
@@ -17,11 +17,11 @@
             <th>Supprimer</th>
         </tr>
         
-        @foreach($questions as $qcm)
+        @foreach($questions as $question)
         <tr>
-            <td><a href="">{{ $qcm->title }}</a></td>
-            <td>{{ $qcm->class_level }}</a></td>
-            <td>{{ $qcm->status }}</td>
+            <td><a href="{{ route('questions.edit', $question) }}">{{ $question->title }}</a></td>
+            <td>{{ $question->class_level }}</a></td>
+            <td>{{ $question->status }}</td>
             <td>
                <form action="" method="post">
                     {{method_field('DELETE')}}
