@@ -56,7 +56,7 @@ header .nav-container{ flex: 1; }
 header .top-nav{ font-size: 12px; text-align: right; color: #333; background-color: #FFF; }
 header .top-nav ul { padding: 8px 10px; }
 header .top-nav ul li{ display: inline-block; margin-right: 10px; }
-header .top-nav ul li img{ height: 20px; vertical-align: middle; }
+header .top-nav ul li img{ height: 30px; vertical-align: middle; }
 header .top-nav ul li .fb-like.fb_iframe_widget{ vertical-align: middle; }
 
 header .second-nav{ background-color: rgba(255, 255, 255, 0.6); }
@@ -70,8 +70,8 @@ header .second-nav nav a:hover::after{ bottom: 20%; opacity: 1; }
 header .second-nav .log-in-button{ margin-right: 10px; background-color: #79CCF0; border-radius: 10px; }
 header .second-nav .log-in-button a{ color: #FFF; padding: 10px 15px; display: inline-block; }
 
-header .top-nav ul li.search input[type="text"]{ min-height: 30px; width: 180px; height: 30px; display: inline-block; padding: 5px; outline: none; }
-header .top-nav ul li.search button[type="submit"]{ height: 30px; width: 30px; margin-left: -3px; background-color: #333; color: #FFF; border: 0; vertical-align: bottom; }
+header .top-nav ul li.search input[type="text"]{ min-height: 30px; width: 180px; margin-right: -3px; height: 30px; padding: 5px; outline: none; }
+header .top-nav ul li.search button[type="submit"]{ height: 30px; width: 30px; background-color: #333; color: #FFF; border: 0; vertical-align: middle; }
 header .top-nav ul li.search button[type="submit"]:hover{ cursor: pointer; }
 
 /* POPUP CONNEXION */
