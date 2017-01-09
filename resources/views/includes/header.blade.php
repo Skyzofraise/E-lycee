@@ -32,7 +32,33 @@
         <div class="nav-container">
             <div class="top-nav">
                 <ul>
-                    <li class="search">Search!</li>
+                    <li class="search">
+
+                        {!! Form::open(array('url' => 'actualites', 'method' => 'GET', 'class' => 'navbar-form navbar-left')) !!}
+
+                            {!! Form::text('term', Request::get('term'),
+                           array('required',
+                                'class'=>'form-control',
+                                'placeholder'=>'Rechercher...')) !!}
+                            <span class="input-group-btn">
+                              <button type="submit" class="btn btn-default-sm">
+                                  <i class="fa fa-search"></i>
+                              </button>
+                          </span>
+
+                        {!! Form::close() !!}
+
+                        {{-- <div class="input-group">
+                          <input type="text" name="search" class="form-control" placeholder="Rechercher...">
+                          <span class="input-group-btn">
+                              <button type="submit" class="btn btn-default-sm">
+                                  <i class="fa fa-search"></i>
+                              </button>
+                          </span>
+
+                        </div>
+                        {!! Form::close() !!} --}}
+                    </li>
                     <li>
                         <div class="fb-like" data-href="https://www.facebook.com/pages/Coluche-president/207260162718463" data-layout="button" data-action="like" data-size="small" data-show-faces="true"></div>
                     </li>

@@ -17,6 +17,7 @@ Route::pattern('id', '[1-9][0-9]*'); // * 0, N
 Route::get('/', 'FrontController@index');
 Route::get('actualites', 'FrontController@actualites');
 Route::get('actualite/{id}', 'FrontController@actualite');
+
 Route::get('lycee', 'FrontController@lycee');
 Route::get('mentions', 'FrontController@mentions');
 Route::get('contact', 'FrontController@contact');

@@ -21,10 +21,20 @@ class FrontController extends Controller
 		return view('front.home', compact('posts'));
 	}
 
-    public function actualites()
+    public function actualites(Request $request)
     {
-        $posts = Post::orderBy('date', 'DESC')->paginate(10);
 
+        // $posts = Post::orderBy('date', 'DESC')->paginate(10);
+        // return view('front.actualites', compact('posts'));
+
+        $posts = Post::where(function($query) use ($request){
+            if(($term = $request->get('term'))){
+                $query->orwhere('title', 'like', '%' . $term . '%');
+                $query->orwhere('content', 'like', '%' . $term . '%');
+            }
+        })
+            ->orderBy("id", "desc")
+            ->paginate(10);
         return view('front.actualites', compact('posts'));
     }
 
