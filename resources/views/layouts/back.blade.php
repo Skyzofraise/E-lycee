@@ -40,10 +40,10 @@
 
     <nav class="bs-docs-sidebar hidden-print hidden-sm hidden-xs affix">
         <ul class="nav bs-docs-sidenav">
-            <li><a href="">Dashboard</a></li>
-            <li><a href="">Elèves</a></li>
-            <li><a href="">Articles</a></li>
-            <li><a href="">Fiches</a></li>
+            <li><a href="{{url('dashboard')}}">Dashboard</a></li>
+            <li><a href="{{url('users')}}">Elèves</a></li>
+            <li><a href="{{url('posts')}}">Articles</a></li>
+            <li><a href="{{url('')}}">Fiches</a></li>
         </ul>
     </nav>
     <!-- @yield('sidebar') -->

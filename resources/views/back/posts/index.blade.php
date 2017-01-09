@@ -21,10 +21,16 @@
         
         @foreach($posts as $post)
         <tr>
-            <td><a href="">{{$post->title}}</a></td>
-            <td>{{$post->status}}</td>
-            <td>{{$post->date}}</td>
-            <td>{{count($post->comment)}}</td>
+            <td><a href="">{{ $post->title }}</a></td>
+            <td>
+                @if($post->user)
+                    <a href="">{{$post->user->username}}</a>
+                @else
+                    {{'Anonyme'}}
+                @endif
+            </td>
+            <td>{{ date('d.m.Y', strtotime($post->date)) }}</td>
+            <td>{{ count($post->comments) }}</td>
             <td>
                 <div class="status status-{{$post->status}}">{{$post->status}}</div>
             </td>
