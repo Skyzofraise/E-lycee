@@ -27,7 +27,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/dashboard', 'BackController@index');
 Route::get('/users', 'UserController@index');
 Route::get('/posts', 'PostController@index');
-Route::get('/Qcm', 'QcmController@index');
+Route::get('/questions', 'QuestionController@index');
 
 
 // Route::group(['prefix' => 'admin', 'middleware' => 'auth.teacher'], function() {
