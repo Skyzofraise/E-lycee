@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Qcm extends Model
+class Question extends Model
 {
 	
 	protected $fillable = [ 'title', 'content', 'class_level', 'status'];
