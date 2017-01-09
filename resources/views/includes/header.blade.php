@@ -54,17 +54,12 @@
                     <a href="{{url('actualites')}}">Actualités</a>
                     <a href="{{url('lycee')}}">Lycée</a>
                 </nav>
-                <div class="log-in-button">
-                    <a href="{{url('login')}}">
-                        Connexion
-                    </a>
-                </div>
+                
 
-                <div class="log-in-button">
-                    <a href="{{ url('/register') }}">Register</a>
-                </div>
-
-                @if (Auth::check())
+                @if (Auth::check() == true)
+                    <div class="log-in-button">
+                        <a href="{{ url('/dashboard') }}">Dashboard</a>
+                    </div>
                     <div class="log-in-button">
                         <a href="{{url('/logout')}}" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
@@ -74,7 +69,18 @@
                             {{ csrf_field() }}
                         </form>
                     </div>
+                @else
+                    <div class="log-in-button">
+                        <a href="{{url('login')}}">
+                            Connexion
+                        </a>
+                    </div>
+
+                    <div class="log-in-button">
+                        <a href="{{ url('/register') }}">Register</a>
+                    </div>
                 @endif
+
             </div>
         </div>
     </header>
