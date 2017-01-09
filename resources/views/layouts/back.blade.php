@@ -27,7 +27,7 @@
                 <div class="navbar-header navbar-collapse">
                     <ul class="nav navbar-nav">
                         <!-- <li class="navbar-brand">E-Lycée</li> -->
-                        <li><a href="{{url('/dashboard')}}" class="navbar-brand">E-Lycée</a></li>
+                        <li><a href="{{url('/dashboard')}}" class="navbar-brand">E-Lycée Dashboard</a></li>
                         <li><a href="{{url('')}}">Retourner au site public</a></li>
                     </ul>
                 </div>
