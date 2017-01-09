@@ -21,6 +21,7 @@
 </head>
 <body> 
 
+<<<<<<< HEAD
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header navbar-collapse">
@@ -50,6 +51,48 @@
     <div class="col-md-offset-2 col-md-8" role="main">
         @yield('content')
     </div>
+=======
+<div class="main-content">
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- <li class="navbar-brand">E-Lycée</li> -->
+                        <li><a href="{{url('/dashboard')}}" class="navbar-brand">E-Lycée</a></li>
+                        <li><a href="{{url('')}}">Retourner au site public</a></li>
+                    </ul>
+                </div>
+                <div id="navbar" class="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="">Nom du prof</a></li>
+                        <li><a href="">Déconnexion</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+        </nav>
+    </header>
+
+    <section class="row">
+
+        <nav class="col-md-2">
+            <ul class="nav">
+                <li><a href="{{url('/dashboard')}}">Dashboard</a></li>
+                <li><a href="">Elèves</a></li>
+                <li><a href="">Articles</a></li>
+                <li><a href="">Fiches</a></li>
+            </ul>
+        </nav>
+        <!-- @yield('sidebar') -->
+
+        <article class="col-md-10" >
+                @yield('content')
+        </article>
+    </section>
+
+</div>
+
+>>>>>>> ffb106bf5c318f5803fb594c25dd490d8bf9331d
 
     <!-- Scripts -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
