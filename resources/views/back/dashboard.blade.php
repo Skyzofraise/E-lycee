@@ -23,7 +23,7 @@
     </div>   
     @endforeach
 
-    <a href="">Voir tous les articles</a>
+    <a href="{{url('posts')}}">Voir tous les articles</a>
 </div>
 
        
