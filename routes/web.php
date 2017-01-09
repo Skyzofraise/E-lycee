@@ -26,6 +26,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::get('/dashboard', 'BackController@index');
 Route::get('/users', 'UserController@index');
+Route::get('/posts', 'PostController@index');
 
 
 // Route::group(['prefix' => 'admin', 'middleware' => 'auth.teacher'], function() {

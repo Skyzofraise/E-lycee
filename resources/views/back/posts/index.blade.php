@@ -22,16 +22,16 @@
         @foreach($posts as $post)
         <tr>
             <td><a href="">{{$post->title}}</a></td>
-            <td>{{$post->user->username}}</td>
+            <td>{{$post->status}}</td>
             <td>{{$post->date}}</td>
-            <td>{{count($post->comments)}}</td>
+            <td>{{count($post->comment)}}</td>
             <td>
-                <div class="status status-{{$post->status}}"></div>
+                <div class="status status-{{$post->status}}">{{$post->status}}</div>
             </td>
             <td>
                <form action="" method="post">
                     {{method_field('DELETE')}}
-                    {{ csrf_field()}}
+                    {{csrf_field()}}
                     <button>Supprimer</button>
                 </form>
             </td>

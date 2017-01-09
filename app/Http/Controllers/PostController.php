@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Post;
+use App\User;
+use App\Comment;
 use Auth;
 
 class PostController extends Controller
