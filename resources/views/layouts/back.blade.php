@@ -20,7 +20,6 @@
     </script>
 </head>
 <body> 
-
 <div class="main-content">
     <header>
         <nav class="navbar navbar-default">
@@ -46,10 +45,10 @@
 
         <nav class="col-md-2">
             <ul class="nav">
-                <li><a href="{{url('/dashboard')}}">Dashboard</a></li>
-                <li><a href="">Elèves</a></li>
-                <li><a href="">Articles</a></li>
-                <li><a href="">Fiches</a></li>
+                <li><a href="{{url('dashboard')}}">Dashboard</a></li>
+                <li><a href="{{url('users')}}">Elèves</a></li>
+                <li><a href="{{url('posts')}}">Articles</a></li>
+                <li><a href="{{url('')}}">Fiches</a></li>
             </ul>
         </nav>
         <!-- @yield('sidebar') -->
@@ -60,7 +59,6 @@
     </section>
 
 </div>
-
 
     <!-- Scripts -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
