@@ -5,7 +5,7 @@
     
     {{Session::get('message')}}
 
-    <h2>Questions</h2>
+    <h2>QCMs</h2>
 
     <p>
         <a href="" class="btn btn-success btn-sm" role="button">En ligne</a>
@@ -21,15 +21,15 @@
             <th>Status</th>
             <th>Titre</th>
             <th>Classe</th>
-            <th>Modifier</th>
-            <th>Supprimer</th>
+            <th class="btn-edit-delete">Modifier</th>
+            <th class="btn-edit-delete">Supprimer</th>
         </tr>
         
         @foreach($questions as $question)
         <tr>
             <td><input type="checkbox"></td>
 
-            <td class="center article-status">
+            <td class="article-status">
                 @if( $question->status == 'published' )
                     <span class="label label-success"> </span>
                 @elseif( $question->status == 'unpublished' )
@@ -38,18 +38,24 @@
             </td>
 
             <td><a href="{{ route('questions.edit', $question) }}">{{ $question->title }}</a></td>
-            <td>{{ $question->class_level }}</a></td>
+            <td>
+                @if( $question->class_level == 'final_class')
+                    Terminale S
+                @else
+                    Première S
+                @endif
+            </td>
             
             <td>
                 <form action="{{ route('questions.edit', $question) }}" method="get">
-                    <button>Modifier</button>
+                    <button class="btn btn-primary btn-sm" role="button">Modifier</button>
                 </form>
             </td>
             <td>
                 <form action="" method="post">
                     {{method_field('DELETE')}}
                     {{csrf_field()}}
-                    <button>Supprimer</button>
+                    <button class="btn btn-danger btn-sm" role="button">Supprimer</button>
                 </form>
             </td>
         </tr>
