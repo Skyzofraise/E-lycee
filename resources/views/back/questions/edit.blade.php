@@ -12,13 +12,13 @@
         {!! BootForm::text('Titre', 'title')->value($question->title) !!}
 
         {!! BootForm::select('Niveau de class', 'class_level')
-            ->options(['terminale' => 'Terminale', 'premiere' => 'Premiere'])
+            ->options(['final_class' => 'Terminale', 'first_class' => 'Premiere'])
             ->select($question->class_level) !!}
 
         {!! BootForm::textarea('Contenu', 'content')->value($question->content) !!}
 
         {!! BootForm::select('Statut', 'status')
-            ->options(['publish' => 'Publié', 'unpublish' => 'Brouillon'])
+            ->options(['published' => 'Publié', 'unpublished' => 'Brouillon'])
             ->select('$question->status') 
         !!}
 

@@ -12,8 +12,8 @@
         {!! BootForm::text('Titre', 'title') !!}
 
         {!! BootForm::select('Niveau de class', 'class_level')
-            ->options(['terminale' => 'Terminale', 'premiere' => 'Premiere'])
-            ->select('premiere') !!}
+            ->options(['final_class' => 'Terminale', 'first_class' => 'Premiere'])
+            ->select('first_class') !!}
 
         {!! BootForm::textarea('Contenu', 'content') !!}
 

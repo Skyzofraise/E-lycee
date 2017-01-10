@@ -30,7 +30,7 @@ $factory->define(App\Post::class, function (Faker\Generator $faker) {
         'abstract' => $faker->paragraphs(1,true),
         'content' => $faker->paragraphs(7,true),
         'date' => $faker->dateTime('now'),
-        'status' => $faker->randomElement(array('published','unpublished','draft'))
+        'status' => $faker->randomElement(array('published','unpublished'))
     ];
 });
 
