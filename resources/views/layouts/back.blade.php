@@ -32,8 +32,18 @@
             </div>
             <div id="navbar" class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="">Professeur {{ Auth::user()->username }}</a></li>
-                    <li><a href="">Déconnexion</a></li>
+                    <li>
+                        <a href=""> 
+                            @if( Auth::user()->role == "teacher")
+                                Professeur {{ Auth::user()->username }}
+                            @else
+                                Étudiant {{ Auth::user()->username }}
+                            @endif
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">Déconnexion</a>
+                    </li>
                 </ul>
             </div><!--/.nav-collapse -->
         </nav>

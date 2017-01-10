@@ -78,7 +78,7 @@
                     <div class="log-in-button">
                         <a href="{{url('/logout')}}" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-                            Deconnexion
+                            Déconnexion
                         </a>
                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
