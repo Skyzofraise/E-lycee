@@ -46,7 +46,7 @@
                 </form>
             </td>
             <td>
-                <form action="" method="post">
+                <form action="{{ route('questions.destroy', $question) }}">
                     {{method_field('DELETE')}}
                     {{csrf_field()}}
                     <button>Supprimer</button>

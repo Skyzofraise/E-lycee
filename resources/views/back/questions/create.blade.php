@@ -3,6 +3,8 @@
 
 @section('content')
 
+    {{Session::get('message')}}
+
     <h1>Créer un nouveau QCM</h1>
     
     {!! BootForm::open()->post()->action( route('questions.store') ) !!}

@@ -3,6 +3,8 @@
 
 @section('content')
 
+    {{Session::get('message')}}
+
     <h1>Modifier le QCM : {{ $question->title }}</h1>
 
     {!! BootForm::open()->put()->action( route('questions.update', $question) ) !!}
