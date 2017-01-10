@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\User;
+use App\Comment;
+use App\Question;
 
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -23,7 +25,11 @@ class BackController extends Controller
     {
         $posts = Post::orderBy('date', 'DESC')->take(3)->get();
         $users = User::where('role', 'first_class')->orWhere('role', 'final_class')->orderBy('id', 'DESC')->take(3)->get();
+        $stat_users = User::where('role', 'first_class')->orWhere('role', 'final_class')->count();
+        $stat_articles = Post::where('status','published')->count();
+        $stat_qcm = Question::all()->count();
+        $stat_comments = Comment::all()->count();
 
-        return view('back.dashboard', compact('posts', 'users'));
+        return view('back.dashboard', compact('posts', 'users', 'stat_users', 'stat_articles', 'stat_qcm', 'stat_comments'));
     }
 }

@@ -15,10 +15,12 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id')->nullable();
             $table->string('title', 100);
             $table->string('content', 100);
             $table->enum('class_level', ['final_class','first_class']);
             $table->enum('status', ['published','unpublished']);
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
             $table->timestamps();
         });
     }

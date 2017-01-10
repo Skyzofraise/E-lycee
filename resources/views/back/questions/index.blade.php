@@ -3,7 +3,11 @@
 
 @section('content')
     
-    {{Session::get('message')}}
+    @if( Session::get('message') )
+        <div class="alert alert-success" role="alert">
+            {{Session::get('message')}}
+        </div>
+    @endif
 
     <h2>QCMs</h2>
 
@@ -21,6 +25,7 @@
             <th>Status</th>
             <th>Titre</th>
             <th>Classe</th>
+            <th>Professeur</th>
             <th>Date</th>
             <th class="btn-edit-delete">Modifier</th>
             <th class="btn-edit-delete">Supprimer</th>
@@ -44,6 +49,13 @@
                     Terminale S
                 @else
                     Première S
+                @endif
+            </td>
+            <td>
+                @if($question->user)
+                    <a href="">{{$question->user->username}}</a>
+                @else
+                    {{'Anonyme'}}
                 @endif
             </td>
             <td>
