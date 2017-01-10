@@ -33,11 +33,12 @@
                     <li>
                         <a href=""><i class="fa fa-user-circle-o" aria-hidden="true"></i>
 
-                            @if( Auth::user()->role == "teacher")
-                                Professeur {{ Auth::user()->username }}
-                            @else
-                                Étudiant {{ Auth::user()->username }}
-                            @endif
+                        @if( Auth::user()->role == "teacher")
+                            Professeur {{ Auth::user()->username }}
+                        @else
+                            Étudiant {{ Auth::user()->username }}
+                        @endif
+    
                         </a>
                     </li>
                     <li>

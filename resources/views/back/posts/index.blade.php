@@ -12,7 +12,7 @@
         <a href="" class="btn btn-warning btn-sm" role="button">Hors ligne</a>
         <a href="" class="btn btn-danger btn-sm" role="button">Supprimer</a>
 
-        <a href="" class="ajouter btn btn-primary pull-right" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Ajouter</a>
+        <a href="{{ route('posts.create') }}" class="ajouter btn btn-primary pull-right" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Ajouter</a>
     </p>
     
     <table class="table">
@@ -52,7 +52,7 @@
             <td>{{ count($post->comments) }}</td>
             
             <td class="btn-edit-delete">
-                <a href="" class="btn btn-primary btn-sm" role="button">Modifier</a>
+                <a href="{{ route('posts.edit', $post) }}" class="btn btn-primary btn-sm" role="button">Modifier</a>
             </td>
             <td class="btn-edit-delete">
                <form action="" method="post">

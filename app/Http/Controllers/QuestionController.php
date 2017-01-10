@@ -134,6 +134,7 @@ class QuestionController extends Controller
         $question->delete();
         
         return back()->with('message', 'Cette question a bien été supprimée');
+        // return redirect()->action('QuestionController@index')->with('message', 'Cette question a bien été supprimée');
     }
 
 }
