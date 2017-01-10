@@ -91,7 +91,7 @@ class QuestionController extends Controller
         $question = Question::findOrFail($id);
         $question->update($request->all());
         
-         return redirect()->action('QuestionController@EditChoice', $question)->with('messages', 'Question modifier avec succès');
+         return redirect()->action('QuestionController@EditChoice', $question)->with('messages', 'La question a bien été modifiée');
     }
     
     public function ChoiceUpdate(Request $request)
@@ -106,11 +106,12 @@ class QuestionController extends Controller
 		    {
 			    $choice = Choice::findOrFail($request->get('id')[$key]);
 			    $choice->content = $request->get('content')[$key];
+			    // $choice->status = $request->get('status')[$key];
 
-		    	if($request->get('status')[$key]){ 
-		    		$choice->status = 'yes'; 
+		    	if($request->get('status')[$key]){
+		    		$choice->status = 'yes';
 		    	} else {
-		    		$choice->status = 'no'; 
+		    		$choice->status = 'no';
 		    	}
 		    	
 			    $choice->touch();
@@ -133,7 +134,7 @@ class QuestionController extends Controller
         $question = Question::findOrFail($id);
         $question->delete();
         
-        return back()->with('message', 'Question supprimée avec succès');
+        return back()->with('message', 'Cette question a bien été supprimée');
     }
 
 }

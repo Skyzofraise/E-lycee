@@ -2,7 +2,10 @@
 
 
 @section('content')
-    <h1>Créer les choix à la question "{{ $question->content }}" </h1>
+
+    {{Session::get('message')}}
+
+    <h1>Les choix à la question "{{ $question->content }}" </h1>
     {!! BootForm::open()->post()->route( 'QuestionController@ChoiceUpdate', $question ) !!}
         {{ method_field('PUT')}}
         {{ csrf_field()}}
@@ -14,13 +17,16 @@
 
             {!! BootForm::hidden('status['. $index .']')->value('0') !!}
 
-            <!-- {!! BootForm::checkbox('Bonne réponse', 'status['. $index .']')
-                ->checkbox('terms')->checked()
-            !!} -->
+           <!--  @if($choice->status == 'yes') 
+                {!! BootForm::checkbox('Bonne réponse', '1')->checkbox('terms')->checked('checked') !!}
+            @else 
+                {!! BootForm::checkbox('Bonne réponse', '0')->checkbox('terms') !!}
+            @endif -->
+
             <div class="form-group">
-                <label for="status[{{ $index }}]">Banana réponse</label>
+                <label for="status[{{ $index }}]">Bonne réponse</label>
                 <input type="checkbox" id="yes-{{$index}}" name="status[{{ $index }}]" value="1" @if($choice->status == 'yes') checked @endif>
-            </div>   
+            </div>
                  
         @endforeach
 
