@@ -246,5 +246,6 @@ h3.panel-title{ border-bottom: 0; padding-bottom: 0; }
 
 .article-status span.label{ padding: 1px 7px; border-radius: 100%; }
 
-
+#dashboard h2{ margin-bottom: 30px; }
+#dashboard table th{ background-color: #FFF; }
 

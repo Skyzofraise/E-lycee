@@ -21,7 +21,7 @@ class CreatePostsTable extends Migration
           $table->text('content');
           $table->string('url_thumbnail', 100)->default('');
           $table->dateTime('date');
-          $table->enum('status',['published','unpublished','draft']);
+          $table->enum('status',['published','unpublished']);
           $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
           $table->timestamps();
        });

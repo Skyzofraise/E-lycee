@@ -19,7 +19,6 @@
         <tr>
             <th><input type="checkbox"></th>
             <th class="center">Statut</th>
-
             <th>Titre</th>
             <th>Auteur</th>
             <th>Date</th>

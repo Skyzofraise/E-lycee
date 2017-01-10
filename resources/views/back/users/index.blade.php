@@ -6,7 +6,7 @@
     
     {{Session::get('message')}}
     
-    <h2>Étudiants</h2>
+    <h2>Élèves</h2>
 
 
     <div class="table-responsive">

@@ -20,20 +20,19 @@
     </script>
 </head>
 <body> 
-<div class="main-content">
+<div class="main-content" id="dashboard">
     <header>
         <nav class="navbar navbar-default">
             <div class="navbar-header navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <!-- <li class="navbar-brand">E-Lycée</li> -->
                     <li><a href="{{url('/dashboard')}}" class="navbar-brand">E-Lycée Dashboard</a></li>
-                    <li><a href="{{url('')}}">Retourner au site public</a></li>
                 </ul>
             </div>
             <div id="navbar" class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href=""> 
+                        <a href=""><i class="fa fa-user-circle-o" aria-hidden="true"></i>
+
                             @if( Auth::user()->role == "teacher")
                                 Professeur {{ Auth::user()->username }}
                             @else
@@ -42,7 +41,11 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">Déconnexion</a>
+                        <a href="{{url('')}}"><i class="fa fa-home" aria-hidden="true">
+                        </i> Retourner au site public</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-power-off" aria-hidden="true"></i> Déconnexion</a>
                     </li>
                 </ul>
             </div><!--/.nav-collapse -->
