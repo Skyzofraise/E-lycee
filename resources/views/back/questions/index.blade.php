@@ -21,6 +21,7 @@
             <th>Status</th>
             <th>Titre</th>
             <th>Classe</th>
+            <th>Date</th>
             <th class="btn-edit-delete">Modifier</th>
             <th class="btn-edit-delete">Supprimer</th>
         </tr>
@@ -45,7 +46,9 @@
                     Première S
                 @endif
             </td>
-            
+            <td>
+                {{ date('d/m/Y', strtotime($question->created_at)) }}
+            </td>
             <td>
                 <form action="{{ route('questions.edit', $question) }}" method="get">
                     <button class="btn btn-primary btn-sm" role="button">Modifier</button>
