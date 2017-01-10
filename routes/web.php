@@ -34,7 +34,7 @@ Route::resource('questions', 'QuestionController');
 Route::get('question/{id}/choix', 'QuestionController@EditChoice');
 Route::put('question/{id}/choix', 'QuestionController@ChoiceUpdate');
 
-Route::get('student', 'StudentController@index'); 
+Route::resource('posts', 'PostController');
 
 
 // Route::group(['prefix' => 'admin', 'middleware' => 'auth.teacher'], function() {

@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
           $table->text('abstract'); // résumé
           $table->text('content');
           $table->string('url_thumbnail', 100)->default('');
-          $table->dateTime('date');
+          $table->dateTime('date')->default(\Carbon\Carbon::now());
           $table->enum('status',['published','unpublished']);
           $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
           $table->timestamps();

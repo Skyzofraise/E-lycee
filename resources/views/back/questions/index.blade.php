@@ -55,9 +55,9 @@
                 </form>
             </td>
             <td>
-                <form action="{{ route('questions.destroy', $question) }}">
+                <form action="{{ route('questions.destroy', $question) }}" method='delete'>
                     {{method_field('DELETE')}}
-                    {{csrf_field()}}
+                    <!-- {{csrf_field()}} -->
                     <button class="btn btn-danger btn-sm" role="button">Supprimer</button>
                 </form>
             </td>
