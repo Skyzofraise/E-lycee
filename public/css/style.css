@@ -239,4 +239,12 @@ section::after{ content: ""; display: block; clear: both; }
 
 h3.panel-title{ border-bottom: 0; padding-bottom: 0; }
 
+/*tableau d'user*/
+.table>tbody>tr>td, .table>tbody>tr>th{ vertical-align: middle!important; }
+.center{ text-align: center; }
+.btn-edit-delete{ width: 70px; text-align: center; }
+
+.article-status span.label{ padding: 1px 7px; border-radius: 100%; }
+
+
 

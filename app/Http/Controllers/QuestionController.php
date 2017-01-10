@@ -44,7 +44,7 @@ class QuestionController extends Controller
             ]);
         }
         
-        return redirect()->action('QuestionController@EditChoice', $question)->with('messages', 'Question crée avec succès');
+        return redirect()->action('QuestionController@EditChoice', $question)->with('messages', 'Question créée avec succès');
     }
     
     public function EditChoice($id)

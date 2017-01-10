@@ -36,7 +36,11 @@
                     </div>
                     <div id="navbar" class="navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="">{{ Auth::user()->username }}</a></li>
+                            <li>
+                                @if (Auth::check() == true)
+                                    <a href="">{{ Auth::user()->username }}</a>
+                                @endif
+                            </li>
                             <li><a href="">Déconnexion</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->

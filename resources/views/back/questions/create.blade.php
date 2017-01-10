@@ -15,8 +15,8 @@
         {!! BootForm::textarea('Contenu', 'content') !!}
 
         {!! BootForm::select('Statut', 'status')
-            ->options(['publish' => 'Publié', 'unpublish' => 'Brouillon'])
-            ->select('unpublish') 
+            ->options(['published' => 'Publié', 'unpublished' => 'Hors ligne'])
+            ->select('unpublished') 
         !!}
 
         {!! BootForm::text('Nombre de choix', 'numberChoice')->type('number')->min('2') !!}

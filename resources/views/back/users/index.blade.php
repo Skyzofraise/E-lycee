@@ -6,33 +6,34 @@
     
     {{Session::get('message')}}
     
-    <button class="btn btn-primary pull-right ctt-ajout">
-        <a href="" class="ajouter">Ajouter</a>
-    </button>
-    <table class="table">
-        <tr>
-            <th>Nom</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Supprimer</th>
-        </tr>
-        
-        @foreach($users as $user)
-        <tr>
-            <td><a href="">{{ $user->username }}</a></td>
-            <td>{{ $user->email }}</a></td>
-            <td>{{ $user->role }}</td>
-            <td>
-               <form action="" method="post">
-                    {{method_field('DELETE')}}
-                    {{csrf_field()}}
-                    <button>Supprimer</button>
-                </form>
-            </td>
-        </tr>
-        @endforeach
-    </table>
-    
+    <h2>Étudiants</h2>
 
+
+    <div class="table-responsive">
+        <table class="table users-table">
+            <tr>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Classe</th>
+            </tr>
+            
+            @foreach($users as $user)
+            @if( $user->role !== 'teacher')
+                <tr>
+                    <td><a href="">{{ $user->username }}</a></td>
+                    <td>{{ $user->email }}</a></td>
+                    <td>
+                        @if( $user->role == 'final_class')
+                            Terminale S
+                        @else
+                            Première S
+                        @endif
+                    </td>
+                </tr>
+            @endif
+            
+            @endforeach
+        </table>
+    </div>
 
 @endsection

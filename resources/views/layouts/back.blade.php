@@ -23,40 +23,39 @@
 <div class="main-content">
     <header>
         <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <!-- <li class="navbar-brand">E-Lycée</li> -->
-                        <li><a href="{{url('/dashboard')}}" class="navbar-brand">E-Lycée Dashboard</a></li>
-                        <li><a href="{{url('')}}">Retourner au site public</a></li>
-                    </ul>
-                </div>
-                <div id="navbar" class="navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="">Professeur {{ Auth::user()->username }}</a></li>
-                        <li><a href="">Déconnexion</a></li>
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div><!--/.container-fluid -->
+            <div class="navbar-header navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- <li class="navbar-brand">E-Lycée</li> -->
+                    <li><a href="{{url('/dashboard')}}" class="navbar-brand">E-Lycée Dashboard</a></li>
+                    <li><a href="{{url('')}}">Retourner au site public</a></li>
+                </ul>
+            </div>
+            <div id="navbar" class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="">Professeur {{ Auth::user()->username }}</a></li>
+                    <li><a href="">Déconnexion</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
         </nav>
     </header>
 
-    <section class="row">
+    <div class="container-fluid">
+        <section class="row">
+            <nav class="col-md-2">
+                <ul class="nav">
+                    <li><a href="{{url('dashboard')}}">Dashboard</a></li>
+                    <li><a href="{{url('questions')}}">QCMs</a></li>
+                    <li><a href="{{url('users')}}">Elèves</a></li>
+                    <li><a href="{{url('posts')}}">Articles</a></li>
+                </ul>
+            </nav>
+            <!-- @yield('sidebar') -->
 
-        <nav class="col-md-2">
-            <ul class="nav">
-                <li><a href="{{url('dashboard')}}">Dashboard</a></li>
-                <li><a href="{{url('questions')}}">QCMs</a></li>
-                <li><a href="{{url('users')}}">Elèves</a></li>
-                <li><a href="{{url('posts')}}">Articles</a></li>
-            </ul>
-        </nav>
-        <!-- @yield('sidebar') -->
-
-        <article class="col-md-10" >
-                @yield('content')
-        </article>
-    </section>
+            <article class="col-md-10" >
+                    @yield('content')
+            </article>
+        </section>
+    </div>
 
 </div>
 

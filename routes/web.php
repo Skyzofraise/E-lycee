@@ -28,6 +28,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/dashboard', 'BackController@index');
 Route::get('/users', 'UserController@index');
 Route::get('/posts', 'PostController@index');
+Route::get('/questions', 'QuestionController@index');
 
 Route::resource('questions', 'QuestionController');
 Route::get('question/{id}/choix', 'QuestionController@EditChoice');
