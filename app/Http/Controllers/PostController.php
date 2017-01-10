@@ -9,6 +9,7 @@ use App\Post;
 use App\User;
 use App\Comment;
 use Auth;
+use Storage;
 
 class PostController extends Controller
 {
@@ -69,20 +70,18 @@ class PostController extends Controller
         $post = Post::create($request->all());
 
         $post->user_id = Auth::user()->id;
-        // $post->content = $request->post('content');
-        // $post->date = now();
-
 
         if (!empty($request->file('url_thumbnail'))) {
             $image = $request->file('url_thumbnail');
             $extension = $image->getClientOriginalExtension();
-            $uri = str_random(50) . '.' . $extension;
-            $image->move('uploads' . DIRECTORY_SEPARATOR . $post->id, $uri);
+            $uri = str_random(30) . '.' . $extension;
+            $upload = public_path('images/posts');
+            $image->move($upload, $uri);
             $post->url_thumbnail = $uri;
         }
         $post->touch();
 
-        return redirect()->action('PostController@index')->with('message', 'Article enregistré avec succès !');
+        return redirect()->action('PostController@index')->with('message', 'Actualité enregistré avec succès !');
     }
 
     /**
@@ -109,7 +108,38 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         $post->update($request->all());
+
+        if (!empty($request->file('url_thumbnail'))) {
+
+            $upload = public_path('images/posts');
+
+            // if (!empty($post->url_thumbnail)) {
+            //     $ancienne = $post->url_thumbnail;
+            //     Storage::delete($upload . '/' . $ancienne); // Supprimer l'ancienne image
+            // }
+
+            $image = $request->file('url_thumbnail');
+            $extension = $image->getClientOriginalExtension();
+            $uri = str_random(30) . '.' . $extension;
+            $image->move($upload, $uri);
+            $post->url_thumbnail = $uri;
+        }
+        $post->touch();
         
-        return redirect()->action('PostController@index', $post)->with('messages', 'L\'article a bien été modifiée');
+        return redirect()->action('PostController@index', $post)->with('messages', 'L\'actualité a bien été modifiée');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $post = Post::findOrFail($id);
+        $post->delete();
+        
+        return back()->with('message', 'Cette actualité a bien été supprimée');
     }
 }
