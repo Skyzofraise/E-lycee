@@ -2,37 +2,26 @@
 
 
 @section('content')
-    {!! BootForm::open(['method' => 'put']) !!}
 
-      {!! BootForm::text('Title') !!}
-      {!! BootForm::text('Last Name', 'last_name') !!}
-      {!! BootForm::date('Date of Birth', 'date_of_birth') !!}
-      {!! BootForm::email('Email', 'email') !!}
-      {!! BootForm::password('Password', 'password') !!}
-      {!! BootForm::submit('Submit') !!}
+    <h1>Modifier le QCM : {{ $question->title }}</h1>
+
+    {!! BootForm::open()->put()->action( route('questions.update', $question) ) !!}
+
+        {!! BootForm::text('Titre', 'title')->value($question->title) !!}
+
+        {!! BootForm::select('Niveau de class', 'class_level')
+            ->options(['terminale' => 'Terminale', 'premiere' => 'Premiere'])
+            ->select($question->class_level) !!}
+
+        {!! BootForm::textarea('Contenu', 'content')->value($question->content) !!}
+
+        {!! BootForm::select('Statut', 'status')
+            ->options(['publish' => 'Publié', 'unpublish' => 'Brouillon'])
+            ->select('$question->status') 
+        !!}
+
+        {!! BootForm::submit('Modifier') !!}
 
     {!! BootForm::close() !!}
-
-    <form action="{{ action('QuestionController@update', $question)}}" method="post" enctype="multipart/form-data">
-        {{ method_field('PUT')}}
-        {{ csrf_field()}}
-        
-        <label for="content">Contenu de la question</label>
-        <textarea name="content" id="content">{{$question->content}}</textarea>
-        
-        <label for="class_level">Niveaux</label>
-        <select name="class_level" id="class_level">*
-            <option value="first_class">Premiere S</option>
-            <option value="final_class">Terminale S</option>
-        </select>
-        
-        
-        <label for="number">Nombre de choix(*)</label>
-        <input type="text" name="number" id="number" values="{{$question->number}}">
-        
-        <button>Modifier</button>
-        
-    </form>
-
 
 @endsection

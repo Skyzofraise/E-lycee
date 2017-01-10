@@ -8,15 +8,23 @@
         {{ csrf_field()}}
         
         @foreach($question->choices as $index => $choice)
+            {!! BootForm::hidden('id[]')->value($choice->id) !!}
 
-            {!! BootForm::text('Choix '. strtolower($index+1), '') !!}
-            {!! BootForm::hidden($choice->id)->name('id[]') !!}
+            {!! BootForm::text('Choix '. strtolower($index+1), 'content[]')->value( $choice->content ) !!}
 
-            {!! BootForm::checkbox('Bonne réponse', '')->checkbox('terms') !!}
-        
+            {!! BootForm::hidden('status['. $index .']')->value('0') !!}
+
+            <!-- {!! BootForm::checkbox('Bonne réponse', 'status['. $index .']')
+                ->checkbox('terms')->checked()
+            !!} -->
+            <div class="form-group">
+                <label for="status[{{ $index }}]">Banana réponse</label>
+                <input type="checkbox" id="yes-{{$index}}" name="status[{{ $index }}]" value="1" @if($choice->status == 'yes') checked @endif>
+            </div>   
+                 
         @endforeach
 
-        {!! BootForm::submit('Créer') !!}
+        {!! BootForm::submit('Je valide !') !!}
 
     {!! BootForm::close() !!}
 

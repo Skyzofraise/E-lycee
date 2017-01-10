@@ -41,6 +41,7 @@ class QuestionController extends Controller
             Choice::create([
                 'question_id' => $question->id,
                 'content' => '',
+                'status' => 'no',
             ]);
         }
         
@@ -52,6 +53,7 @@ class QuestionController extends Controller
         $question = Question::findOrFail($id);
         return view('back.choices.edit', compact('question'));
     }
+
 
     /**
      * Display the specified resource.
@@ -89,7 +91,35 @@ class QuestionController extends Controller
         $question = Question::findOrFail($id);
         $question->update($request->all());
         
-         return redirect()->action('QuestionController@ChoiceEdit', $question)->with('messages', 'Question modifier avec succès');
+         return redirect()->action('QuestionController@EditChoice', $question)->with('messages', 'Question modifier avec succès');
+    }
+    
+    public function ChoiceUpdate(Request $request)
+    {
+	    if ($request->get('id')) {
+		    if (empty($request->get('content')[0]) || empty($request->get('content')[1])) 
+		    {
+		    	return back()->with('message', 'Erreur, les 2 premiers choix sont obligatoires.');
+		    }
+
+		    foreach ($request->get('id') as $key => $id) 
+		    {
+			    $choice = Choice::findOrFail($request->get('id')[$key]);
+			    $choice->content = $request->get('content')[$key];
+
+		    	if($request->get('status')[$key]){ 
+		    		$choice->status = 'yes'; 
+		    	} else {
+		    		$choice->status = 'no'; 
+		    	}
+		    	
+			    $choice->touch();
+
+			    if (!$choice->content) $choice->delete();
+		    }
+
+	    	return redirect()->action('QuestionController@index')->with('message', 'Question modifiée avec succès !');
+	    }
     }
 
     /**
@@ -105,23 +135,5 @@ class QuestionController extends Controller
         
         return back()->with('message', 'Question supprimée avec succès');
     }
-    
-    public function ChoiceUpdate(Request $request)
-    {
-	    if ($request->get('id')) {
-	    if ($request->get('content')[0] == '' || $request->get('content')[1] == '')
-	    return back()->with('message', 'Erreur, les 2 premiers choix sont obligatoires.');
 
-	    foreach ($request->get('id') as $key => $id) {
-	    $choice = Choice::findOrFail($request->get('id')[$key]);
-	    $choice->content = $request->get('content')[$key];
-	    $choice->status = $request->get('status')[$key];
-	    $choice->touch();
-
-	    if (!$choice->content) $choice->delete();
-    }
-
-    return redirect()->action('QuestionController@index')->with('message', 'Question modifiée avec succès !');
-    }
-    }
 }

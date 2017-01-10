@@ -21,6 +21,7 @@
             <th>Status</th>
             <th>Titre</th>
             <th>Classe</th>
+            <th>Modifier</th>
             <th>Supprimer</th>
         </tr>
         
@@ -40,7 +41,12 @@
             <td>{{ $question->class_level }}</a></td>
             
             <td>
-               <form action="" method="post">
+                <form action="{{ route('questions.edit', $question) }}" method="get">
+                    <button>Modifier</button>
+                </form>
+            </td>
+            <td>
+                <form action="" method="post">
                     {{method_field('DELETE')}}
                     {{csrf_field()}}
                     <button>Supprimer</button>

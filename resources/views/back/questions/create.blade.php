@@ -4,6 +4,7 @@
 @section('content')
 
     <h1>Créer un nouveau QCM</h1>
+    
     {!! BootForm::open()->post()->action( route('questions.store') ) !!}
 
         {!! BootForm::text('Titre', 'title') !!}
