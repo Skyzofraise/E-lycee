@@ -54,7 +54,6 @@ class QuestionController extends Controller
         return view('back.choices.edit', compact('question'));
     }
 
-
     /**
      * Display the specified resource.
      *
@@ -119,7 +118,7 @@ class QuestionController extends Controller
 			    if (!$choice->content) $choice->delete();
 		    }
 
-	    	return redirect()->action('QuestionController@index')->with('message', 'Question modifiée avec succès !');
+	    	return redirect()->action('QuestionController@index')->with('message', 'Question enregistrée avec succès !');
 	    }
     }
 
