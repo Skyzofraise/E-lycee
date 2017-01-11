@@ -106,6 +106,12 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'title' => 'required|unique:posts|max:200',
+            'content' => 'required',
+            'status' => 'in:published,unpublished',
+        ]);
+
         $post = Post::findOrFail($id);
         $post->update($request->all());
 
@@ -113,9 +119,10 @@ class PostController extends Controller
 
             $upload = public_path('images/posts');
 
+            // -- Supprimer l'ancienne image
             // if (!empty($post->url_thumbnail)) {
             //     $ancienne = $post->url_thumbnail;
-            //     Storage::delete($upload . '/' . $ancienne); // Supprimer l'ancienne image
+            //     Storage::delete($upload . '/' . $ancienne); 
             // }
 
             $image = $request->file('url_thumbnail');
