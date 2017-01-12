@@ -6,7 +6,8 @@
     {{Session::get('message')}}
 
     <h1>Les choix à la question "{{ $question->content }}" </h1>
-    {!! BootForm::open()->post()->route( 'QuestionController@ChoiceUpdate', $question ) !!}
+
+    {!! BootForm::open()->post()->url('qcm', [$question->id]) ) !!}
         {{ method_field('PUT')}}
         {{ csrf_field()}}
         
