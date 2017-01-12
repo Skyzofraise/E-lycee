@@ -13,7 +13,8 @@
             @if( $qcm_restant != 0 )
                 <div class="alert alert-info" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+
                         <a href="/qcm">Il y a {{ $qcm_restant }} nouveau(x) QCM</a>
                 </div>
             @else

@@ -1,7 +1,9 @@
-@extends('layouts.back')
+@extends('layouts.student-back')
 
 
 @section('content')
+
+    <h3>Formulaire</h3>
 
     {{Session::get('erreur')}}
 

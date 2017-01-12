@@ -83,6 +83,8 @@ class StudentController extends Controller
         $choices = Choice::where('question_id', $question->id)->get();
         
         return view('student.questions.question', compact('question', 'choices'));
+
+        
     }
     
     public function validation(Request $request, $id)
