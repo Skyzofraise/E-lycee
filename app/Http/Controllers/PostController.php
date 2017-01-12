@@ -107,7 +107,7 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' => 'required|unique:posts|max:200',
+            'title' => 'required|max:200',
             'content' => 'required',
             'status' => 'in:published,unpublished',
         ]);
