@@ -74,7 +74,7 @@
                     <td>{{ $question->title }}</td>
                     <td>
                         @if($question->user_id)
-                            <a href="">{{$question->user_id->username}}</a>
+                            <a href="">{{$question->user->username}}</a>
                         @else
                             {{'Anonyme'}}
                         @endif
