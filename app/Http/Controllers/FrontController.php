@@ -19,10 +19,7 @@ class FrontController extends Controller
                 ->take(3)
                 ->get();
 
-        $autres_posts = Post::where('status', 'published')
-            ->inRandomOrder()
-            ->take(3)
-            ->get();
+        $autres_posts = $this->random_post();
 
 		return view('front.home', compact('posts','autres_posts'));
 	}
@@ -40,10 +37,7 @@ class FrontController extends Controller
             ->orderBy("date", "desc")
             ->paginate(10);
 
-        $autres_posts = Post::where('status', 'published')
-            ->inRandomOrder()
-            ->take(3)
-            ->get();
+        $autres_posts = $this->random_post();
 
         return view('front.actualites', compact('posts','autres_posts'));
     }
@@ -51,8 +45,9 @@ class FrontController extends Controller
     public function actualite($id)
     {
     	$post = Post::findOrFail($id);
+        $autres_posts = $this->random_post();
 
-    	return view('front.actualite', compact('post'));
+    	return view('front.actualite', compact('post','autres_posts'));
     }
 
     public function lycee()
@@ -67,11 +62,18 @@ class FrontController extends Controller
 
     public function contact()
     {
-        $autres_posts = Post::where('status', 'published')
+
+        $autres_posts = $this->random_post();
+
+        return view('front.contact', compact('posts','autres_posts'));
+    }
+
+    private function random_post()
+    {
+        return Post::where('status', 'published')
             ->inRandomOrder()
             ->take(3)
             ->get();
-        return view('front.contact', compact('posts','autres_posts'));
     }
 
 }
