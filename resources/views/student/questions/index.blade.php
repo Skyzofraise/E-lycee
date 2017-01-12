@@ -40,8 +40,8 @@
                 <tr>
                     <td><a href="{{ url('qcm', [$question->id]) }}">{{ $question->title }}</a></td>
                     <td>
-                        @if($question->user_id)
-                            <a href="">{{$question->user_id->username}}</a>
+                        @if($question->user)
+                            <a href="">{{$question->user->username}}</a>
                         @else
                             {{'Anonyme'}}
                         @endif
