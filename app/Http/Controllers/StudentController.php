@@ -77,20 +77,19 @@ class StudentController extends Controller
     
     public function validation(Request $request, $id)
     {
-    	if ($request->get('id')) {
-            $note = 0;
+    	if ($request->get('status')) {
+            $note = 1;
         
-            foreach ($request->get('id') as $key => $id) {
+            foreach ($request->get('status') as $key => $value) {
 
-                if($request->get('status')[$key]){
+                $choice = Choice::where('id', $key)->get();
 
-                    $choice = Choice::findOrFail($request->get('id')[$key]);
-                    if ($choice->status != 'no')
-                        $note++;
+                if($request->get('status')[$key] != $choice->status){
+                    $note = 0;
                 }
 
             }
-
+            
             $note = $note > 0 ? 1 : 0;
             $score = Score::firstOrCreate([
                 'user_id' => Auth::user()->id,

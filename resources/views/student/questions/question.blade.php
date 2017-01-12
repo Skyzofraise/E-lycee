@@ -13,17 +13,18 @@
         
         <table class="table">
         @foreach($choices as $index => $choice)
-            <tr>
+            <!-- <tr>
                 <td class="article-status">
                     {!! BootForm::checkbox('', 'status['. $choice->id .']') !!}
                 </td>
                 <td class="article-status">
                     {{ $choice->content }}
                 </td>
-            </tr>
-            <!-- <h3>{{ $choice->content }}</h3><!-- 
+            </tr> -->
+            <h3>{{ $choice->content }}</h3>
+            
             {!! BootForm::radio('Oui', 'status['. $choice->id .']', 'yes') !!}
-            {!! BootForm::radio('Non', 'status['. $choice->id .']', 'no') !!} -->
+            {!! BootForm::radio('Non', 'status['. $choice->id .']', 'no') !!}
 
         @endforeach
         </table>
