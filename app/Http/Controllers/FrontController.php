@@ -67,7 +67,11 @@ class FrontController extends Controller
 
     public function contact()
     {
-        return view('front.contact');
+        $autres_posts = Post::where('status', 'published')
+            ->inRandomOrder()
+            ->take(3)
+            ->get();
+        return view('front.contact', compact('posts','autres_posts'));
     }
 
 }
