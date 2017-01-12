@@ -22,7 +22,7 @@
     <table class="table">
         <tr>
             <th><input type="checkbox"></th>
-            <th>Status</th>
+            <th>Statut</th>
             <th>Titre</th>
             <th>Classe</th>
             <th>Professeur</th>

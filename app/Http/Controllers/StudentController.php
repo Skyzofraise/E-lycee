@@ -53,6 +53,14 @@ class StudentController extends Controller
         })
         ->get();
 
+        $number_questions = Question::with('scores')
+        ->where('class_level', $class_level)
+        ->where('status', 'published')
+        ->whereDoesntHave('scores', function($q) {
+            $q->where('user_id', '=', Auth::user()->id);
+        })
+        ->count();
+
         $questions_anc = Question::with('scores')
         ->where('class_level', $class_level)
         ->where('status', 'published')
@@ -61,7 +69,7 @@ class StudentController extends Controller
         })
         ->get();
         
-        return view('student.questions.index', compact('questions_new','questions_anc'));
+        return view('student.questions.index', compact('questions_new', 'number_questions' ,'questions_anc'));
     }
     
     public function question($id)

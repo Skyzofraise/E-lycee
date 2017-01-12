@@ -31,6 +31,4 @@ class BackController extends Controller
         return view('back.dashboard', compact('posts', 'questions', 'users', 'stat_users', 'stat_articles', 'stat_qcm', 'stat_comments'));
     }
 
-
-
 }
