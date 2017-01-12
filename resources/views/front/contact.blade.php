@@ -44,7 +44,7 @@
 		<div class="contact-form">
 			<h3 class="title">Contactez-nous</h3>
 			<div class="contact-form">
-				<form action="" method="post" novalidate="novalidate">
+				<form action="{{url('contact')}}" method="" novalidate="novalidate">
 					<div class="flex">
 						<div class="form-left flex-col">
 							<input type="text" name="nom" value="" class="nom" required="required" placeholder="Nom *">

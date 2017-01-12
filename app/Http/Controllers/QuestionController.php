@@ -35,6 +35,13 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required|unique:questions',
+            'class_level' => 'in:first_class,final_class',
+            'user_id' => 'integer',
+            'content' => 'required',
+            'status' => 'in:published,unpublished',
+        ]);
         $question = Question::create($request->all());
         $question->user_id = Auth::user()->id;
         $question->touch();
