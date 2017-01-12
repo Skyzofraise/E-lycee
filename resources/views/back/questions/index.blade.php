@@ -25,6 +25,7 @@
         <a href="{{ route('questions.create') }}" class="ajouter btn btn-primary pull-right" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Ajouter</a>
     </p>
     
+<<<<<<< HEAD
     <div class="table-responsive">
         <table class="table">
             <tr>
@@ -41,6 +42,23 @@
             @foreach($questions as $question)
             <tr>
                 <td><input type="checkbox" class="check"></td>
+=======
+    <table class="table">
+        <tr>
+            <th><input type="checkbox"></th>
+            <th>Statut</th>
+            <th>Titre</th>
+            <th>Classe</th>
+            <th>Professeur</th>
+            <th>Date</th>
+            <th class="btn-edit-delete">Modifier</th>
+            <th class="btn-edit-delete">Supprimer</th>
+        </tr>
+        
+        @foreach($questions as $question)
+        <tr>
+            <td><input type="checkbox" class="check"></td>
+>>>>>>> 75aac5236ede383b50b5b3feeb9a7bbe9977f3fe
 
                 <td class="element-status">
                     @if( $question->status == 'published' )
@@ -96,20 +114,9 @@
                             </div>
                         </div>
                         <!-- Popup end -->
-
                     </form>
                 </td>
             </tr>
             @endforeach
         </table>
-    </div>
-    <script type="text/javascript">
-        // $("#checkAll").click(function () {
-        //     $(".check").prop('checked', $(this).prop('checked'));
-        // });
-        $('#checkAll').click(function() {
-            $('.check[type="checkbox"]').prop('checked', true);
-        });
-    </script>
-
 @endsection

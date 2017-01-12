@@ -61,7 +61,12 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|unique:posts|max:200',
+            // 'title' => 'required|unique:posts|max:200',
+            'title' => array(
+                'required' => 'Ce champs est obligatoire',
+                'unique:posts' => 'Ce titre est déjà utilisé',
+                'max:200' => '200 caractères maximum',
+            ),
             'user_id' => 'integer',
             'content' => 'required',
             'status' => 'in:published,unpublished',

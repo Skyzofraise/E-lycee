@@ -22,7 +22,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            Votre score est de : 12/20
+            Votre score est de : {{ $mon_score }}/{{ $total }}
         </div>
     </div>
     
