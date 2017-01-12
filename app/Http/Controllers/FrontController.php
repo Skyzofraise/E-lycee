@@ -33,8 +33,9 @@ class FrontController extends Controller
                 $query->orwhere('content', 'like', '%' . $term . '%');
             }
         })
-            ->orderBy("id", "desc")
+            ->orderBy("date", "desc")
             ->paginate(10);
+
         return view('front.actualites', compact('posts'));
     }
 

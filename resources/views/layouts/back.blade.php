@@ -46,7 +46,11 @@
                         </i> Retourner au site public</a>
                     </li>
                     <li>
-                        <a href=""><i class="fa fa-power-off" aria-hidden="true"></i> Déconnexion</a>
+                        <a href="{{url('')}}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();"><i class="fa fa-power-off" aria-hidden="true"></i> Déconnexion</a>
+                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
                     </li>
                 </ul>
             </div><!--/.nav-collapse -->

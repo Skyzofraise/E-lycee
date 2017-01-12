@@ -244,8 +244,8 @@ h3.panel-title{ border-bottom: 0; padding-bottom: 0; }
 .center{ text-align: center; }
 .btn-edit-delete{ width: 70px; text-align: center; }
 
-.article-status span.label{ padding: 1px 7px; border-radius: 100%; }
-
 #dashboard h2{ margin-bottom: 30px; }
+#dashboard h3{ border-bottom: 0; }
+
+#dashboard table .element-status span.label{ padding: 1px 7px; border-radius: 100%; }
 #dashboard table th{ background-color: #FFF; }
-#dashboard .back-statistiques{ margin-top: 50px;}
