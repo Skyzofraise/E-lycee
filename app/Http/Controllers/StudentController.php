@@ -120,5 +120,16 @@ class StudentController extends Controller
             return redirect()->action('StudentController@questions');
         }
         return back()->with('erreur', 'Merci de répondre à toutes les questions.');
+
+        // $q = $this->question_fac();
     }
+
+    // private function question_fac()
+    // {
+
+    //     return Post::where('status', 'published')
+    //         ->inRandomOrder()
+    //         ->take(3)
+    //         ->get();
+    // }
 }

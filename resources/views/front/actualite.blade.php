@@ -35,7 +35,7 @@
 <section id="commentaire">
 	<div id="respond">
 		<h4>Laisser un commentaire </h4>
-		<form action="" method="post" id="respondform" class="respond-form">
+		<form action="" method="" id="respondform" class="respond-form">
 			<div class="flex">
 				<div class="form-left flex-col">
 					<input placeholder="Nom *" name="author" type="text" value="" required="required">
