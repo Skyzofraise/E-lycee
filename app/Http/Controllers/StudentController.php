@@ -20,7 +20,7 @@ class StudentController extends Controller
     }
     
     public function index()  
-    {   
+    {
         $student = Auth::user();
         $class_level = $student->role;
 
@@ -37,9 +37,14 @@ class StudentController extends Controller
                 $qcm_restant++;
         }
 
+        // Score
+        $mon_score = Score::where(['user_id' => Auth::user()->id, 'note' => '1'])->count();
+        // Nb total de qcm fait
+        $total = Score::where('user_id', Auth::user()->id)->count();
+
         $number_questions = $qcm_restant;
         
-        return view('student.index', compact('questions', 'qcm_restant', 'number_questions', 'qcm_count'));
+        return view('student.index', compact('questions', 'qcm_restant', 'number_questions', 'qcm_count', 'total','mon_score'));
     }
 
     public function questions()

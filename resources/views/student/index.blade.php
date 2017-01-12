@@ -46,7 +46,7 @@
                         <i class="fa fa-meh-o" aria-hidden="true"></i>
                         @endif --}}
 
-                        Votre score est de xx sur xx
+                        Votre score est de {{ $mon_score }} sur {{ $total }}
                     </div>
                     <div class="col-md-3"><i class="fa fa-question-circle-o" aria-hidden="true"></i>
                         {{ $qcm_count }} QCM
