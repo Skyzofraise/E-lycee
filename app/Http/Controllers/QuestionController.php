@@ -98,6 +98,13 @@ class QuestionController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'class_level' => 'in:first_class,final_class',
+            'user_id' => 'integer',
+            'content' => 'required',
+            'status' => 'in:published,unpublished',
+        ]);
         $question = Question::findOrFail($id);
         $question->update($request->all());
         
@@ -112,7 +119,7 @@ class QuestionController extends Controller
         {
 		    if (empty($request->get('content')[0]) || empty($request->get('content')[1])) 
 		    {
-		    	return back()->with('message', 'Vous devez indiquer au moins deux réponses possibles');
+		    	return back()->with('erreur', 'Vous devez indiquer au moins deux réponses possibles');
 		    }
 
             $check = 0;
@@ -120,8 +127,9 @@ class QuestionController extends Controller
                 if (!empty($request->get('status')[$i]) )  
                     $check++;
             }
-            if($check == 0)
+            if($check == 0) {
                 return back()->with('erreur', 'Vous devez cocher au moins une bonne réponse');
+            }
 
 		    foreach ($request->get('id') as $key => $id) 
 		    {
