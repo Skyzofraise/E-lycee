@@ -32,7 +32,7 @@
         <tr>
             <td><input type="checkbox"></td>
 
-            <td class="center article-status">
+            <td class="element-status">
                 @if( $post->status == 'published' )
                     <span class="label label-success"> </span>
                 @elseif( $post->status == 'unpublished' )

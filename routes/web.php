@@ -25,7 +25,10 @@ Route::get('contact', 'FrontController@contact');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
 Route::get('/dashboard', 'BackController@index');
+
+
 Route::get('/users', 'UserController@index');
 Route::get('/posts', 'PostController@index');
 Route::get('/questions', 'QuestionController@index');
