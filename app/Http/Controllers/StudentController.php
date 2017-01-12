@@ -84,7 +84,7 @@ class StudentController extends Controller
         
         return view('student.questions.question', compact('question', 'choices'));
 
-        
+
     }
     
     public function validation(Request $request, $id)
@@ -112,7 +112,7 @@ class StudentController extends Controller
             $score->note = $note;
             $score->touch();
          
-            return redirect()->action('StudentController@index');
+            return redirect()->action('StudentController@questions');
         }
         return back()->with('erreur', 'Répondez a toutes les questions.');
     }

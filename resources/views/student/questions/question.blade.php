@@ -17,20 +17,22 @@
         @foreach($choices as $index => $choice)
 
             <div class="panel panel-info">
-                
-                <div class="panel-heading"><p class="panel-title">{{ $choice->content }}</p></div>
-                    <div class="panel-body">
+                <div class="panel-heading">
+                    <p class="panel-title">Réponse : {{ $choice->content }}</p>
+                </div>
+                <div class="panel-body">
                     <label for="" class="radio-inline">
                         {!! BootForm::radio('Oui', 'status['. $choice->id .']', 'yes') !!}
                     </label>
                     <label for="" class="radio-inline">
                         {!! BootForm::radio('Non', 'status['. $choice->id .']', 'no') !!}
                     </label>
-                    </div>
+                </div>
             </div>
 
         @endforeach
 
+        
         {!! BootForm::submit('Je valide !')->class('btn btn-primary btn-lg') !!}
 
     {!! BootForm::close() !!}
