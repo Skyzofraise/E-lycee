@@ -112,6 +112,7 @@ article.posts { width: 48%; margin-right: 4%; padding: 40px 0; border-top: 1px s
 article.posts:nth-child(even) { margin-right: 0; }
 
 article.posts .posts-image { width: 100%; height: auto; margin-bottom: 20px; text-align: center; background-color: #ddd; }
+article.posts .posts-image img { max-width: 100%; height: auto; }
 
 article.posts .posts-date { background-color:#79CCF0; color: #FFF; font-weight: 600; margin-right: 10px; padding: 10px; text-align: center; }
 article.posts .posts-date span.post_date_month,
