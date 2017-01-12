@@ -24,6 +24,7 @@ Route::get('contact', 'FrontController@contact');
 
 Auth::routes();
 
+<<<<<<< HEAD
 Route::get('/home', 'HomeController@index');
 
 Route::get('/dashboard', 'BackController@index');
@@ -54,3 +55,25 @@ Route::resource('posts', 'PostController');
 //    Route::get('question/{id}', 'StudentController@question'); 
 //    Route::post('question/{id}', 'StudentController@validChoice'); 
 // });
+=======
+Route::get('home', 'HomeController@index');
+
+Route::group(['middleware' => 'auth.teacher'], function() {
+	Route::get('dashboard', 'BackController@index');
+
+	Route::resource('questions', 'QuestionController');
+	Route::get('question/{id}/choix', 'QuestionController@EditChoice');
+	Route::put('question/{id}/choix', 'QuestionController@ChoiceUpdate');
+
+	Route::get('users', 'UserController@index');
+	Route::resource('posts', 'PostController');
+
+});
+
+Route::group(['middleware' => ['auth']], function() {
+	Route::get('/dashboard', 'StudentController@index');
+	Route::get('qcm', 'StudentController@questions'); 
+	Route::get('qcm/{id}', 'StudentController@question'); 
+	Route::post('qcm/{id}', 'StudentController@validation');
+});
+>>>>>>> e72d084cc40d6875da61f9865e4249cab49d32ed

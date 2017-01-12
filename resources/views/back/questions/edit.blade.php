@@ -17,10 +17,17 @@
 
         {!! BootForm::textarea('Contenu', 'content')->value($question->content) !!}
 
-        {!! BootForm::select('Statut', 'status')
-            ->options(['published' => 'Publié', 'unpublished' => 'Brouillon'])
-            ->select('$question->status') 
-        !!}
+        @if($question->status == 'published')
+            {!! BootForm::select('Statut', 'status')
+                ->options(['published' => 'Publié', 'unpublished' => 'Brouillon'])
+                ->select('published') 
+            !!}
+        @else 
+            {!! BootForm::select('Statut', 'status')
+                ->options(['published' => 'Publié', 'unpublished' => 'Brouillon'])
+                ->select('unpublished') 
+            !!}
+        @endif
 
         {!! BootForm::submit('Modifier') !!}
 

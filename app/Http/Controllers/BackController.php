@@ -16,24 +16,6 @@ use App\Http\Requests;
 
 class BackController extends Controller
 {
-	public function __construct()
-	{
-	    $this->middleware('auth');
-	}
-
-    // HOME PAGE
-    public function getIndex()
-    {
-        
-        if (Auth::check())
-        {
-            return View::make('back.dashboard');
-        }
-        else
-        {
-            return View::make('front.home');
-        }
-    }
  
     public function index()
     {

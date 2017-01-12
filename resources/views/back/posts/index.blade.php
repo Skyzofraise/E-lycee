@@ -40,7 +40,7 @@
                 @endif                
             </td>
 
-            <td><a href="">{{ $post->title }}</a></td>
+            <td><a href="{{ route('posts.edit', $post) }}">{{ $post->title }}</a></td>
             <td>
                 @if($post->user)
                     <a href="">{{$post->user->username}}</a>
@@ -55,10 +55,10 @@
                 <a href="{{ route('posts.edit', $post) }}" class="btn btn-primary btn-sm" role="button">Modifier</a>
             </td>
             <td class="btn-edit-delete">
-               <form action="" method="post">
-                    {{method_field('DELETE')}}
-                    {{csrf_field()}}
-                    <a href="" class="btn btn-danger btn-sm" role="button">Supprimer</a>
+                <form action="{{ route('posts.destroy', $post) }}" method='post'>
+                    {{ method_field('DELETE') }}
+                    {{csrf_field()}} 
+                    <button class="btn btn-danger btn-sm" role="button">Supprimer</button>
                 </form>
             </td>
         </tr>

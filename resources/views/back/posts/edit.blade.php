@@ -7,7 +7,7 @@
 
     <h1>Editer l'article : "{{ $post->title }}"</h1>
     
-    {!! BootForm::open()->post()->action( route('posts.update', $post) ) !!}
+    {!! BootForm::open()->put()->action( route('posts.update', $post) )->enctype('multipart/form-data') !!}
 
         {{ csrf_field()}}
 
@@ -16,12 +16,17 @@
         {!! BootForm::textarea('Contenu', 'content')->value($post->content) !!}
         {!! BootForm::file('Image', 'url_thumbnail') !!}
 
-        <!-- {!! BootForm::hidden('date')->value('2016-12-19 06:41:36') !!} -->
-
-        {!! BootForm::select('Statut', 'status')
-            ->options(['published' => 'Publié', 'unpublished' => 'Hors ligne'])
-            ->select('unpublished') 
-        !!}
+        @if($post->status == 'published')
+            {!! BootForm::select('Statut', 'status')
+                ->options(['published' => 'Publié', 'unpublished' => 'Hors ligne'])
+                ->select('published') 
+            !!}
+        @else 
+            {!! BootForm::select('Statut', 'status')
+                ->options(['published' => 'Publié', 'unpublished' => 'Hors ligne'])
+                ->select('unpublished') 
+            !!}
+        @endif
 
         {!! BootForm::submit('Editer') !!}
 

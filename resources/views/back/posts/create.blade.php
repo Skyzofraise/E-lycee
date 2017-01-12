@@ -7,16 +7,18 @@
 
     <h1>Créer un nouvel article</h1>
     
-    {!! BootForm::open()->post()->action( route('posts.store') ) !!}
+    {!! BootForm::open()->post()->action( route('posts.store') )->enctype('multipart/form-data') !!}
 
         {{ csrf_field()}}
 
         {!! BootForm::text('Titre', 'title') !!}
         {!! BootForm::text('Résumé', 'abstract') !!}
         {!! BootForm::textarea('Contenu', 'content') !!}
-        {!! BootForm::file('Image', 'url_thumbnail') !!}
-
-        <!-- {!! BootForm::hidden('date')->value('2016-12-19 06:41:36') !!} -->
+        <!-- {!! BootForm::file('Image', 'url_thumbnail') !!} -->
+        <div class="form-group">
+            <label class="control-label" for="url_thumbnail">Image</label>
+            <input type="file" name="url_thumbnail" id="url_thumbnail">
+        </div>
 
         {!! BootForm::select('Statut', 'status')
             ->options(['published' => 'Publié', 'unpublished' => 'Hors ligne'])

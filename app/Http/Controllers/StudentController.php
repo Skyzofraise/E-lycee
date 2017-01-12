@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 use Auth;
+
 use App\Http\Requests;
 use App\Question;
 use App\Choice;
@@ -11,20 +14,54 @@ use App\Score;
 
 class StudentController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     
     public function index()  
     {   
         $student = Auth::user();
         $class_level = $student->role;
-        $questions = Question::where(['class_level' => $class_level, 'status' => 1])->get();
-        $count = 0;
-        
+
+        // Tous les qcm (dans son level)
+        $questions = Question::where(['class_level' => $class_level, 'status' => 'published'])->get();
+
+        // Nb total de qcm
+        $qcm_count = $questions->count();
+
+        // Nb de qcm non repondu
+        $qcm_restant = 0;
         foreach($questions as $question) {
             if(Score::where(['question_id' => $question->id, 'user_id' => Auth::user()->id])->get()->count() === 0)
-                $count++;
+                $qcm_restant++;
         }
         
-        return view('student.index', compact('questions', 'count'));
+        return view('student.index', compact('questions', 'qcm_restant', 'qcm_count'));
+    }
+
+    public function questions()
+    {
+        $student = Auth::user();
+        $class_level = $student->role;
+
+        $questions_new = Question::with('scores')
+        ->where('class_level', $class_level)
+        ->where('status', 'published')
+        ->whereDoesntHave('scores', function($q) {
+            $q->where('user_id', '=', Auth::user()->id);
+        })
+        ->get();
+
+        $questions_anc = Question::with('scores')
+        ->where('class_level', $class_level)
+        ->where('status', 'published')
+        ->whereHas('scores', function($q) {
+            $q->whereUser_id(Auth::user()->id);
+        })
+        ->get();
+        
+        return view('student.questions.index', compact('questions_new','questions_anc'));
     }
     
     public function question($id)
@@ -35,41 +72,36 @@ class StudentController extends Controller
         $question = Question::findOrFail($id);
         $choices = Choice::where('question_id', $question->id)->get();
         
-        return view('student.question', compact('question', 'choices'));
+        return view('student.questions.question', compact('question', 'choices'));
     }
     
-    public function validChoice(Request $request, $id)
+    public function validation(Request $request, $id)
     {
     	if ($request->get('id')) {
             $note = 0;
-            $success = [];
-            $checked = [];
         
             foreach ($request->get('id') as $key => $id) {
-                if (isset($request->get('id')[$key]) && isset($request->get('status')[$key])) {
-                    $checked[$key] = $request->get('status')[$key];
+
+                if($request->get('status')[$key]){
+
                     $choice = Choice::findOrFail($request->get('id')[$key]);
-                    if ($choice->status == $request->get('status')[$key]) {
+                    if ($choice->status != 'no')
                         $note++;
-                        $success[$key] = 1;
-                    } else {
-                        $note--;
-                        $success[$key] = 0;
-                    }
                 }
+
             }
-            $note = $note > 0 ? $note : 0;
-            $max = count($request->get('id'));
+
+            $note = $note > 0 ? 1 : 0;
             $score = Score::firstOrCreate([
                 'user_id' => Auth::user()->id,
                 'question_id' => $request->get('question_id'),
+                'note' => $note,
             ]);
          
-            $score->note = $note;
+            // $score->note = $note;
             $score->touch();
          
             return redirect()->action('StudentController@index');
         }
-        
     }
 }
