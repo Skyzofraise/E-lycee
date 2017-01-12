@@ -46,20 +46,20 @@ class StudentController extends Controller
         $class_level = $student->role;
 
         $questions_new = Question::with('scores')
-        ->where('class_level', $class_level)
-        ->where('status', 'published')
-        ->whereDoesntHave('scores', function($q) {
-            $q->where('user_id', '=', Auth::user()->id);
-        })
-        ->get();
+                        ->where('class_level', $class_level)
+                        ->where('status', 'published')
+                        ->whereDoesntHave('scores', function($q) {
+                            $q->where('user_id', '=', Auth::user()->id);
+                        })
+                        ->get();
 
         $questions_anc = Question::with('scores')
-        ->where('class_level', $class_level)
-        ->where('status', 'published')
-        ->whereHas('scores', function($q) {
-            $q->whereUser_id(Auth::user()->id);
-        })
-        ->get();
+                        ->where('class_level', $class_level)
+                        ->where('status', 'published')
+                        ->whereHas('scores', function($q) {
+                            $q->whereUser_id(Auth::user()->id);
+                        })
+                        ->get();
         
         return view('student.questions.index', compact('questions_new','questions_anc'));
     }
@@ -79,28 +79,29 @@ class StudentController extends Controller
     {
     	if ($request->get('status')) {
             $note = 1;
-        
+
             foreach ($request->get('status') as $key => $value) {
 
-                $choice = Choice::where('id', $key)->get();
+                $choice = Choice::findOrFail($key);
 
                 if($request->get('status')[$key] != $choice->status){
                     $note = 0;
                 }
 
             }
-            
-            $note = $note > 0 ? 1 : 0;
+
+            $note = $note == 1 ? 1 : 0;
             $score = Score::firstOrCreate([
                 'user_id' => Auth::user()->id,
-                'question_id' => $request->get('question_id'),
+                'question_id' => $id,
                 'note' => $note,
             ]);
-         
-            // $score->note = $note;
+
+            $score->note = $note;
             $score->touch();
          
             return redirect()->action('StudentController@index');
         }
+        return back()->with('erreur', 'Répondez a toutes les questions.');
     }
 }

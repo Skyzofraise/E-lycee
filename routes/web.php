@@ -11,8 +11,7 @@
 |
 */
 
-Route::pattern('id', '[1-9][0-9]*'); // * 0, N
-// Route::pattern('slug', '[a-zA-Z\-]+');   // + 1, N
+Route::pattern('id', '[1-9][0-9]*');
 
 Route::get('/', 'FrontController@index');
 Route::get('actualites', 'FrontController@actualites');
@@ -23,7 +22,6 @@ Route::get('mentions', 'FrontController@mentions');
 Route::get('contact', 'FrontController@contact');
 
 Auth::routes();
-
 Route::get('home', 'HomeController@index');
 
 Route::group(['middleware' => 'auth.teacher'], function() {
@@ -35,12 +33,11 @@ Route::group(['middleware' => 'auth.teacher'], function() {
 
 	Route::get('users', 'UserController@index');
 	Route::resource('posts', 'PostController');
-
 });
 
 Route::group(['middleware' => ['auth']], function() {
-	Route::get('/dashboard', 'StudentController@index');
-	Route::get('qcm', 'StudentController@questions'); 
-	Route::get('qcm/{id}', 'StudentController@question'); 
-	Route::post('qcm/{id}', 'StudentController@validation');
+	Route::get('student', 'StudentController@index');
+	Route::get('qcm', 'StudentController@questions');
+	Route::get('qcm/{id}', 'StudentController@question');
+	Route::post('qcm/{id}', 'StudentController@Validation');
 });
