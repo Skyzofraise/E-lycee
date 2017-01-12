@@ -27,7 +27,7 @@
     
     <table class="table">
         <tr>
-            <th><input type="checkbox" id="checkAll" class="check"></th>
+            <th><input type="checkbox"></th>
             <th>Statut</th>
             <th>Titre</th>
             <th>Classe</th>
@@ -101,13 +101,5 @@
         </tr>
         @endforeach
     </table>
-    <script type="text/javascript">
-        // $("#checkAll").click(function () {
-        //     $(".check").prop('checked', $(this).prop('checked'));
-        // });
-        $('#checkAll').click(function() {
-            $('.check[type="checkbox"]').prop('checked', true);
-        });
-    </script>
 
 @endsection

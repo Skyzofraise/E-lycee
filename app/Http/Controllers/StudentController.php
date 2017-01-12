@@ -37,10 +37,8 @@ class StudentController extends Controller
                 $qcm_restant++;
         }
 
-        // Score
-        $mon_score = Score::where(['user_id' => Auth::user()->id, 'note' => '1'])->count();
-        // Nb total de qcm fait
-        $total = Score::where('user_id', Auth::user()->id)->count();
+        $mon_score = $this->mon_score(Auth::user()->id);
+        $total = $this->mon_total(Auth::user()->id);
 
         $number_questions = $qcm_restant;
         
@@ -75,8 +73,11 @@ class StudentController extends Controller
                             $q->whereUser_id(Auth::user()->id);
                         })
                         ->get();
+
+        $mon_score = $this->mon_score(Auth::user()->id);
+        $total = $this->mon_total(Auth::user()->id);
         
-        return view('student.questions.index', compact('questions_new', 'number_questions' ,'questions_anc'));
+        return view('student.questions.index', compact('questions_new', 'number_questions' ,'questions_anc','total','mon_score'));
     }
     
     public function question($id)
@@ -88,8 +89,6 @@ class StudentController extends Controller
         $choices = Choice::where('question_id', $question->id)->get();
         
         return view('student.questions.question', compact('question', 'choices'));
-
-
     }
     
     public function validation(Request $request, $id)
@@ -124,12 +123,12 @@ class StudentController extends Controller
         // $q = $this->question_fac();
     }
 
-    // private function question_fac()
-    // {
-
-    //     return Post::where('status', 'published')
-    //         ->inRandomOrder()
-    //         ->take(3)
-    //         ->get();
-    // }
+    private function mon_score($id)
+    {
+        return Score::where(['user_id' => $id, 'note' => '1'])->count();
+    }
+    private function mon_total($id)
+    {
+        return Score::where('user_id', $id)->count();
+    }
 }
