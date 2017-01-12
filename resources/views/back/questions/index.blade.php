@@ -69,8 +69,25 @@
             <td>
                 <form action="{{ route('questions.destroy', $question) }}" method='post'>
                     {{ method_field('DELETE') }}
-                    {{csrf_field()}} 
-                    <button class="btn btn-danger btn-sm" role="button">Supprimer</button>
+                    {{csrf_field()}}
+                    <button  type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#mod{{ $question->id }}">Supprimer</button>
+
+                    <!-- Popup -->
+                    <div class="modal fade" id="mod{{ $question->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title" id="myModalLabel">Supprimer</h4>
+                            </div>
+                            <div class="modal-body">
+                              <p>Est-tu sur de vouloir supprimer le QCM : "{{ $question->title }}" ?</p>
+                              <button class="btn btn-danger btn-sm" role="button">Oui</button>
+                              <button class="btn btn-danger btn-sm" type="button" class="close" data-dismiss="modal" aria-label="Close">Non</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- Popup end -->
                 </form>
             </td>
         </tr>
