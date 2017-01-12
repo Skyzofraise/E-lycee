@@ -2,7 +2,9 @@
 
 @section ('content')
 
-<h2>Dashboard</h2>
+<div class="page-header">
+    <h2>Dashboard</h2>
+</div>
 
 <div class="row">
     <div class="col-md-12 back-statistiques">
@@ -12,9 +14,9 @@
             </div>
             <div class="panel-body">
                 <div class="col-md-3"><i class="fa fa-comment" aria-hidden="true"></i> {{ $stat_comments }} Commentaires </div>
-                <div class="col-md-3"><i class="fa fa-file-text-o" aria-hidden="true"></i> {{ $stat_articles }} Articles publiés</div>
-                <div class="col-md-3"><i class="fa fa-question-circle-o" aria-hidden="true"></i> {{ $stat_qcm }} QCMs</div>
-                <div class="col-md-3"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{ $stat_users }} Élèves </div>
+                <div class="col-md-3"><i class="fa fa-file-text-o" aria-hidden="true"></i> <a href="/posts">{{ $stat_articles }} Articles publiés</a></div>
+                <div class="col-md-3"><i class="fa fa-question-circle-o" aria-hidden="true"></i> {{ $stat_qcm }} <a href="/questions">QCMs</a></div>
+                <div class="col-md-3"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <a href="/users">{{ $stat_users }} Élèves</a> </div>
             </div>
         </div>        
     </div>

@@ -119,6 +119,6 @@ class StudentController extends Controller
          
             return redirect()->action('StudentController@questions');
         }
-        return back()->with('erreur', 'Répondez a toutes les questions.');
+        return back()->with('erreur', 'Merci de répondre à toutes les questions.');
     }
 }

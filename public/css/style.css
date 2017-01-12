@@ -245,6 +245,7 @@ h3.panel-title{ border-bottom: 0; padding-bottom: 0; }
 .center{ text-align: center; }
 .btn-edit-delete{ width: 70px; text-align: center; }
 
+#dashboard section{ padding-bottom: 30px; }
 #dashboard h2{ margin-bottom: 30px; }
 #dashboard h3{ border-bottom: 0; }
 

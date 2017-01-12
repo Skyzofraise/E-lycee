@@ -3,7 +3,17 @@
 
 @section('content')
 
-    {{Session::get('message')}}
+    @if( Session::get('message') )
+        <div class="alert alert-success" role="alert">
+            <i class="fa fa-check" aria-hidden="true"></i> {{Session::get('message')}}
+        </div>
+    @endif
+
+    @if( Session::get('erreur') )
+        <div class="alert alert-danger" role="alert">
+            <i class="fa fa-times" aria-hidden="true"></i> {{Session::get('erreur')}}
+        </div>
+    @endif
 
     <h1>Créer un nouveau QCM</h1>
     
@@ -24,7 +34,7 @@
 
         {!! BootForm::text('Nombre de choix', 'numberChoice')->type('number')->min('2')->value('2') !!}
 
-        {!! BootForm::submit('Créer') !!}
+        {!! BootForm::submit('Créer')->class('btn btn-primary btn-lg') !!}
 
     {!! BootForm::close() !!}
 

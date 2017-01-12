@@ -3,17 +3,29 @@
 
 @section('content')
 
-    {{Session::get('message')}}
+    @if( Session::get('message') )
+        <div class="alert alert-success" role="alert">
+            <i class="fa fa-check" aria-hidden="true"></i> {{Session::get('message')}}
+        </div>
+    @endif
 
-    <h1>Editer l'article : "{{ $post->title }}"</h1>
+    @if( Session::get('erreur') )
+        <div class="alert alert-danger" role="alert">
+            <i class="fa fa-times" aria-hidden="true"></i> {{Session::get('erreur')}}
+        </div>
+    @endif
+
+    <div class="page-header">
+        <h2>Editer l'article : "{{ $post->title }}"</h2>
+    </div>
     
     {!! BootForm::open()->put()->action( route('posts.update', $post) )->enctype('multipart/form-data') !!}
 
         {{ csrf_field()}}
 
-        {!! BootForm::text('Titre', 'title')->value($post->title) !!}
+        {!! BootForm::text('Titre <span class="text-danger">*</span>', 'title')->value($post->title) !!}
         {!! BootForm::text('Résumé', 'abstract')->value($post->abstract) !!}
-        {!! BootForm::textarea('Contenu', 'content')->value($post->content) !!}
+        {!! BootForm::textarea('Contenu <span class="text-danger">*</span>', 'content')->value($post->content) !!}
         {!! BootForm::file('Image', 'url_thumbnail') !!}
 
         @if($post->status == 'published')
@@ -28,7 +40,7 @@
             !!}
         @endif
 
-        {!! BootForm::submit('Editer') !!}
+        {!! BootForm::submit('Editer')->class('btn btn-primary btn-lg') !!}
 
     {!! BootForm::close() !!}
 
