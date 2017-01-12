@@ -4,6 +4,7 @@
 @section('content')
 
     {{Session::get('message')}}
+    {{Session::get('erreur')}}
 
     <h1>Les choix à la question "{{ $question->content }}" </h1>
     

@@ -15,8 +15,9 @@ class FrontController extends Controller
 	public function index() 
 	{
 		$posts = Post::orderBy('date', 'desc')
-               ->take(3)
-               ->get();
+                ->where('status', 'published')
+                ->take(3)
+                ->get();
 
 		return view('front.home', compact('posts'));
 	}
@@ -24,19 +25,21 @@ class FrontController extends Controller
     public function actualites(Request $request)
     {
 
-        // $posts = Post::orderBy('date', 'DESC')->paginate(10);
-        // return view('front.actualites', compact('posts'));
-
         $posts = Post::where(function($query) use ($request){
-            if(($term = $request->get('term'))){
-                $query->orwhere('title', 'like', '%' . $term . '%');
-                $query->orwhere('content', 'like', '%' . $term . '%');
-            }
-        })
+                if(($term = $request->get('term'))){
+                    $query->orwhere('title', 'like', '%' . $term . '%');
+                    $query->orwhere('content', 'like', '%' . $term . '%');
+                }
+            })
+            ->where('status', 'published')
             ->orderBy("date", "desc")
             ->paginate(10);
 
-        return view('front.actualites', compact('posts'));
+        $autres_posts = Post::where('status', 'published')
+            ->take(3)
+            ->paginate(10);
+
+        return view('front.actualites', compact('posts','autres_posts'));
     }
 
     public function actualite($id)
@@ -53,12 +56,12 @@ class FrontController extends Controller
 
     public function mentions()
     {
-     return view('front.mentions');
+        return view('front.mentions');
     }
 
     public function contact()
     {
-    	return view('front.contact');
+        return view('front.contact');
     }
 
 }

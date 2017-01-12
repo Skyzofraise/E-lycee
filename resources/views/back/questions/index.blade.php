@@ -21,7 +21,7 @@
     
     <table class="table">
         <tr>
-            <th><input type="checkbox"></th>
+            <th><input type="checkbox" id="checkAll" class="check"></th>
             <th>Statut</th>
             <th>Titre</th>
             <th>Classe</th>
@@ -33,7 +33,7 @@
         
         @foreach($questions as $question)
         <tr>
-            <td><input type="checkbox"></td>
+            <td><input type="checkbox" class="check"></td>
 
             <td class="element-status">
                 @if( $question->status == 'published' )
@@ -88,10 +88,19 @@
                         </div>
                     </div>
                     <!-- Popup end -->
+
                 </form>
             </td>
         </tr>
         @endforeach
     </table>
+    <script type="text/javascript">
+        // $("#checkAll").click(function () {
+        //     $(".check").prop('checked', $(this).prop('checked'));
+        // });
+        $('#checkAll').click(function() {
+            $('.check[type="checkbox"]').prop('checked', true);
+        });
+    </script>
 
 @endsection

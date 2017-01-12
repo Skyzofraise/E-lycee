@@ -3,7 +3,7 @@
     	<h3><i class="fa fa-plus-circle" aria-hidden="true"></i> A lire aussi</h3>
 		@if(!empty($posts))
 
-        @foreach($posts as $post)
+        @foreach($autres_posts as $post)
         <article class="aside-posts">
             <ul class="article-list">
                 <li>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Question;
 use App\Choice;
+use Auth;
 
 class QuestionController extends Controller
 {
@@ -35,9 +36,10 @@ class QuestionController extends Controller
     public function store(Request $request)
     {
         $question = Question::create($request->all());
+        $question->user_id = Auth::user()->id;
+        $question->touch();
         
         for ($i = 0; $i < $request->get('numberChoice'); $i++){
-            
             Choice::create([
                 'question_id' => $question->id,
                 'content' => '',
@@ -45,7 +47,9 @@ class QuestionController extends Controller
             ]);
         }
         
-        return redirect()->action('QuestionController@EditChoice', $question)->with('messages', 'Question créée avec succès');
+        return redirect()
+                ->action('QuestionController@EditChoice', $question)
+                ->with('messages', 'Question créée avec succès');
     }
     
     public function EditChoice($id)
@@ -90,16 +94,27 @@ class QuestionController extends Controller
         $question = Question::findOrFail($id);
         $question->update($request->all());
         
-         return redirect()->action('QuestionController@EditChoice', $question)->with('messages', 'La question a bien été modifiée');
+         return redirect()
+                ->action('QuestionController@EditChoice', $question)
+                ->with('messages', 'La question a bien été modifiée');
     }
     
     public function ChoiceUpdate(Request $request)
     {
-	    if ($request->get('id')) {
+	    if ($request->get('id')) 
+        {
 		    if (empty($request->get('content')[0]) || empty($request->get('content')[1])) 
 		    {
 		    	return back()->with('message', 'Erreur, les 2 premiers choix sont obligatoires.');
 		    }
+
+            $check = 0;
+            for ($i = 0; $i < count($request->get('status')); $i++){
+                if (!empty($request->get('status')[$i]) )  
+                    $check++;
+            }
+            if($check == 0)
+                return back()->with('erreur', 'Vous devez coché au moins une bonne réponse');
 
 		    foreach ($request->get('id') as $key => $id) 
 		    {
@@ -117,7 +132,9 @@ class QuestionController extends Controller
 			    if (!$choice->content) $choice->delete();
 		    }
 
-	    	return redirect()->action('QuestionController@index')->with('message', 'Question enregistrée avec succès !');
+	    	return redirect()
+                    ->action('QuestionController@index')
+                    ->with('message', 'Question enregistrée avec succès !');
 	    }
     }
 
