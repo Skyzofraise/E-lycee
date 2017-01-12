@@ -105,7 +105,6 @@ class QuestionController extends Controller
 		    {
 			    $choice = Choice::findOrFail($request->get('id')[$key]);
 			    $choice->content = $request->get('content')[$key];
-			    // $choice->status = $request->get('status')[$key];
 
 		    	if($request->get('status')[$key]){
 		    		$choice->status = 'yes';
