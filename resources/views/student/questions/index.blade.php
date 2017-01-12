@@ -9,7 +9,10 @@
         </div>
     @endif
 
-    <h2>QCMs</h2>
+    <div class="page-header">
+       <h2>QCMs</h2> 
+    </div>
+    
 
     <div class="row">
         <div class="col-md-12">
