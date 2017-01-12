@@ -3,11 +3,12 @@
 
 @section('content')
 
-    <h3>Formulaire</h3>
-
     {{Session::get('erreur')}}
 
-    <h2>{{ $question->content }}</h2>
+    <div class="page-header">
+        <h2>{{ $question->content }}</h2>
+    </div>
+    
 
     {!! BootForm::open()->post()->route( 'StudentController@validation', $question )->enctype('multipart/form-data') !!}
 
@@ -15,14 +16,22 @@
         
         @foreach($choices as $index => $choice)
 
-            <h3>{{ $choice->content }}</h3>
-
-            {!! BootForm::radio('Oui', 'status['. $choice->id .']', 'yes') !!}
-            {!! BootForm::radio('Non', 'status['. $choice->id .']', 'no') !!}
+            <div class="panel panel-info">
+                
+                <div class="panel-heading"><p class="panel-title">{{ $choice->content }}</p></div>
+                    <div class="panel-body">
+                    <label for="" class="radio-inline">
+                        {!! BootForm::radio('Oui', 'status['. $choice->id .']', 'yes') !!}
+                    </label>
+                    <label for="" class="radio-inline">
+                        {!! BootForm::radio('Non', 'status['. $choice->id .']', 'no') !!}
+                    </label>
+                    </div>
+            </div>
 
         @endforeach
 
-        {!! BootForm::submit('Je valide !') !!}
+        {!! BootForm::submit('Je valide !')->class('btn btn-primary btn-lg') !!}
 
     {!! BootForm::close() !!}
 

@@ -6,8 +6,10 @@
     
     {{Session::get('message')}}
     
-    <h2>Dashboard étudiant</h2>
-
+    <div class="page-header">
+        <h2>Dashboard étudiant</h2>
+    </div>
+    
     <div class="row">
         <div class="col-md-12 back-statistiques">
             @if( $qcm_restant != 0 )
