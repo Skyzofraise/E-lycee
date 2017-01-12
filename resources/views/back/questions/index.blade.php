@@ -5,7 +5,7 @@
     
     @if( Session::get('message') )
         <div class="alert alert-success" role="alert">
-            {{Session::get('message')}}
+            <i class="fa fa-check" aria-hidden="true"></i> {{Session::get('message')}}
         </div>
     @endif
 
@@ -66,7 +66,7 @@
                     <button class="btn btn-primary btn-sm" role="button">Modifier</button>
                 </form>
             </td>
-            <td>
+            <td class="btn-edit-delete">
                 <form action="{{ route('questions.destroy', $question) }}" method='post'>
                     {{ method_field('DELETE') }}
                     {{csrf_field()}}
@@ -76,11 +76,12 @@
                     <div class="modal fade" id="mod{{ $question->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                         <div class="modal-dialog modal-lg">
                           <div class="modal-content">
-                            <div class="modal-header">
+                            <div class="modal-header label-danger">
                               <h4 class="modal-title" id="myModalLabel">Supprimer</h4>
                             </div>
                             <div class="modal-body">
-                              <p>Est-tu sur de vouloir supprimer le QCM : "{{ $question->title }}" ?</p>
+                              <p>Es-tu sur de vouloir supprimer le QCM : </p>
+                              <p><b>{{ $question->title }}</b> ?</p>
                               <button class="btn btn-danger btn-sm" role="button">Oui</button>
                               <button class="btn btn-danger btn-sm" type="button" class="close" data-dismiss="modal" aria-label="Close">Non</button>
                             </div>

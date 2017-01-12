@@ -105,7 +105,7 @@ class QuestionController extends Controller
         {
 		    if (empty($request->get('content')[0]) || empty($request->get('content')[1])) 
 		    {
-		    	return back()->with('message', 'Erreur, les 2 premiers choix sont obligatoires.');
+		    	return back()->with('message', 'Vous devez indiquer au moins deux réponses possibles');
 		    }
 
             $check = 0;
@@ -114,7 +114,7 @@ class QuestionController extends Controller
                     $check++;
             }
             if($check == 0)
-                return back()->with('erreur', 'Vous devez coché au moins une bonne réponse');
+                return back()->with('erreur', 'Vous devez cocher au moins une bonne réponse');
 
 		    foreach ($request->get('id') as $key => $id) 
 		    {

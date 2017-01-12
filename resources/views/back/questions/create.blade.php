@@ -22,7 +22,7 @@
             ->select('unpublished') 
         !!}
 
-        {!! BootForm::text('Nombre de choix', 'numberChoice')->type('number')->min('2') !!}
+        {!! BootForm::text('Nombre de choix', 'numberChoice')->type('number')->min('2')->value('2') !!}
 
         {!! BootForm::submit('Créer') !!}
 

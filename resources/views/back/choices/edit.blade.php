@@ -3,8 +3,14 @@
 
 @section('content')
 
-    {{Session::get('message')}}
-    {{Session::get('erreur')}}
+    @if( Session::get('message') )
+    <div class="alert alert-danger" role="alert">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+        <span class="sr-only">Error:</span>
+        {{Session::get('message')}}
+        {{Session::get('erreur')}}
+    </div>
+    @endif
 
     <h1>Les choix à la question "{{ $question->content }}" </h1>
     

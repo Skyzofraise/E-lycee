@@ -250,3 +250,4 @@ h3.panel-title{ border-bottom: 0; padding-bottom: 0; }
 
 #dashboard table .element-status span.label{ padding: 1px 7px; border-radius: 100%; }
 #dashboard table th{ background-color: #FFF; }
+#dashboard .modal-header.label-danger{ color: #FFF; }
