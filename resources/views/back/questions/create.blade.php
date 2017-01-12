@@ -15,17 +15,19 @@
         </div>
     @endif
 
-    <h1>Créer un nouveau QCM</h1>
+    <div class="page-header">
+        <h2>Créer un nouveau QCM</h2>
+    </div>
     
     {!! BootForm::open()->post()->action( route('questions.store') ) !!}
 
-        {!! BootForm::text('Titre', 'title') !!}
+        {!! BootForm::text('Titre <span class="text-danger">*</span>', 'title') !!}
 
-        {!! BootForm::select('Niveau de class', 'class_level')
+        {!! BootForm::select('Niveau de classe', 'class_level')
             ->options(['final_class' => 'Terminale S', 'first_class' => 'Premiere S'])
             ->select('premiere') !!}
 
-        {!! BootForm::textarea('Contenu', 'content') !!}
+        {!! BootForm::textarea('Contenu <span class="text-danger">*</span>', 'content') !!}
 
         {!! BootForm::select('Statut', 'status')
             ->options(['published' => 'Publié', 'unpublished' => 'Hors ligne'])

@@ -21,13 +21,13 @@
 
     {!! BootForm::open()->put()->action( route('questions.update', $question) ) !!}
 
-        {!! BootForm::text('Titre', 'title')->value($question->title) !!}
+        {!! BootForm::text('Titre <span class="text-danger">*</span>', 'title')->value($question->title) !!}
 
-        {!! BootForm::select('Niveau de class', 'class_level')
+        {!! BootForm::select('Niveau de classe  <span class="text-danger">*</span>', 'class_level')
             ->options(['final_class' => 'Terminale', 'first_class' => 'Premiere'])
             ->select($question->class_level) !!}
 
-        {!! BootForm::textarea('Contenu', 'content')->value($question->content) !!}
+        {!! BootForm::textarea('Contenu  <span class="text-danger">*</span>', 'content')->value($question->content) !!}
 
         @if($question->status == 'published')
             {!! BootForm::select('Statut', 'status')
@@ -35,7 +35,7 @@
                 ->select('published') 
             !!}
         @else 
-            {!! BootForm::select('Statut', 'status')
+            {!! BootForm::select('Statut <span class="text-danger">*</span>', 'status')
                 ->options(['published' => 'Publié', 'unpublished' => 'Brouillon'])
                 ->select('unpublished') 
             !!}
