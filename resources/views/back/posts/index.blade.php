@@ -70,8 +70,8 @@
                             <div class="modal-body">
                               <p>Es-tu sur de vouloir supprimer l'article : </p>
                               <p><b>{{ $post->title }} ?</b></p>
-                              <button class="btn btn-danger btn-sm" role="button">Oui</button>
-                              <button class="btn btn-danger btn-sm" type="button" class="close" data-dismiss="modal" aria-label="Close">Non</button>
+                              <button class="btn btn-danger" role="button">Oui</button>
+                              <button class="btn btn-danger" type="button" class="close" data-dismiss="modal" aria-label="Close">Non</button>
                             </div>
                           </div>
                         </div>
