@@ -59,7 +59,7 @@
 
     <div class="container-fluid">
         <section class="row">
-            <nav class="col-md-2">
+            <nav class="col-md-2 second-sidebar">
                 <ul class="nav">
                     <li><a href="{{url('dashboard')}}">Dashboard</a></li>
                     <li><a href="{{url('questions')}}">QCMs</a></li>

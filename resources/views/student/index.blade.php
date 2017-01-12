@@ -38,7 +38,7 @@
                 <div class="panel-body">
                     
 
-                    <div class="col-md-3"> 
+                    <div class="col-md-6"> 
                         <i class="fa fa-smile-o" aria-hidden="true"></i>
                         {{-- @if( $score >= moyenne)
                         <i class="fa fa-smile-o" aria-hidden="true"></i>
@@ -48,7 +48,7 @@
 
                         Votre score est de {{ $mon_score }} sur {{ $total }}
                     </div>
-                    <div class="col-md-3"><i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                    <div class="col-md-6"><i class="fa fa-question-circle-o" aria-hidden="true"></i>
                         {{ $qcm_count }} QCM
                     </div>
                 </div>

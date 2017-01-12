@@ -34,64 +34,68 @@
                     Vous n'avez pas de QCM à faire
                 </div>
             @else
-            <table class="table">
-                <tr>
-                    <th>Titre</th>
-                    <th>Professeur</th>
-                    <th>Date</th>
-                    <th class="btn-edit-delete"></th>
-                </tr>
-                
-                @foreach($questions_new as $question)
-                <tr>
-                    <td><a href="{{ url('qcm', [$question->id]) }}">{{ $question->title }}</a></td>
-                    <td>
-                        @if($question->user)
-                            <a href="">{{$question->user->username}}</a>
-                        @else
-                            {{'Anonyme'}}
-                        @endif
-                    </td>
-                    <td>
-                        {{ date('d/m/Y', strtotime($question->created_at)) }}
-                    </td>
-                    <td>
-                        <form action="{{ url('qcm', [$question->id]) }}" method="get">
-                            <button class="btn btn-primary btn-sm" role="button">Répondre</button>
-                        </form>
-                    </td>
-                </tr>
-                @endforeach
-            </table>
+            <div class="table-responsive">
+                <table class="table">
+                    <tr>
+                        <th>Titre</th>
+                        <th>Professeur</th>
+                        <th>Date</th>
+                        <th class="btn-edit-delete"></th>
+                    </tr>
+                    
+                    @foreach($questions_new as $question)
+                    <tr>
+                        <td><a href="{{ url('qcm', [$question->id]) }}">{{ $question->title }}</a></td>
+                        <td>
+                            @if($question->user)
+                                <a href="">{{$question->user->username}}</a>
+                            @else
+                                {{'Anonyme'}}
+                            @endif
+                        </td>
+                        <td>
+                            {{ date('d/m/Y', strtotime($question->created_at)) }}
+                        </td>
+                        <td>
+                            <form action="{{ url('qcm', [$question->id]) }}" method="get">
+                                <button class="btn btn-primary btn-sm" role="button">Répondre</button>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
             @endif
         </div>
             
         <div class="col-md-6 col-sm-12">
             <h3>QCMs faits</h3>
-            <table class="table">
-                <tr>
-                    <th>Titre</th>
-                    <th>Professeur</th>
-                    <th>Date</th>
-                    <th class="btn-edit-delete"></th>
-                </tr>
-                @foreach($questions_anc as $question)
-                <tr>
-                    <td>{{ $question->title }}</td>
-                    <td>
-                        @if($question->user_id)
-                            <a href="">{{$question->user->username}}</a>
-                        @else
-                            {{'Anonyme'}}
-                        @endif
-                    </td>
-                    <td>
-                        {{ date('d/m/Y', strtotime($question->created_at)) }}
-                    </td>
-                    <td></td>
-                </tr>
-                @endforeach
-            </table>
+            <div class="table-responsive">
+                <table class="table">
+                    <tr>
+                        <th>Titre</th>
+                        <th>Professeur</th>
+                        <th>Date</th>
+                        <th class="btn-edit-delete"></th>
+                    </tr>
+                    @foreach($questions_anc as $question)
+                    <tr>
+                        <td>{{ $question->title }}</td>
+                        <td>
+                            @if($question->user_id)
+                                <a href="">{{$question->user->username}}</a>
+                            @else
+                                {{'Anonyme'}}
+                            @endif
+                        </td>
+                        <td>
+                            {{ date('d/m/Y', strtotime($question->created_at)) }}
+                        </td>
+                        <td></td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
         </div>
     </div>
 
