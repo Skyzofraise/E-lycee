@@ -19,7 +19,12 @@ class FrontController extends Controller
                 ->take(3)
                 ->get();
 
-		return view('front.home', compact('posts'));
+        $autres_posts = Post::where('status', 'published')
+            ->inRandomOrder()
+            ->take(3)
+            ->get();
+
+		return view('front.home', compact('posts','autres_posts'));
 	}
 
     public function actualites(Request $request)
@@ -36,8 +41,9 @@ class FrontController extends Controller
             ->paginate(10);
 
         $autres_posts = Post::where('status', 'published')
+            ->inRandomOrder()
             ->take(3)
-            ->paginate(10);
+            ->get();
 
         return view('front.actualites', compact('posts','autres_posts'));
     }
