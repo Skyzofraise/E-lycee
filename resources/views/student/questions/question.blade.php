@@ -10,12 +10,8 @@
     <h2>{{ $question->content }}</h2>
 
     {!! BootForm::open()->post()->route( 'StudentController@validation', $question )->enctype('multipart/form-data') !!}
-    <!-- {!! BootForm::open()->post()->route( 'QuestionController@ChoiceUpdate', $question ) !!} -->
-    <!-- {!! BootForm::open()->post()->action( route('questions.store') ) !!} -->
 
         {{ csrf_field() }}
-
-        <!-- {!! BootForm::hidden('question_id')->value($question->id) !!} -->
         
         @foreach($choices as $index => $choice)
 
