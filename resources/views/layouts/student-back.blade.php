@@ -63,6 +63,11 @@
                 <ul class="nav">
                     <li><a href="{{url('dashboard')}}">Dashboard</a></li>
                     <li><a href="{{url('qcm')}}">QCMs</a></li>
+
+                    @if($number_questions !== 0)
+                    	<span class="badge">{{ $number_questions }}</span>
+                    @endif
+
                 </ul>
             </nav>
             <!-- @yield('sidebar') -->

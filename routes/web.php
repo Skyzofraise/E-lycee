@@ -40,4 +40,5 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::get('qcm', 'StudentController@questions'); 
 	Route::get('qcm/{id}', 'StudentController@question'); 
 	Route::post('qcm/{id}', 'StudentController@validation');
+});
 

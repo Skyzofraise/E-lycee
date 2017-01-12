@@ -36,8 +36,10 @@ class StudentController extends Controller
             if(Score::where(['question_id' => $question->id, 'user_id' => Auth::user()->id])->get()->count() === 0)
                 $qcm_restant++;
         }
+
+        $number_questions = $qcm_restant;
         
-        return view('student.index', compact('questions', 'qcm_restant', 'qcm_count'));
+        return view('student.index', compact('questions', 'qcm_restant', 'number_questions', 'qcm_count'));
     }
 
     public function questions()
