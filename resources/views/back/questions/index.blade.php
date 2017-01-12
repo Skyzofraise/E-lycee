@@ -9,6 +9,12 @@
         </div>
     @endif
 
+    @if( Session::get('erreur') )
+        <div class="alert alert-danger" role="alert">
+            <i class="fa fa-times" aria-hidden="true"></i> {{Session::get('erreur')}}
+        </div>
+    @endif
+
     <h2>QCMs</h2>
 
     <p>

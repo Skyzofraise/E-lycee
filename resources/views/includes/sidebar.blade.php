@@ -15,7 +15,7 @@
             @endforeach
 
     	@else
-        <p>Nous n'avons pas d'autre article à vous présenter pour le moment.</p>
+        <p>Nous n'avons pas d'autres articles à vous présenter pour le moment.</p>
    		@endif
    	</section>
 

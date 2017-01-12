@@ -3,9 +3,21 @@
 
 @section('content')
 
-    {{Session::get('message')}}
+    @if( Session::get('message') )
+        <div class="alert alert-success" role="alert">
+            <i class="fa fa-check" aria-hidden="true"></i> {{Session::get('message')}}
+        </div>
+    @endif
 
-    <h1>Modifier le QCM : {{ $question->title }}</h1>
+    @if( Session::get('erreur') )
+        <div class="alert alert-danger" role="alert">
+            <i class="fa fa-times" aria-hidden="true"></i> {{Session::get('erreur')}}
+        </div>
+    @endif
+
+    <div class="page-header">
+        <h2>Modifier le QCM : {{ $question->title }}</h2>
+    </div>
 
     {!! BootForm::open()->put()->action( route('questions.update', $question) ) !!}
 
@@ -29,7 +41,7 @@
             !!}
         @endif
 
-        {!! BootForm::submit('Modifier') !!}
+        {!! BootForm::submit('Modifier')->class('btn btn-primary btn-lg') !!}
 
     {!! BootForm::close() !!}
 

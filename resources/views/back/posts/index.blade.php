@@ -3,10 +3,22 @@
 
 @section('content')
     
-    
-    {{Session::get('message')}}
+    @if( Session::get('message') )
+        <div class="alert alert-success" role="alert">
+            <i class="fa fa-check" aria-hidden="true"></i> {{Session::get('message')}}
+        </div>
+    @endif
 
-    <h2>Articles</h2>
+    @if( Session::get('erreur') )
+        <div class="alert alert-danger" role="alert">
+            <i class="fa fa-times" aria-hidden="true"></i> {{Session::get('erreur')}}
+        </div>
+    @endif
+
+    <div class="page-header">
+       <h2>Articles</h2> 
+    </div>
+    
     <p>
         <a href="" class="btn btn-success btn-sm" role="button">En ligne</a>
         <a href="" class="btn btn-warning btn-sm" role="button">Hors ligne</a>

@@ -5,10 +5,16 @@
     
     @if( Session::get('message') )
         <div class="alert alert-success" role="alert">
-            {{Session::get('message')}}
+            <i class="fa fa-check" aria-hidden="true"></i> {{Session::get('message')}}
         </div>
     @endif
 
+    @if( Session::get('erreur') )
+        <div class="alert alert-danger" role="alert">
+            <i class="fa fa-times" aria-hidden="true"></i> {{Session::get('erreur')}}
+        </div>
+    @endif
+    
     <div class="page-header">
        <h2>QCMs</h2> 
     </div>
