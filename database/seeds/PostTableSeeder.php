@@ -20,7 +20,7 @@ class PostTableSeeder extends Seeder
         }
 
         // Pour chaque post creer (each) on associe une image
-        factory(App\Post::class, 8)->create()->each(function($post) use($upload) {
+        factory(App\Post::class, 20)->create()->each(function($post) use($upload) {
             // Recuperer le fichier source sur le web
             $fileName = file_get_contents('http://lorempicsum.com/futurama/400/200/'.rand(1,9));
 
