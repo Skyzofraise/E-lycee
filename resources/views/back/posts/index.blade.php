@@ -19,18 +19,20 @@
        <h2>Articles</h2> 
     </div>
     
-    <p>
+    <p class="gestion-btn">
+        <a href="{{ route('posts.create') }}" class="ajouter btn btn-primary pull-right no-pull-right btn-sm" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Ajouter</a>
+
         <a href="" class="btn btn-success btn-sm" role="button">En ligne</a>
         <a href="" class="btn btn-warning btn-sm" role="button">Hors ligne</a>
         <a href="" class="btn btn-danger btn-sm" role="button">Supprimer</a>
 
-        <a href="{{ route('posts.create') }}" class="ajouter btn btn-primary pull-right" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Ajouter</a>
+        
     </p>
     
     <div class="table-responsive">
         <table class="table">
             <tr>
-                <th><input type="checkbox"></th>
+                <th><input type="checkbox" id="checkAll" class="check"></th>
                 <th class="center">Statut</th>
                 <th>Titre</th>
                 <th>Auteur</th>
@@ -43,7 +45,7 @@
             
             @foreach($posts as $post)
             <tr>
-                <td><input type="checkbox"></td>
+                <td><input type="checkbox" class="check"></td>
 
                 <td class="element-status">
                     @if( $post->status == 'published' )

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Lang;
 
 class LoginController extends Controller
 {
@@ -44,9 +46,26 @@ class LoginController extends Controller
 
     public function authenticate()
     {
-        if (Auth::attempt(['username' => $username, 'password' => $password])) {
-            // Authentication passed...
-            return redirect()->intended('dashboard');
-        }
+
+        // if (Auth::attempt(['username' => $username, 'password' => $password])) {
+        //     // Authentication passed...
+        //     // return redirect()->intended('dashboard');
+        // }
     }
+
+    /**
+     * Get the failed login response instance.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        return redirect()->back()
+            ->withInput($request->only($this->username(), 'remember'))
+            ->withErrors([
+                $this->username() => Lang::get('auth.wrongcombinaison'),
+            ]);
+    }
+
 }

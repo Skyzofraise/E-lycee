@@ -27,6 +27,11 @@
         <h3>QCMs</h3>
         
         <table class="table">
+            <tr>
+                <th>Statut</th>
+                <th>Date</th>
+                <th>Titre</th>
+            </tr>
             @foreach($questions as $question)
             <tr>
                 <td class="element-status">
@@ -53,6 +58,11 @@
     <div class="col-md-6 col-sm-12">
         <h3>Actualités</h3>
         <table class="table">
+            <tr>
+                <th>Statut</th>
+                <th>Date</th>
+                <th>Titre</th>
+            </tr>
             @foreach($posts as $post)
             <tr>
                 <td class="element-status">

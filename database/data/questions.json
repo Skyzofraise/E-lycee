@@ -1,0 +1,52 @@
+[  
+   {  
+      "id":"4",
+      "user_id":"12",
+      "title":"Fonction du second degr\u00e9",
+      "content":"On consid\u00e9re la fonction f(x) = (2x\u20133)\u00b2\u201316, apr\u00e8s d\u00e9veloppement on obtient :",
+      "class_level":"final_class",
+      "status":"published",
+      "created_at":"2017-01-13 04:06:35",
+      "updated_at":"2017-01-13 04:06:35"
+   },
+   {  
+      "id":"5",
+      "user_id":"12",
+      "title":"D\u00e9veloppement",
+      "content":"Quelle est l'expression \u00e9gale \u00e0 3x2 x 2x ?",
+      "class_level":"first_class",
+      "status":"published",
+      "created_at":"2017-01-13 04:11:32",
+      "updated_at":"2017-01-13 04:11:32"
+   },
+   {  
+      "id":"6",
+      "user_id":"12",
+      "title":"Aires et volumes",
+      "content":"La longueur d'un rectangle mesure 20m, sa largeur 4,5m de moins que sa longueur. Son air est de :",
+      "class_level":"first_class",
+      "status":"unpublished",
+      "created_at":"2017-01-13 04:14:28",
+      "updated_at":"2017-01-13 04:14:28"
+   },
+   {  
+      "id":"7",
+      "user_id":"12",
+      "title":"Aires et volumes 2",
+      "content":"A, B, C et D sont des terrains dont on donne la superficie ou les dimensions. Le plus \u00e9tendu est:",
+      "class_level":"first_class",
+      "status":"published",
+      "created_at":"2017-01-13 04:15:36",
+      "updated_at":"2017-01-13 04:17:05"
+   },
+   {  
+      "id":"8",
+      "user_id":"12",
+      "title":"Calcul litt\u00e9ral",
+      "content":"Le d\u00e9veloppement de l'expression ( a - b)( c - d) est :",
+      "class_level":"final_class",
+      "status":"published",
+      "created_at":"2017-01-13 04:23:00",
+      "updated_at":"2017-01-13 04:23:00"
+   }
+]

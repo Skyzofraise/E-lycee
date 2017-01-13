@@ -1,0 +1,182 @@
+[  
+   {  
+      "id":"1",
+      "email":"alexandre@live.fr",
+      "username":"Alexandre",
+      "password":"$2y$10$jmjZHTaG.SyrmacspmomHuGFNprYeLQbicbZdnMVAJh2FlhOoBZfy",
+      "role":"teacher",
+      "remember_token":"EzKXbZyz5ZOKJlVRqcqZkR28ane08E6l1zbTWqk6uH5vlz84iHrsjg57Z28Q",
+      "created_at":"2017-01-13 03:43:56",
+      "updated_at":"2017-01-13 03:44:25"
+   },
+   {  
+      "id":"2",
+      "email":"abel@live.fr",
+      "username":"Abel",
+      "password":"$2y$10$wOinFTEFTYb7jGbliIncxuv9QbYje\/LbzrL8UR3hjw.JmuQj\/6UgS",
+      "role":"first_class",
+      "remember_token":"kRr2xk6ExoPxcdoFA3R7dT68nJl7ENRvZ225udV9j4QgodPMHjO1L75LniUk",
+      "created_at":"2017-01-13 03:44:41",
+      "updated_at":"2017-01-13 03:45:01"
+   },
+   {  
+      "id":"3",
+      "email":"al@live.fr",
+      "username":"Al",
+      "password":"$2y$10$HSSoppNExyRs4nUbhsHfROfDQ4LsZCnlTSOqTv5iGP2dVm0YWWwNG",
+      "role":"first_class",
+      "remember_token":"d8cBGHGqVtIAQcWLEKUfr6NjXZg4prUz8lAKsTGtO3yNID3K8tEyPPh7Oypb",
+      "created_at":"2017-01-13 03:45:15",
+      "updated_at":"2017-01-13 03:45:18"
+   },
+   {  
+      "id":"4",
+      "email":"alan@live.fr",
+      "username":"Alan",
+      "password":"$2y$10$vTcq36bOX46COzRygLVAOO9BIXZoEEQk8GJYaVCXP18Ij1Fwbzn9K",
+      "role":"first_class",
+      "remember_token":"7uPJbMXaM8fodtHS09ivQAaNbAGFJ0V9xXYZwFDsTpLnImwWLe1ZvATeMupW",
+      "created_at":"2017-01-13 03:45:38",
+      "updated_at":"2017-01-13 03:45:42"
+   },
+   {  
+      "id":"5",
+      "email":"arthur@live.fr",
+      "username":"Arthur",
+      "password":"$2y$10$1Kgxx31hSY4V1AEz.UKbQeaZ6WfxUu7hOHnuhikviffxX8YP5UiUC",
+      "role":"first_class",
+      "remember_token":"d8C7fZAT2i5qYQ3OvLLkEA0onkuWb2lql9M9xbqeW6t1v3TbJifS85URoWRR",
+      "created_at":"2017-01-13 03:45:55",
+      "updated_at":"2017-01-13 03:45:59"
+   },
+   {  
+      "id":"6",
+      "email":"carl@live.fr",
+      "username":"Carl",
+      "password":"$2y$10$i2qZ2HVvNDgGsyeN6fBj..obmiDru8BOSUtSy.WrhdyjuvTsSi8CW",
+      "role":"first_class",
+      "remember_token":"ExDC1L2yGLz4AXDvhGTaW1v8q4vM7C5HEEyBuqcPlUUwAghvZm6wz8z5ND2d",
+      "created_at":"2017-01-13 03:46:17",
+      "updated_at":"2017-01-13 03:46:19"
+   },
+   {  
+      "id":"7",
+      "email":"blaise@live.fr",
+      "username":"Blaise",
+      "password":"$2y$10$uHD1ZovhBvr3eO3frmf3we6rZ6qhPqvieyhUMzpciSb4BXOzOL97K",
+      "role":"first_class",
+      "remember_token":"1BtTXCnj3ACwkvhKgdtGIoT5kwhzWZcMC8wgMF82dWrxc5oBnJ5PvHet0c4c",
+      "created_at":"2017-01-13 03:46:34",
+      "updated_at":"2017-01-13 03:46:36"
+   },
+   {  
+      "id":"8",
+      "email":"isaac@live.fr",
+      "username":"Isaac",
+      "password":"$2y$10$BQTeR.ebgU1VF5Dv\/2HHZOZwgtideDkbediFVMAwSVQaGlLEABEPG",
+      "role":"first_class",
+      "remember_token":"sF0UYsqg4HMrSDANRu5SdzSjoqrZn4Y9b2NV5IwJnBhoP9ji0D53s6fDkBsT",
+      "created_at":"2017-01-13 03:46:54",
+      "updated_at":"2017-01-13 03:46:56"
+   },
+   {  
+      "id":"9",
+      "email":"steve@live.fr",
+      "username":"Steve",
+      "password":"$2y$10$mMG9jqetj\/SMBAhvezWG\/ORS4XiyIjZL6vHztKHjNzGADXVwl4kw6",
+      "role":"first_class",
+      "remember_token":"R2zaYoMsPcWV643btlKNdtvsn6F6D6fnrcvQLrG2yDjtNS1yL4uFnw6FgOKq",
+      "created_at":"2017-01-13 03:47:13",
+      "updated_at":"2017-01-13 03:47:18"
+   },
+   {  
+      "id":"10",
+      "email":"alfred@live.fr",
+      "username":"Alfred",
+      "password":"$2y$10$CD2zJpH0\/SOCzZSD2fqQkuQq6trwIWMiF9Gapad3OI2YbRZLyVbBW",
+      "role":"final_class",
+      "remember_token":"Oc7qVyXW1PeXqWJop9A95unbOGQAnGqprbN5skZ5qZSdYDf0PgpJRRhKcnVJ",
+      "created_at":"2017-01-13 03:48:28",
+      "updated_at":"2017-01-13 03:48:30"
+   },
+   {  
+      "id":"11",
+      "email":"brendan@live.fr",
+      "username":"Brendan",
+      "password":"$2y$10$NNBzLY.knX60g5.VIyrIVOIFyffiLmTK7dZlnhFvrhhf551IR2G2i",
+      "role":"final_class",
+      "remember_token":"p20DTXDGzDZhwCyW2Ju2ERX1iVQJaLda8PNU5mkZFljlc7F9Vmg5iouU9c94",
+      "created_at":"2017-01-13 03:48:45",
+      "updated_at":"2017-01-13 03:48:47"
+   },
+   {  
+      "id":"12",
+      "email":"david@live.fr",
+      "username":"David",
+      "password":"$2y$10$KKa05GqsEffF2UvIHHg3fedxiaRvz4IMrefQmePgksfUKVoORvMQS",
+      "role":"final_class",
+      "remember_token":"vIgSYL7NfM8oxMNOXpxP2ISeTkAgdZaSZ0pAbb8xqHCIgCo5eRwcqX8kbfKL",
+      "created_at":"2017-01-13 03:49:05",
+      "updated_at":"2017-01-13 03:49:07"
+   },
+   {  
+      "id":"13",
+      "email":"george@live.fr",
+      "username":"George",
+      "password":"$2y$10$2\/HFJ8KY6h8e1\/cQbvh37OlVBTdqqtTd\/V3tVvm2sAqe82ZhM9SWq",
+      "role":"final_class",
+      "remember_token":"epNJZI7UaEJxdZ6zw1ctAXHUtezbfcM6Nii7rMXHMsNbaxMDqXZ0xWblvx1q",
+      "created_at":"2017-01-13 03:49:23",
+      "updated_at":"2017-01-13 03:49:25"
+   },
+   {  
+      "id":"14",
+      "email":"jim@live.fr",
+      "username":"Jim",
+      "password":"$2y$10$gjipJGVaZ30KltLm62jTEuj6fUp9VmyF5pUBUEUXKFNWIfL7tBRbS",
+      "role":"final_class",
+      "remember_token":"MEPW0we9fzu0kBW50alfXWnCKwQ9Qxcc7NoyYFHQBsjMcgpaMwYFTFVy6Izi",
+      "created_at":"2017-01-13 03:49:37",
+      "updated_at":"2017-01-13 03:49:38"
+   },
+   {  
+      "id":"15",
+      "email":"leslie@live.fr",
+      "username":"Leslie",
+      "password":"$2y$10$5uvWEq9Fxeajme.3afE54u5YpQsLNJrsRALy2qLVEy5Goot.MTQ4m",
+      "role":"final_class",
+      "remember_token":"tyMPcWWHugtzxHH054ypjDzPM6gfNgEZi98J3tqYfXVo2cv0tB22tsTvs0wq",
+      "created_at":"2017-01-13 03:49:52",
+      "updated_at":"2017-01-13 03:49:54"
+   },
+   {  
+      "id":"16",
+      "email":"maria@live.fr",
+      "username":"Maria",
+      "password":"$2y$10$kv7yeDoEb2v1RigvTgmMgORkwvBEuFPoSRE3T5cdbGt3tLfDuiyx6",
+      "role":"final_class",
+      "remember_token":"RVsBrOYmQZKxlzp3Z2jm6nm6tcHaytcfnZsovC9Piax1Uk78C1fruOgqGd5G",
+      "created_at":"2017-01-13 03:50:14",
+      "updated_at":"2017-01-13 03:50:16"
+   },
+   {  
+      "id":"17",
+      "email":"rasmus@live.fr",
+      "username":"Rasmus",
+      "password":"$2y$10$wDrXOOkPIbw.tk5NLOoifOnv2i0ogWugLHXV0s0Z2Zp95zTaJOAwG",
+      "role":"final_class",
+      "remember_token":"mhCGx5rWhCRKKXKKBeffPrjoh3ZhkHSEsttmW7sMpml29MJjs6oVVnks6XHD",
+      "created_at":"2017-01-13 03:54:32",
+      "updated_at":"2017-01-13 03:55:38"
+   },
+   {  
+      "id":"18",
+      "email":"tim@live.fr",
+      "username":"Tim",
+      "password":"$2y$10$7QfG8jKXod2AbDyJtXlFvuk5WvEql3yp4LFuaa.11QjRQBqBqMZ3m",
+      "role":"final_class",
+      "remember_token":"ExDC1L2yGLz4AXDvhGTaW1v8q4vM7C5HEEyBuqcPlUUwAghvZm6wz8z5ND2d",
+      "created_at":"2017-01-13 03:55:55",
+      "updated_at":"2017-01-13 03:55:55"
+   }
+]

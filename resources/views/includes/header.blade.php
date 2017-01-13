@@ -28,6 +28,71 @@
     <header>
         <div class="logo flex">
             <h1><a href="{{url('')}}">E-Lycée</a></h1>
+            <div class="responsive-nav">
+                <nav>
+                    <input type="checkbox" id="nav" /><label for="nav"></label>
+                    <div class="content-responsive-nav">
+                        
+                        @if (Auth::check() == true)
+                            
+                            <a href="{{ url('/dashboard') }}"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>
+                            <a href="{{url('/logout')}}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                                <i class="fa fa-power-off" aria-hidden="true"></i> Déconnexion
+                            </a>
+                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        @else
+                            <a href="{{url('login')}}">
+                                <i class="fa fa-power-off" aria-hidden="true"></i> 
+                                Connexion
+                            </a>
+
+                            <a href="{{ url('/register') }}"><i class="fa fa-user-circle-o" aria-hidden="true"></i> S'enregistrer</a>
+                        @endif
+
+                        <a href="{{url('')}}">Accueil</a>
+                        <a href="{{url('actualites')}}">Actualités</a>
+                        <a href="{{url('lycee')}}">Lycée</a>
+                    
+                        
+
+                        <ul class="social-searchbar">
+                            <li>
+                                <div class="fb-like" data-href="https://www.facebook.com/pages/Coluche-president/207260162718463" data-layout="button" data-action="like" data-size="small" data-show-faces="true"></div>
+                            </li>
+                            <li>
+                                <a href="#" alt="Facebook">
+                                    <img src="../images/fb.svg" alt="" title="facebook icon">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" alt="Twitter">
+                                    <img src="../images/twitter.svg" alt="" title="twitter icon">
+                                </a>
+                            </li>
+                            <li class="search">
+
+                                {!! Form::open(array('url' => 'actualites', 'method' => 'GET', 'class' => 'navbar-form navbar-left')) !!}
+
+                                    {!! Form::text('term', Request::get('term'),
+                                        array('required',
+                                            'class'=>'form-control',
+                                            'id'=>'searchbar',
+                                            'placeholder'=>'Rechercher...')) !!}
+
+                                      <button type="submit" class="btn btn-default-sm">
+                                        <i class="fa fa-search"></i>
+                                      </button>
+
+                                {!! Form::close() !!}
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+            </div>
         </div>
         <div class="nav-container">
             <div class="top-nav">
@@ -37,12 +102,12 @@
                     </li>
                     <li>
                         <a href="#" alt="Facebook">
-                            <img src="images/fb.svg" alt="" title="facebook icon">
+                            <img src="../images/fb.svg" alt="" title="facebook icon">
                         </a>
                     </li>
                     <li>
                         <a href="#" alt="Twitter">
-                            <img src="images/twitter.svg" alt="" title="twitter icon">
+                            <img src="../images/twitter.svg" alt="" title="twitter icon">
                         </a>
                     </li>
                     <li class="search">
@@ -92,7 +157,7 @@
                     </div>
 
                     <div class="log-in-button">
-                        <a href="{{ url('/register') }}">Register</a>
+                        <a href="{{ url('/register') }}">S'enregistrer</a>
                     </div>
                 @endif
 

@@ -12,15 +12,15 @@
 */
 
 // modèle qui permet de generer automatiquement des users
-$factory->define(App\User::class, function (Faker\Generator $faker) {
-    return [
-        'username' => $faker->username,
-        'email' => $faker->safeEmail,
-        'password' => bcrypt(str_random(10)),
-        'role' => $faker->randomElement(array('teacher','first_class','final_class')),
-        'remember_token' => str_random(10)
-    ];
-});
+// $factory->define(App\User::class, function (Faker\Generator $faker) {
+//     return [
+//         'username' => $faker->username,
+//         'email' => $faker->safeEmail,
+//         'password' => bcrypt(str_random(10)),
+//         'role' => $faker->randomElement(array('teacher','first_class','final_class')),
+//         'remember_token' => str_random(10)
+//     ];
+// });
 
 // modèle qui permet de generer automatiquement des posts
 $factory->define(App\Post::class, function (Faker\Generator $faker) {

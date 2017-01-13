@@ -17,15 +17,15 @@
 
     <h2>QCMs</h2>
 
-    <p>
+    <p class="gestion-btn">
+        <a href="{{ route('questions.create') }}" class="ajouter btn btn-primary pull-right no-pull-right btn-sm" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Ajouter</a>
+
         <a href="" class="btn btn-success btn-sm" role="button">En ligne</a>
         <a href="" class="btn btn-warning btn-sm" role="button">Hors ligne</a>
         <a href="" class="btn btn-danger btn-sm" role="button">Supprimer</a>
 
-        <a href="{{ route('questions.create') }}" class="ajouter btn btn-primary pull-right" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Ajouter</a>
     </p>
     
-<<<<<<< HEAD
     <div class="table-responsive">
         <table class="table">
             <tr>
@@ -42,24 +42,6 @@
             @foreach($questions as $question)
             <tr>
                 <td><input type="checkbox" class="check"></td>
-=======
-    <table class="table">
-        <tr>
-            <th><input type="checkbox"></th>
-            <th>Statut</th>
-            <th>Titre</th>
-            <th>Classe</th>
-            <th>Professeur</th>
-            <th>Date</th>
-            <th class="btn-edit-delete">Modifier</th>
-            <th class="btn-edit-delete">Supprimer</th>
-        </tr>
-        
-        @foreach($questions as $question)
-        <tr>
-            <td><input type="checkbox" class="check"></td>
->>>>>>> 75aac5236ede383b50b5b3feeb9a7bbe9977f3fe
-
                 <td class="element-status">
                     @if( $question->status == 'published' )
                         <span class="label label-success"> </span>

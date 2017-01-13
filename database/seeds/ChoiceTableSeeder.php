@@ -1,9 +1,9 @@
 <?php
-
+use App\Choice;
 use App\User;
 use Illuminate\Database\Seeder;
 
-class UserTableSeeder extends Seeder
+class ChoiceTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,17 +12,15 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->delete();
-        $json = File::get("database/data/users.json");
+        DB::table('choices')->delete();
+        $json = File::get("database/data/choices.json");
         $data = json_decode($json);
         foreach ($data as $obj) {
-          User::create(array(
+          Choice::create(array(
             'id' => $obj->id,
-            'email' => $obj->email,
-            'username' => $obj->username,
-            'password' => $obj->password,
-            'role' => $obj->role,
-            'remember_token' => $obj->remember_token,
+            'question_id' => $obj->question_id,
+            'content' => $obj->content,
+            'status' => $obj->status,
             'created_at' => $obj->created_at,
             'updated_at' => $obj->updated_at
           ));

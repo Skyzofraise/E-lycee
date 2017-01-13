@@ -1,0 +1,138 @@
+[  
+   {  
+      "id":"7",
+      "question_id":"4",
+      "content":"f(x) = 4x\u00b2\u201325",
+      "status":"no",
+      "created_at":"2017-01-13 04:06:35",
+      "updated_at":"2017-01-13 04:06:51"
+   },
+   {  
+      "id":"8",
+      "question_id":"4",
+      "content":"f(x) = 2x\u00b2\u201312x\u20137",
+      "status":"no",
+      "created_at":"2017-01-13 04:06:35",
+      "updated_at":"2017-01-13 04:06:51"
+   },
+   {  
+      "id":"9",
+      "question_id":"4",
+      "content":"f(x) = 4x\u00b2\u201312x\u20137",
+      "status":"yes",
+      "created_at":"2017-01-13 04:06:35",
+      "updated_at":"2017-01-13 04:06:51"
+   },
+   {  
+      "id":"10",
+      "question_id":"5",
+      "content":"5x3",
+      "status":"no",
+      "created_at":"2017-01-13 04:11:32",
+      "updated_at":"2017-01-13 04:12:06"
+   },
+   {  
+      "id":"11",
+      "question_id":"5",
+      "content":"6x2",
+      "status":"no",
+      "created_at":"2017-01-13 04:11:32",
+      "updated_at":"2017-01-13 04:12:06"
+   },
+   {  
+      "id":"12",
+      "question_id":"5",
+      "content":"6x3",
+      "status":"yes",
+      "created_at":"2017-01-13 04:11:32",
+      "updated_at":"2017-01-13 04:12:06"
+   },
+   {  
+      "id":"13",
+      "question_id":"6",
+      "content":"31m2",
+      "status":"no",
+      "created_at":"2017-01-13 04:14:28",
+      "updated_at":"2017-01-13 04:14:46"
+   },
+   {  
+      "id":"14",
+      "question_id":"6",
+      "content":"330m2",
+      "status":"yes",
+      "created_at":"2017-01-13 04:14:28",
+      "updated_at":"2017-01-13 04:14:46"
+   },
+   {  
+      "id":"15",
+      "question_id":"6",
+      "content":"90m2",
+      "status":"no",
+      "created_at":"2017-01-13 04:14:28",
+      "updated_at":"2017-01-13 04:14:46"
+   },
+   {  
+      "id":"16",
+      "question_id":"6",
+      "content":"310m2",
+      "status":"no",
+      "created_at":"2017-01-13 04:14:28",
+      "updated_at":"2017-01-13 04:14:46"
+   },
+   {  
+      "id":"17",
+      "question_id":"7",
+      "content":"12 hectares",
+      "status":"no",
+      "created_at":"2017-01-13 04:15:36",
+      "updated_at":"2017-01-13 04:17:07"
+   },
+   {  
+      "id":"18",
+      "question_id":"7",
+      "content":"Un rectangle de 610m de longueur et de 200m de largeur",
+      "status":"no",
+      "created_at":"2017-01-13 04:15:36",
+      "updated_at":"2017-01-13 04:17:07"
+   },
+   {  
+      "id":"19",
+      "question_id":"7",
+      "content":"1253 ares",
+      "status":"yes",
+      "created_at":"2017-01-13 04:15:36",
+      "updated_at":"2017-01-13 04:17:07"
+   },
+   {  
+      "id":"20",
+      "question_id":"7",
+      "content":"12 600m2",
+      "status":"no",
+      "created_at":"2017-01-13 04:15:36",
+      "updated_at":"2017-01-13 04:17:07"
+   },
+   {  
+      "id":"21",
+      "question_id":"8",
+      "content":"ac - ad + bc + bd",
+      "status":"no",
+      "created_at":"2017-01-13 04:23:00",
+      "updated_at":"2017-01-13 04:23:47"
+   },
+   {  
+      "id":"22",
+      "question_id":"8",
+      "content":"ac + bc + ad + bd",
+      "status":"yes",
+      "created_at":"2017-01-13 04:23:00",
+      "updated_at":"2017-01-13 04:23:47"
+   },
+   {  
+      "id":"23",
+      "question_id":"8",
+      "content":"ac - ad -bc + bd",
+      "status":"no",
+      "created_at":"2017-01-13 04:23:00",
+      "updated_at":"2017-01-13 04:23:47"
+   }
+]
